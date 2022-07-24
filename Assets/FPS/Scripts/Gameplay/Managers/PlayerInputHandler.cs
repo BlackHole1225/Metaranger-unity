@@ -6,7 +6,7 @@ namespace Unity.FPS.Gameplay
     public class PlayerInputHandler : MonoBehaviour
     {
         [Tooltip("Sensitivity multiplier for moving the camera around")]
-        public float LookSensitivity = 1f;
+        public float LookSensitivity = 2f;
 
         [Tooltip("Additional sensitivity multiplier for WebGL")]
         public float WebglLookSensitivityMultiplier = 0.25f;
