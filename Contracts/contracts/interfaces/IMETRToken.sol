@@ -7,12 +7,6 @@ interface IMETRToken {
     // STRUCTS
     ////////////
 
-    /// @notice Restricts what can be used to interact with the token
-    /// @dev Restricts the parameters to a specific format
-    struct TokenArgs {
-        address account;
-        uint256 amount;
-    }
 
     ////////////
     // EVENTS
@@ -36,13 +30,11 @@ interface IMETRToken {
 
     /// @notice Creates METR Tokens
     /// @dev Mints METR tokens for a specific address
-    /// @param tokenArgs The relevant arguments in form of a TokenArgs
-    function mintToken(TokenArgs calldata tokenArgs) external;
+    function mintToken(address account, uint256 amount) external;
 
     /// @notice Destroys METR Tokens
     /// @dev Burns METR tokens for a specific address
-    /// @param tokenArgs The relevant arguments in form of a TokenArgs
-    function burnToken(TokenArgs calldata tokenArgs) external;
+    function burnToken(address account, uint256 amount) external;
 
     ////////////
     // ERRORS

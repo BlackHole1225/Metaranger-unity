@@ -16,19 +16,18 @@ contract METRToken is ERC20, ERC20Burnable, AccessControl, IMETRToken {
     }
 
     // Mints MetaTokens to an inputted address
-    function mintToken(TokenArgs calldata tokenArgs) external {
+    function mintToken(address account, uint256 amount) external {
         if(!hasRole(MINTER_ROLE, msg.sender)) revert InvalidRole();
-        _mint(tokenArgs.account, tokenArgs.amount);
-        emit METRMinted(tokenArgs.account, tokenArgs.amount);
+        _mint(account, amount);
+        emit METRMinted(account, amount);
 
     }
 
     // Burns MetaTokens from an inputted address
-    function burnToken(TokenArgs calldata tokenArgs) external {
+    function burnToken(address account, uint256 amount) external {
         if(!hasRole(BURNER_ROLE, msg.sender)) revert InvalidRole();
-        _burn(tokenArgs.account, tokenArgs.amount);
-        emit METRBurned(tokenArgs.account, tokenArgs.amount);
+        _burn(account, amount);
+        emit METRBurned(account, amount);
     }
-
 }
 
