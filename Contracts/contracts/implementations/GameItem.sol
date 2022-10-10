@@ -82,10 +82,17 @@ contract GameItem is ERC1155, AccessControl, IGameItem {
         if(!hasEnoughMETR(account,itemName)) revert InadequateMETR();
         if(!ownsPreReqs(account, itemName)) revert InadequatePreReqs();
 
-        // METRTokenContract.burnToken({account: account, amount: getPrice(itemName)});
-        METRTokenContract.burnToken({account: account, amount: getPrice(itemName)});
+        METRTokenContract.burnToken(account, getPrice(itemName));
         _mint(account, getIndex(itemName), 1, "");
         emit ItemMinted(account, itemName);
+    }
+
+    // Checks to see if a game token is owned by a specific address
+    function ownsGameItem(address account, string calldata itemName) external returns(bool owns) {
+        if(!gameItems[itemName].exists) revert ItemDoesntExist();
+        uint256 index = getIndex(itemName);
+        uint256 gameTokenBalance = balanceOf(account, index);
+        return gameTokenBalance > 0;
     }
 
     // The following functions are overrides required by Solidity.

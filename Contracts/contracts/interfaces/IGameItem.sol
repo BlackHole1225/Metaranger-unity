@@ -55,6 +55,12 @@ interface IGameItem {
     /// @param itemName The plaintext name of the token requested to be minted
     function mintGameItem(address account, string memory itemName) external;
 
+    /// @notice Identifies if a user owns a specific game token or not
+    /// @dev Returns whether or not an address owns the inputted game token
+    /// @param account The address that is checking if they own the item
+    /// @param itemName The plaintext name of the token checked
+    function ownsGameItem(address account, string memory itemName) external returns(bool owns);
+
     ////////////
     // ERRORS
     ////////////

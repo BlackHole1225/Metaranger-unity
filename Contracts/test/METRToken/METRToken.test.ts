@@ -46,10 +46,7 @@ describe("METRToken Tests", () => {
     const { METR, Bob, Carol } = await loadFixture(deployFixture);
     expect(await METR.balanceOf(Carol.address)).to.equal(0);
     await expect(
-      METR.connect(Bob).mintToken({
-        account: Carol.address,
-        amount: MINT_AMOUNT,
-      })
+      METR.connect(Bob).mintToken(Carol.address, MINT_AMOUNT)
     ).be.revertedWithCustomError(METR, "InvalidRole");
     expect(await METR.balanceOf(Carol.address)).to.equal(0);
   });
@@ -64,10 +61,7 @@ describe("METRToken Tests", () => {
   it("Should revert if another address tried to burn METR tokens", async () => {
     const { METR, Alice, Bob } = await loadFixture(deployFixture);
     await expect(
-      METR.connect(Bob).burnToken({
-        account: Alice.address,
-        amount: BURN_AMOUNT,
-      })
+      METR.connect(Bob).burnToken(Alice.address, BURN_AMOUNT)
     ).be.revertedWithCustomError(METR, "InvalidRole");
   });
 });
