@@ -3,7 +3,6 @@ import { expect } from "chai";
 import { MINTER_ROLE, BURNER_ROLE } from "../../constants/roles";
 import { GameItem, METRToken } from "../../typechain-types";
 import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
-import { parseEther } from "ethers/lib/utils";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 
 describe("GameItem Tests", () => {
@@ -14,8 +13,8 @@ describe("GameItem Tests", () => {
   let GameItemContract: GameItem;
   let METR: METRToken;
 
-  const MINT_AMOUNT = parseEther("1000");
-  const MINT_AMOUNT_2 = parseEther("2000");
+  const MINT_AMOUNT = 1000;
+  const MINT_AMOUNT_2 = 2000;
   const TokenAPrice = 200;
   const TokenBPrice = 500;
   const TokenCPrice = 500;
@@ -80,6 +79,9 @@ describe("GameItem Tests", () => {
     // Deployments
     await METR.deployed();
     await GameItemContract.deployed();
+
+    // await METR.connect(Deployer).mintToken(Alice.address, MINT_AMOUNT);
+    // await GameItemContract.mintGameItem(Alice.address, "TokenA");
 
     // Variables relevant for the tests
     return { GameItemContract, METR, Deployer, Alice, Bob };
@@ -147,7 +149,27 @@ describe("GameItem Tests", () => {
   });
 
   // Item doesn't exist
-  // Item doesn't exist
+  it("Should revert if attempting to mint token that doesn't exist", async () => {
+    const { GameItemContract, Alice } = await loadFixture(deployFixture);
+    await expect(
+      GameItemContract.mintGameItem(Alice.address, "TokenDoesntExist")
+    ).be.revertedWithCustomError(GameItemContract, "ItemDoesntExist");
+  });
+
+  it("Should allow deployed to mint TokenA", async () => {
+    const { GameItemContract, METR, Alice, Deployer, Bob } = await loadFixture(
+      deployFixture
+    );
+
+    // await expect(METR.connect(Deployer).mintToken(Alice.address, MINT_AMOUNT))
+    //   .not.be.reverted;
+    // await expect(METR.balanceOf(Alice.address)).not.be.reverted;
+    console.log("Alice's balance ", await METR.balanceOf(Alice.address));
+    await expect(
+      GameItemContract.connect(Deployer).mintGameItem(Alice.address, "TokenA")
+    ).be.revertedWithCustomError(GameItemContract, "ItemDoesntExist");
+  });
+
   // Already owns the token
   // Not enough METR
   // Doesn't have prereqs

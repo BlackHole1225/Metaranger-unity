@@ -20,7 +20,6 @@ contract METRToken is ERC20, ERC20Burnable, AccessControl, IMETRToken {
         if(!hasRole(MINTER_ROLE, msg.sender)) revert InvalidRole();
         _mint(account, amount);
         emit METRMinted(account, amount);
-
     }
 
     // Burns MetaTokens from an inputted address
