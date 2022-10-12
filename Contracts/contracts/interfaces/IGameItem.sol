@@ -86,4 +86,7 @@ interface IGameItem {
 
     /// @notice Buyer already owns this token
     error AlreadyOwned();
+
+    /// @notice Can't set a price for an item below 1
+    error InadequatePrice();
 }

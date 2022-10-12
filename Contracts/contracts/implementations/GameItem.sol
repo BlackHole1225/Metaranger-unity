@@ -20,8 +20,6 @@ contract GameItem is ERC1155, AccessControl, IGameItem {
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
 
         // Enables this contract to find balances of the METRToken contract
-        // ! Figure out how do I check this?
-        // ! Or check if this is the right implementation?
         METRTokenContract = METRToken(metrContractAddress);
 
         // Cannot call this contract without items to initialise
@@ -30,6 +28,7 @@ contract GameItem is ERC1155, AccessControl, IGameItem {
         // Populates contract's internal gameItems based on deployment variables
         for(uint i = 0; i < itemsToInitialise.length; i++){
             ItemInitialiser memory item = itemsToInitialise[i]; // Abbreviation for readibility
+            if(item.price < 1) revert InadequatePrice();
             gameItems[item.itemName] = ItemValues(i,item.prereqs,item.price, true);
         }
     }
@@ -42,7 +41,6 @@ contract GameItem is ERC1155, AccessControl, IGameItem {
 
     // Gets a game item's index 
     function getIndex(string memory itemName) internal view returns(uint256 index){
-        if(!gameItems[itemName].exists) revert ItemDoesntExist();
         return gameItems[itemName].index;
     }
 
@@ -54,6 +52,7 @@ contract GameItem is ERC1155, AccessControl, IGameItem {
 
     // Checks if the buyer owns enough METR to make the purchase
     function hasEnoughMETR(address account, string memory itemName) internal view returns(bool valid) {
+        if(!gameItems[itemName].exists) revert ItemDoesntExist();
         uint256 price = getPrice(itemName);
         uint256 usersBalance = METRTokenContract.balanceOf(account);
         if(price > usersBalance) return false;
@@ -62,6 +61,7 @@ contract GameItem is ERC1155, AccessControl, IGameItem {
 
     // Checks if buyer owns prerequisite game item token
     function ownsPreReqs(address account, string memory itemName) internal view returns(bool valid) {
+        if(!gameItems[itemName].exists) revert ItemDoesntExist();
         string[] memory prereqs = getPrereqs(itemName);
         if(prereqs.length == 0) return true;
 
