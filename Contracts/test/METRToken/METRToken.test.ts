@@ -2,7 +2,7 @@ import { ethers } from "hardhat";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { expect } from "chai";
 import { MINTER_ROLE, BURNER_ROLE } from "../../constants/roles";
-import { METRToken } from "../../typechain-types";
+import { METRToken } from "../../typechain";
 import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 import { parseEther } from "ethers/lib/utils";
 

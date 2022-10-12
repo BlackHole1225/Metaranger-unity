@@ -1,7 +1,7 @@
 import { ethers } from "hardhat";
 import { expect } from "chai";
 import { MINTER_ROLE, BURNER_ROLE } from "../../constants/roles";
-import { GameItem, METRToken } from "../../typechain-types";
+import { GameItem, METRToken } from "../../typechain";
 import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 
@@ -71,14 +71,15 @@ describe("GameItem Tests", () => {
       METR.address
     );
 
+    // Deployments
+    await METR.deployed();
+    await GameItemContract.deployed();
+
     // Roles
     await METR.grantRole(MINTER_ROLE, Deployer.address);
     await METR.grantRole(BURNER_ROLE, Deployer.address);
     await GameItemContract.grantRole(MINTER_ROLE, Deployer.address);
-
-    // Deployments
-    await METR.deployed();
-    await GameItemContract.deployed();
+    await METR.grantRole(BURNER_ROLE, GameItemContract.address);
 
     // await METR.connect(Deployer).mintToken(Alice.address, MINT_AMOUNT);
     // await GameItemContract.mintGameItem(Alice.address, "TokenA");
@@ -161,8 +162,13 @@ describe("GameItem Tests", () => {
       deployFixture
     );
 
-    // await expect(METR.connect(Deployer).mintToken(Alice.address, MINT_AMOUNT))
-    //   .not.be.reverted;
+    console.log(await METR.hasRole(MINTER_ROLE, Deployer.address));
+    console.log(await GameItemContract.hasRole(MINTER_ROLE, Deployer.address));
+    const _METR = METR.connect(Deployer);
+    await _METR.mintToken(Alice.address, ethers.utils.parseEther("1000"));
+
+    await METR.connect(Deployer).mintToken(Alice.address, MINT_AMOUNT);
+
     // await expect(METR.balanceOf(Alice.address)).not.be.reverted;
     console.log("Alice's balance ", await METR.balanceOf(Alice.address));
     await expect(
