@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
-interface IGameItem {
+interface IGameItem is IGameItemCommon{
 
     ////////////
     // STRUCTS
@@ -11,15 +11,6 @@ interface IGameItem {
     /// @dev Sets the values that can be set and accessed for an in-game item
     struct ItemValues {
         uint256 index;
-        string[] prereqs;
-        uint256 price;
-        bool exists;
-    }
-
-    /// @notice Restricts how a new game item token can be created
-    /// @dev Sets the values that the constructor can receive and interpret to make a new game token
-    struct ItemInitialiser {
-        string itemName;
         string[] prereqs;
         uint256 price;
         bool exists;
@@ -64,9 +55,6 @@ interface IGameItem {
     ////////////
     // ERRORS
     ////////////
-
-    /// @notice Caller does not have correct role to perform this action
-    error InvalidRole();
 
     /// @notice User doesn't own enough METR to mint requested in-game token
     error InadequateMETR();
