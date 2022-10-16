@@ -1,7 +1,26 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
-interface IGameManager is IGameItemCommon{
+import "./IGameItemCommon.sol";
+
+interface IGameManager is IGameItemCommon {
+
+    ////////////
+    // STRUCTS
+    ////////////
+
+    /// @dev Represents the data structure for the Manager's interal reference to the GameItem contracts
+    struct GameContractDetails {
+        address contractAddress;
+        bool exists;
+    }
+
+    /// @notice Details about a specific game item contract
+    /// @dev Sets out the interface for a GameItemContract as interpreted by the GameManager
+    struct GameItemDetails {
+        string contractName;
+        ItemInitialiser[] gameItems;
+    }
 
     ////////////
     // EVENTS
@@ -31,15 +50,18 @@ interface IGameManager is IGameItemCommon{
     /// @notice Purchases the game item requested
     /// @dev Mints the Game Item token specified
     /// @param account The address that is receiving the Game Item
+    /// @param contractName The name of the Game
     /// @param itemName The name of the Game Item attempting to be purchased
     /// @param digitalKey String hash that only comes from the game
-    function purchaseGameItem(address account, string memory itemName, string memory digitalKey) external;
+    function purchaseGameItem(address account, string memory contractName, string memory itemName, string memory digitalKey) external;
 
     ////////////
     // ERRORS
     ////////////
 
-    /// @notice Digital Key provided is incorrect
-    error InvalidDigitalKey();
+    
+
+    /// @notice Contract name doesn't exist
+    error ContractDoesntExist();
 
 }

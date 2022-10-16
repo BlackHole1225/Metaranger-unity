@@ -20,4 +20,13 @@ describe("METRToken burnToken Tests", () => {
       METR.connect(Bob).burnToken(Alice.address, BURN_AMOUNT)
     ).be.revertedWithCustomError(METR, "InvalidRole");
   });
+
+  it("Should revert if attempting to burn non-positive number of tokens", async () => {
+    const { METR, Alice } = await loadFixture(deployFixture);
+    await METR.mintToken(Alice.address, MINT_AMOUNT);
+    await expect(METR.burnToken(Alice.address, 0)).be.revertedWithCustomError(
+      METR,
+      "NotPositiveValue"
+    );
+  });
 });

@@ -21,4 +21,12 @@ describe("METRToken mintToken Tests", () => {
     ).be.revertedWithCustomError(METR, "InvalidRole");
     expect(await METR.balanceOf(Carol.address)).to.equal(0);
   });
+
+  it("Should revert if attempting to mint non-positive number of tokens", async () => {
+    const { METR, Alice } = await loadFixture(deployFixture);
+    await expect(METR.mintToken(Alice.address, 0)).be.revertedWithCustomError(
+      METR,
+      "NotPositiveValue"
+    );
+  });
 });

@@ -13,11 +13,12 @@ contract GameItem is ERC1155, AccessControl, IGameItem {
     mapping(string => ItemValues) private gameItems;
 
     // Internal instance of the METRToken contract
-    METRToken METRTokenContract; 
+    METRToken private METRTokenContract; 
 
     constructor(ItemInitialiser[] memory itemsToInitialise, address metrContractAddress) ERC1155(""){
         // Address that deploys this contract can mint
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _setupRole(MINTER_ROLE, msg.sender);
 
         // Enables this contract to find balances of the METRToken contract
         METRTokenContract = METRToken(metrContractAddress);
@@ -52,7 +53,6 @@ contract GameItem is ERC1155, AccessControl, IGameItem {
 
     // Checks if the buyer owns enough METR to make the purchase
     function hasEnoughMETR(address account, string memory itemName) internal view returns(bool valid) {
-        if(!gameItems[itemName].exists) revert ItemDoesntExist();
         uint256 price = getPrice(itemName);
         uint256 usersBalance = METRTokenContract.balanceOf(account);
         if(price > usersBalance) return false;
@@ -61,7 +61,6 @@ contract GameItem is ERC1155, AccessControl, IGameItem {
 
     // Checks if buyer owns prerequisite game item token
     function ownsPreReqs(address account, string memory itemName) internal view returns(bool valid) {
-        if(!gameItems[itemName].exists) revert ItemDoesntExist();
         string[] memory prereqs = getPrereqs(itemName);
         if(prereqs.length == 0) return true;
 

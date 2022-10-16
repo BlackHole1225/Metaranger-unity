@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
-interface IMETRToken {
+import "./IGameItemCommon.sol";
+
+interface IMETRToken is IGameItemCommon{
 
     ////////////
     // EVENTS
@@ -31,11 +33,15 @@ interface IMETRToken {
     /// @dev Burns METR tokens for a specific address
     function burnToken(address account, uint256 amount) external;
 
+    /// @notice Allows a GameItem contract to mint/burn tokens on this contract
+    /// @dev Grants an inputted GameItem contract the minter and burner role
+    function grantRolesToGameItem(address account, string memory digitalKey) external;
+
     ////////////
     // ERRORS
     ////////////
 
-    /// @notice Caller does not have correct role to perform this action
-    error InvalidRole();
+    /// @notice Amount supplied isn't a positive number
+    error NotPositiveValue();
 
 }

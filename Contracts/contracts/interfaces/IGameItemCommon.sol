@@ -21,4 +21,7 @@ interface IGameItemCommon {
 
     /// @notice Caller does not have correct role to perform this action
     error InvalidRole();
+
+    /// @notice Digital Key provided is incorrect
+    error InvalidDigitalKey();
 }

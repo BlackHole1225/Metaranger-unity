@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
+import "./IGameItemCommon.sol";
+
 interface IGameItem is IGameItemCommon{
 
     ////////////
