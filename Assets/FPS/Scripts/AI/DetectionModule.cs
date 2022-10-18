@@ -45,11 +45,7 @@ namespace Unity.FPS.AI
 
         public virtual void HandleTargetDetection(Actor actor, Collider[] selfColliders)
         {
-            // Handle known target detection timeout
-            if (KnownDetectedTarget && !IsSeeingTarget && (Time.time - TimeLastSeenTarget) > KnownTargetTimeout)
-            {
-                KnownDetectedTarget = null;
-            }
+
 
             // Find the closest visible hostile actor
             float sqrDetectionRange = DetectionRange * DetectionRange;
@@ -57,40 +53,13 @@ namespace Unity.FPS.AI
             float closestSqrDistance = Mathf.Infinity;
             foreach (Actor otherActor in m_ActorsManager.Actors)
             {
+                // As soon as enemy detects player, locks on and chases them
                 if (otherActor.Affiliation != actor.Affiliation)
                 {
-                    float sqrDistance = (otherActor.transform.position - DetectionSourcePoint.position).sqrMagnitude;
-                    if (sqrDistance < sqrDetectionRange && sqrDistance < closestSqrDistance)
-                    {
-                        // Check for obstructions
-                        RaycastHit[] hits = Physics.RaycastAll(DetectionSourcePoint.position,
-                            (otherActor.AimPoint.position - DetectionSourcePoint.position).normalized, DetectionRange,
-                            -1, QueryTriggerInteraction.Ignore);
-                        RaycastHit closestValidHit = new RaycastHit();
-                        closestValidHit.distance = Mathf.Infinity;
-                        bool foundValidHit = false;
-                        foreach (var hit in hits)
-                        {
-                            if (!selfColliders.Contains(hit.collider) && hit.distance < closestValidHit.distance)
-                            {
-                                closestValidHit = hit;
-                                foundValidHit = true;
-                            }
-                        }
-
-                        if (foundValidHit)
-                        {
-                            Actor hitActor = closestValidHit.collider.GetComponentInParent<Actor>();
-                            if (hitActor == otherActor)
-                            {
-                                IsSeeingTarget = true;
-                                closestSqrDistance = sqrDistance;
-
-                                TimeLastSeenTarget = Time.time;
-                                KnownDetectedTarget = otherActor.AimPoint.gameObject;
-                            }
-                        }
-                    }
+                    IsSeeingTarget = true;
+                    KnownDetectedTarget = otherActor.AimPoint.gameObject;
+                    closestSqrDistance = (otherActor.transform.position - DetectionSourcePoint.position).sqrMagnitude;
+                    TimeLastSeenTarget = Time.time;
                 }
             }
 
