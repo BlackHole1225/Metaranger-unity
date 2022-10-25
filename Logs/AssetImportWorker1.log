@@ -22,7 +22,7 @@ AssetImportWorker1
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-54364
+65352
 Successfully changed project path to: /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1
 /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -54,7 +54,7 @@ Successfully changed project path to: /Users/brodiesmith/Documents/coding/metara
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 169.44 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 489.28 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.6f1 (7da38d85baf6)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2021.3.6f1/Unity.app/Contents/Resources/UnitySubsystems
@@ -69,93 +69,93 @@ Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/2021.3.6f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/2021.3.6f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/2021.3.6f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56210
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56125
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/2021.3.6f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/2021.3.6f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Registered in 0.002411 seconds.
+Registered in 0.002151 seconds.
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 171.72 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 174.46 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.602 seconds
+- Completed reload, in  1.756 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1604ms)
-		BeginReloadAssembly (106ms)
+	ReloadAssembly (1757ms)
+		BeginReloadAssembly (176ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (1225ms)
-			LoadAssemblies (105ms)
-			RebuildTransferFunctionScriptingTraits (2ms)
-			SetupTypeCache (148ms)
+		EndReloadAssembly (1307ms)
+			LoadAssemblies (175ms)
+			RebuildTransferFunctionScriptingTraits (1ms)
+			SetupTypeCache (146ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (34ms)
-			SetupLoadedEditorAssemblies (883ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (940ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (23ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (174ms)
+				InitializePlatformSupportModulesInManaged (27ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (175ms)
 				BeforeProcessingInitializeOnLoad (6ms)
-				ProcessInitializeOnLoadAttributes (496ms)
-				ProcessInitializeOnLoadMethodAttributes (183ms)
+				ProcessInitializeOnLoadAttributes (556ms)
+				ProcessInitializeOnLoadMethodAttributes (176ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.013046 seconds.
+Registered in 0.008855 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 197.85 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 177.00 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.589 seconds
+- Completed reload, in  4.177 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3591ms)
-		BeginReloadAssembly (258ms)
+	ReloadAssembly (4185ms)
+		BeginReloadAssembly (296ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (40ms)
+			DisableScriptedObjects (41ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (39ms)
-		EndReloadAssembly (3029ms)
-			LoadAssemblies (198ms)
+			CreateAndSetChildDomain (53ms)
+		EndReloadAssembly (3582ms)
+			LoadAssemblies (269ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (522ms)
-			ReleaseScriptCaches (13ms)
-			RebuildScriptCaches (98ms)
-			SetupLoadedEditorAssemblies (1923ms)
+			SetupTypeCache (546ms)
+			ReleaseScriptCaches (29ms)
+			RebuildScriptCaches (89ms)
+			SetupLoadedEditorAssemblies (2413ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
+				InitializePlatformSupportModulesInManaged (23ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (198ms)
-				BeforeProcessingInitializeOnLoad (221ms)
-				ProcessInitializeOnLoadAttributes (1181ms)
-				ProcessInitializeOnLoadMethodAttributes (305ms)
+				RefreshPlugins (177ms)
+				BeforeProcessingInitializeOnLoad (213ms)
+				ProcessInitializeOnLoadAttributes (1650ms)
+				ProcessInitializeOnLoadMethodAttributes (345ms)
 				AfterProcessingInitializeOnLoad (1ms)
-				EditorAssembliesLoaded (0ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (11ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launching external process: /Applications/Unity/Hub/Editor/2021.3.6f1/Unity.app/Contents/Tools/UnityShaderCompiler
-Launched and connected shader compiler UnityShaderCompiler after 0.90 seconds
-Refreshing native plugins compatible for Editor in 1.98 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler after 1.13 seconds
+Refreshing native plugins compatible for Editor in 1.47 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5922 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 79 unused Assets / (3.3 MB). Loaded Objects now: 6339.
 Memory consumption went from 439.0 MB to 435.7 MB.
-Total: 18.498334 ms (FindLiveObjects: 1.323666 ms CreateObjectMapping: 0.353792 ms MarkObjects: 14.408916 ms  DeleteObjects: 2.410333 ms)
+Total: 20.839542 ms (FindLiveObjects: 1.232083 ms CreateObjectMapping: 0.373625 ms MarkObjects: 16.538750 ms  DeleteObjects: 2.693958 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -168,9 +168,856 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 905695.579886 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Textures/mettalic.png
+  artifactKey: Guid(5ef1ecb17b682174ebbeed9a9d7af166) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Textures/mettalic.png using Guid(5ef1ecb17b682174ebbeed9a9d7af166) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15cb2fe2830bc1f93a05dcfdec49f309') in 1.776863 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Assets/FPS/Art/Textures/VFX/Symbol_Anger01.tga
+  artifactKey: Guid(9de0756cf40eac344ba13f10ceadcffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FPS/Art/Textures/VFX/Symbol_Anger01.tga using Guid(9de0756cf40eac344ba13f10ceadcffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f536a99e9381bf7539c4c546d886f4d1') in 0.450099 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000097 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Textures/second-color.png
+  artifactKey: Guid(35c79cc0b2e9d394faa8922409ffb64a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Textures/second-color.png using Guid(35c79cc0b2e9d394faa8922409ffb64a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46cf9df7bb246b8a8f5931faad5c293a') in 0.017274 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000091 seconds.
+  path: Assets/FPS/Art/Textures/Backgrounds/Unity_skyboxBG02.png
+  artifactKey: Guid(91c91768bbde1d24da879a8907f0edd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FPS/Art/Textures/Backgrounds/Unity_skyboxBG02.png using Guid(91c91768bbde1d24da879a8907f0edd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28f0f560ebb754ecff0a8630d453907a') in 0.192758 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 124.847364 seconds.
+  path: Assets/FPS/Tutorials/EditColors/03-Select-Material.asset
+  artifactKey: Guid(96c72e8e33b114148b5acae2b12a90d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FPS/Tutorials/EditColors/03-Select-Material.asset using Guid(96c72e8e33b114148b5acae2b12a90d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a71d2c01347d8f05c180ec1609158c54') in 1.400192 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000153 seconds.
+  path: Assets/FPS/Tutorials/AddAnAsset/AddAnAsset-15.asset
+  artifactKey: Guid(51c83f6dc57d24cd896b1902b96e3423) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FPS/Tutorials/AddAnAsset/AddAnAsset-15.asset using Guid(51c83f6dc57d24cd896b1902b96e3423) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12784cc6f47f6423342b247c13181025') in 0.004663 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/ModAssets/Materials/Custom Materials/Basic Black.mat
+  artifactKey: Guid(dc263f8d5174d45c0a98e6489eca16c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ModAssets/Materials/Custom Materials/Basic Black.mat using Guid(dc263f8d5174d45c0a98e6489eca16c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c632bf0440a94fb558998207bec8912') in 1.829942 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/FPS/Tutorials/AddAnAsset/AddAnAsset-Walkthrough.asset
+  artifactKey: Guid(acc3795cfd9ef4206836da4a1d377627) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FPS/Tutorials/AddAnAsset/AddAnAsset-Walkthrough.asset using Guid(acc3795cfd9ef4206836da4a1d377627) Importer(815301076,1909f56bfc062723c751e8b465ee728b) SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Altar: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Statue_Wall: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Statue_Wall: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Statue_Wall: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (HitBox: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh_Health_Pickup: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (Mesh_Projectile: OnMeshFilterChanged)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:LoadAssetAtPath<Unity.Tutorials.Core.Editor.Tutorial> (string) (at /Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:232)
+System.Linq.Utilities/<>c__DisplayClass2_0`3<string, string, Unity.Tutorials.Core.Editor.Tutorial>:<CombineSelectors>b__0 (string)
+System.Linq.Enumerable/SelectArrayIterator`2<string, Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable/<ExceptIterator>d__57`1<Unity.Tutorials.Core.Editor.Tutorial>:MoveNext ()
+System.Linq.Enumerable:Any<Unity.Tutorials.Core.Editor.Tutorial> (System.Collections.Generic.IEnumerable`1<Unity.Tutorials.Core.Editor.Tutorial>,System.Func`2<Unity.Tutorials.Core.Editor.Tutorial, bool>)
+Unity.Tutorials.Core.Editor.Tutorial:OnValidate () (at Library/PackageCache/com.unity.learn.iet-framework@2.2.1/Editor/Models/Tutorial.cs:286)
+
+[/Users/bokken/buildslave/unity/build/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 232]
+
+ -> (artifact id: '531cb24f007889de0131e94fc2f20f5c') in 0.334036 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/FPS/Tutorials/AddAnAsset/AddAnAsset-01.asset
+  artifactKey: Guid(dc9b1b1cb98344f3780ba96d4f32c225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FPS/Tutorials/AddAnAsset/AddAnAsset-01.asset using Guid(dc9b1b1cb98344f3780ba96d4f32c225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd23851c5ff76ecb65396cd0f1b8496b5') in 0.003253 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/FPS/Tutorials/AddARoom/17-Select-Move.asset
+  artifactKey: Guid(c83a4ddcf9c7a489cb25b31f69c78791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FPS/Tutorials/AddARoom/17-Select-Move.asset using Guid(c83a4ddcf9c7a489cb25b31f69c78791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a390f6de11d65643096fec1d2e26d83') in 0.014483 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/FPS/Prefabs/Level/MainLvl/Section3/Base_Wall.prefab
+  artifactKey: Guid(544fe380545febf4997d6a45e7a51642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FPS/Prefabs/Level/MainLvl/Section3/Base_Wall.prefab using Guid(544fe380545febf4997d6a45e7a51642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9196ffe9e09265ff2f064a899035fd6a') in 0.174878 seconds 
+========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002838 seconds.
+Registered in 0.003256 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
@@ -179,40 +1026,40 @@ Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 2.61 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.504 seconds
+- Completed reload, in  4.660 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3507ms)
-		BeginReloadAssembly (386ms)
+	ReloadAssembly (4665ms)
+		BeginReloadAssembly (745ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (44ms)
+			DisableScriptedObjects (98ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (131ms)
-		EndReloadAssembly (2868ms)
-			LoadAssemblies (208ms)
+			CreateAndSetChildDomain (279ms)
+		EndReloadAssembly (3628ms)
+			LoadAssemblies (368ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (519ms)
-			ReleaseScriptCaches (34ms)
-			RebuildScriptCaches (66ms)
-			SetupLoadedEditorAssemblies (1784ms)
+			SetupTypeCache (510ms)
+			ReleaseScriptCaches (23ms)
+			RebuildScriptCaches (108ms)
+			SetupLoadedEditorAssemblies (2173ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (47ms)
-				SetLoadedEditorAssemblies (2ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (176ms)
-				ProcessInitializeOnLoadAttributes (1241ms)
-				ProcessInitializeOnLoadMethodAttributes (313ms)
+				InitializePlatformSupportModulesInManaged (78ms)
+				SetLoadedEditorAssemblies (3ms)
+				RefreshPlugins (4ms)
+				BeforeProcessingInitializeOnLoad (166ms)
+				ProcessInitializeOnLoadAttributes (1553ms)
+				ProcessInitializeOnLoadMethodAttributes (367ms)
 				AfterProcessingInitializeOnLoad (1ms)
-				EditorAssembliesLoaded (0ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (44ms)
+			AwakeInstancesAfterBackupRestoration (86ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.10 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 3.13 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5805 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 72 unused Assets / (3.5 MB). Loaded Objects now: 6342.
-Memory consumption went from 433.2 MB to 429.7 MB.
-Total: 26.476875 ms (FindLiveObjects: 0.848250 ms CreateObjectMapping: 0.273041 ms MarkObjects: 22.766417 ms  DeleteObjects: 2.586250 ms)
+Unloading 5812 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 72 unused Assets / (3.4 MB). Loaded Objects now: 6442.
+Memory consumption went from 463.5 MB to 460.1 MB.
+Total: 9.477750 ms (FindLiveObjects: 0.548375 ms CreateObjectMapping: 0.272916 ms MarkObjects: 6.836000 ms  DeleteObjects: 1.819042 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -226,89 +1073,275 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 769045.450148 seconds.
-  path: Assets/FPS/Prefabs/Pickups/Loot_Jetpack.prefab
-  artifactKey: Guid(0bb4e7bdf1aec0247854edd179ed1557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FPS/Prefabs/Pickups/Loot_Jetpack.prefab using Guid(0bb4e7bdf1aec0247854edd179ed1557) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '2ad0924a2bb7463dfc2a18985bf083f3') in 1.347928 seconds 
+  Time since last request: 1089.741937 seconds.
+  path: Assets/FPS/Art/Textures/Characters/Turret_Light_Emission.png
+  artifactKey: Guid(935233d8608b4e844984c64d06fd2c01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FPS/Art/Textures/Characters/Turret_Light_Emission.png using Guid(935233d8608b4e844984c64d06fd2c01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05f184127be6cd612a3a80c0fe6ad239') in 0.283408 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000376 seconds.
-  path: Assets/FPS/Prefabs/Pickups/Pickup_Jetpack.prefab
-  artifactKey: Guid(d771f03a2656e194fba5a444d5a3d9e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FPS/Prefabs/Pickups/Pickup_Jetpack.prefab using Guid(d771f03a2656e194fba5a444d5a3d9e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '71d57f06562dd1fac138bf1883afbcea') in 0.071912 seconds 
+  Time since last request: 0.569043 seconds.
+  path: Assets/FPS/Art/Textures/Props/WallStatue_Normal.png
+  artifactKey: Guid(48c0e96ebfb39ae468590e4983df332d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FPS/Art/Textures/Props/WallStatue_Normal.png using Guid(48c0e96ebfb39ae468590e4983df332d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dda47d60193c70a0d891ceec4620ad48') in 0.047494 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000070 seconds.
-  path: Assets/FPS/Prefabs/Pickups/Pickup_Health.prefab
-  artifactKey: Guid(d40ae884302b6684a8b3b6f3d55a71ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FPS/Prefabs/Pickups/Pickup_Health.prefab using Guid(d40ae884302b6684a8b3b6f3d55a71ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'efd28e96aeb837f62ab2a81992cb3a42') in 0.128560 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000061 seconds.
-  path: Assets/FPS/Prefabs/Projectiles/Projectile_Disc.prefab
-  artifactKey: Guid(0e23901b938cf4f4eb86850d912715eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FPS/Prefabs/Projectiles/Projectile_Disc.prefab using Guid(0e23901b938cf4f4eb86850d912715eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5ae02c85d700b3c6a4d40b9b83c319a') in 0.025022 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.366021 seconds.
-  path: Assets/FPS/Prefabs/Weapons/MgFPS_SniperRifle/SniperRifle_MeshesAndTextures/Crosshair_SniperRifle_02.png
-  artifactKey: Guid(7ed7349a85eb4404fbbe8ec2e8a11c2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FPS/Prefabs/Weapons/MgFPS_SniperRifle/SniperRifle_MeshesAndTextures/Crosshair_SniperRifle_02.png using Guid(7ed7349a85eb4404fbbe8ec2e8a11c2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39c119aed76d5036f36cc77133ed153c') in 0.240818 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000152 seconds.
-  path: Assets/FPS/Prefabs/Weapons/MgFPS_SniperRifle/SniperRifle_MeshesAndTextures/Weapon_SniperRifle.fbx
-  artifactKey: Guid(cf7496720f7088d40832fc23b91d7fd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FPS/Prefabs/Weapons/MgFPS_SniperRifle/SniperRifle_MeshesAndTextures/Weapon_SniperRifle.fbx using Guid(cf7496720f7088d40832fc23b91d7fd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1ea3cbb99143744068b38bf68cb8de7') in 0.192935 seconds 
+  Time since last request: 358.300142 seconds.
+  path: Assets/UI/StartGameBaseButton.png
+  artifactKey: Guid(7e4482ecf344f4f9fb9764ce51ab8ec7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/StartGameBaseButton.png using Guid(7e4482ecf344f4f9fb9764ce51ab8ec7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a4de99fa0427e1c558d7f5ac5ee9086') in 0.077256 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002745 seconds.
+Registered in 0.002833 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 4.74 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 5.62 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.776 seconds
+- Completed reload, in  4.363 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3780ms)
-		BeginReloadAssembly (428ms)
-			ExecutionOrderSort (1ms)
+	ReloadAssembly (4370ms)
+		BeginReloadAssembly (636ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (95ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (178ms)
+		EndReloadAssembly (3377ms)
+			LoadAssemblies (301ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (521ms)
+			ReleaseScriptCaches (28ms)
+			RebuildScriptCaches (69ms)
+			SetupLoadedEditorAssemblies (2123ms)
+				LogAssemblyErrors (1ms)
+				InitializePlatformSupportModulesInManaged (54ms)
+				SetLoadedEditorAssemblies (3ms)
+				RefreshPlugins (6ms)
+				BeforeProcessingInitializeOnLoad (203ms)
+				ProcessInitializeOnLoadAttributes (1479ms)
+				ProcessInitializeOnLoadMethodAttributes (375ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (71ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.36 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5813 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 72 unused Assets / (3.4 MB). Loaded Objects now: 6448.
+Memory consumption went from 463.8 MB to 460.4 MB.
+Total: 19.048292 ms (FindLiveObjects: 0.567541 ms CreateObjectMapping: 0.320083 ms MarkObjects: 16.181792 ms  DeleteObjects: 1.977458 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 489.694402 seconds.
+  path: Assets/UI/ControlsButton/ControlClickedButton.png
+  artifactKey: Guid(20b143993f1fc46beb70ee7951e4d9e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/ControlsButton/ControlClickedButton.png using Guid(20b143993f1fc46beb70ee7951e4d9e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9690d207a49889de03fd2d4d7c943ce7') in 0.236220 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.297944 seconds.
+  path: Assets/UI/ControlsButton/ControlClickedButton.png
+  artifactKey: Guid(20b143993f1fc46beb70ee7951e4d9e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/ControlsButton/ControlClickedButton.png using Guid(20b143993f1fc46beb70ee7951e4d9e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54b0d8de746301b46aa5f6a30ff0c405') in 0.145991 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002950 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 2.78 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.764 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3768ms)
+		BeginReloadAssembly (507ms)
+			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (57ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (159ms)
-		EndReloadAssembly (3078ms)
-			LoadAssemblies (213ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (577ms)
-			ReleaseScriptCaches (31ms)
-			RebuildScriptCaches (77ms)
-			SetupLoadedEditorAssemblies (1819ms)
+			CreateAndSetChildDomain (161ms)
+		EndReloadAssembly (2986ms)
+			LoadAssemblies (304ms)
+			RebuildTransferFunctionScriptingTraits (2ms)
+			SetupTypeCache (506ms)
+			ReleaseScriptCaches (14ms)
+			RebuildScriptCaches (71ms)
+			SetupLoadedEditorAssemblies (1823ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (34ms)
-				SetLoadedEditorAssemblies (5ms)
-				RefreshPlugins (5ms)
-				BeforeProcessingInitializeOnLoad (202ms)
-				ProcessInitializeOnLoadAttributes (1257ms)
-				ProcessInitializeOnLoadMethodAttributes (309ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (2ms)
+				InitializePlatformSupportModulesInManaged (38ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (175ms)
+				ProcessInitializeOnLoadAttributes (1269ms)
+				ProcessInitializeOnLoadMethodAttributes (334ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (92ms)
+			AwakeInstancesAfterBackupRestoration (72ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.93 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 2.82 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5812 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 73 unused Assets / (3.4 MB). Loaded Objects now: 6411.
-Memory consumption went from 467.1 MB to 463.7 MB.
-Total: 30.066250 ms (FindLiveObjects: 0.970208 ms CreateObjectMapping: 0.381958 ms MarkObjects: 21.804459 ms  DeleteObjects: 6.907208 ms)
+Unloading 5813 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 72 unused Assets / (3.3 MB). Loaded Objects now: 6454.
+Memory consumption went from 464.1 MB to 460.7 MB.
+Total: 24.451000 ms (FindLiveObjects: 0.464667 ms CreateObjectMapping: 0.307166 ms MarkObjects: 20.605125 ms  DeleteObjects: 3.072958 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1755.091891 seconds.
+  path: Assets/UI/Images/LoadoutButton/LoadoutClickedButton.png
+  artifactKey: Guid(1bb0acdc7f5c6466e8bbc45143166997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Images/LoadoutButton/LoadoutClickedButton.png using Guid(1bb0acdc7f5c6466e8bbc45143166997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98562a9ec3b6c85ce0a6ca3ced66a09d') in 0.326101 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.781992 seconds.
+  path: Assets/UI/Images/LoadoutButton/LoadoutClickedButton.png
+  artifactKey: Guid(1bb0acdc7f5c6466e8bbc45143166997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Images/LoadoutButton/LoadoutClickedButton.png using Guid(1bb0acdc7f5c6466e8bbc45143166997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0542cb5f35ed9f54e1e13ac8f76f3374') in 0.187110 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003087 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 5.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.454 seconds
+Domain Reload Profiling:
+	ReloadAssembly (4457ms)
+		BeginReloadAssembly (664ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (72ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (1ms)
+			CreateAndSetChildDomain (208ms)
+		EndReloadAssembly (3440ms)
+			LoadAssemblies (360ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (527ms)
+			ReleaseScriptCaches (20ms)
+			RebuildScriptCaches (69ms)
+			SetupLoadedEditorAssemblies (2174ms)
+				LogAssemblyErrors (1ms)
+				InitializePlatformSupportModulesInManaged (39ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (6ms)
+				BeforeProcessingInitializeOnLoad (206ms)
+				ProcessInitializeOnLoadAttributes (1478ms)
+				ProcessInitializeOnLoadMethodAttributes (440ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (73ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.89 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5813 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 72 unused Assets / (3.3 MB). Loaded Objects now: 6457.
+Memory consumption went from 464.3 MB to 461.0 MB.
+Total: 13.815917 ms (FindLiveObjects: 0.481084 ms CreateObjectMapping: 0.281166 ms MarkObjects: 11.030375 ms  DeleteObjects: 2.022000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 818.845549 seconds.
+  path: Assets/UI/Images/ConnectWalletButton/ConnectClickedButton.png
+  artifactKey: Guid(5755772f432474b97a797e0c4a6711ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Images/ConnectWalletButton/ConnectClickedButton.png using Guid(5755772f432474b97a797e0c4a6711ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d76712a6e0fed19421c943dba541e8c') in 0.248540 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.053322 seconds.
+  path: Assets/UI/Images/ConnectWalletButton/ConnectClickedButton.png
+  artifactKey: Guid(5755772f432474b97a797e0c4a6711ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Images/ConnectWalletButton/ConnectClickedButton.png using Guid(5755772f432474b97a797e0c4a6711ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66473c8215ea9949d337c8590a636eae') in 0.155336 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003191 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 4.40 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.094 seconds
+Domain Reload Profiling:
+	ReloadAssembly (4096ms)
+		BeginReloadAssembly (460ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (64ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (137ms)
+		EndReloadAssembly (3334ms)
+			LoadAssemblies (267ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (555ms)
+			ReleaseScriptCaches (21ms)
+			RebuildScriptCaches (73ms)
+			SetupLoadedEditorAssemblies (2062ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (36ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (4ms)
+				BeforeProcessingInitializeOnLoad (176ms)
+				ProcessInitializeOnLoadAttributes (1437ms)
+				ProcessInitializeOnLoadMethodAttributes (404ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (82ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.81 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5813 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 72 unused Assets / (3.4 MB). Loaded Objects now: 6463.
+Memory consumption went from 464.7 MB to 461.3 MB.
+Total: 12.972916 ms (FindLiveObjects: 0.812708 ms CreateObjectMapping: 0.342583 ms MarkObjects: 9.537042 ms  DeleteObjects: 2.278750 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -323,7 +1356,121 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002819 seconds.
+Registered in 0.002727 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 3.07 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.877 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3879ms)
+		BeginReloadAssembly (431ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (63ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (1ms)
+			CreateAndSetChildDomain (142ms)
+		EndReloadAssembly (3148ms)
+			LoadAssemblies (194ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (552ms)
+			ReleaseScriptCaches (10ms)
+			RebuildScriptCaches (66ms)
+			SetupLoadedEditorAssemblies (1910ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (53ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (176ms)
+				ProcessInitializeOnLoadAttributes (1269ms)
+				ProcessInitializeOnLoadMethodAttributes (401ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (71ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.57 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5813 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 72 unused Assets / (3.3 MB). Loaded Objects now: 6466.
+Memory consumption went from 464.9 MB to 461.6 MB.
+Total: 6.953959 ms (FindLiveObjects: 0.440667 ms CreateObjectMapping: 0.289791 ms MarkObjects: 4.311583 ms  DeleteObjects: 1.910709 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002854 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 5.86 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.704 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3707ms)
+		BeginReloadAssembly (399ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (53ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (127ms)
+		EndReloadAssembly (3006ms)
+			LoadAssemblies (213ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (519ms)
+			ReleaseScriptCaches (22ms)
+			RebuildScriptCaches (65ms)
+			SetupLoadedEditorAssemblies (1818ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (36ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (6ms)
+				BeforeProcessingInitializeOnLoad (200ms)
+				ProcessInitializeOnLoadAttributes (1190ms)
+				ProcessInitializeOnLoadMethodAttributes (381ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (70ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5813 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 72 unused Assets / (3.3 MB). Loaded Objects now: 6469.
+Memory consumption went from 465.2 MB to 461.9 MB.
+Total: 16.100708 ms (FindLiveObjects: 0.571625 ms CreateObjectMapping: 0.270167 ms MarkObjects: 12.909666 ms  DeleteObjects: 2.348042 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003131 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
@@ -332,40 +1479,40 @@ Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 6.06 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.741 seconds
+- Completed reload, in  4.305 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3744ms)
-		BeginReloadAssembly (428ms)
+	ReloadAssembly (4312ms)
+		BeginReloadAssembly (426ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (58ms)
+			DisableScriptedObjects (51ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (152ms)
-		EndReloadAssembly (3042ms)
-			LoadAssemblies (230ms)
+			CreateAndSetChildDomain (136ms)
+		EndReloadAssembly (3582ms)
+			LoadAssemblies (233ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (576ms)
-			ReleaseScriptCaches (34ms)
-			RebuildScriptCaches (81ms)
-			SetupLoadedEditorAssemblies (1800ms)
+			SetupTypeCache (577ms)
+			ReleaseScriptCaches (36ms)
+			RebuildScriptCaches (74ms)
+			SetupLoadedEditorAssemblies (2229ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (40ms)
-				SetLoadedEditorAssemblies (1ms)
+				SetLoadedEditorAssemblies (2ms)
 				RefreshPlugins (6ms)
-				BeforeProcessingInitializeOnLoad (200ms)
-				ProcessInitializeOnLoadAttributes (1232ms)
-				ProcessInitializeOnLoadMethodAttributes (319ms)
-				AfterProcessingInitializeOnLoad (1ms)
-				EditorAssembliesLoaded (0ms)
+				BeforeProcessingInitializeOnLoad (260ms)
+				ProcessInitializeOnLoadAttributes (1406ms)
+				ProcessInitializeOnLoadMethodAttributes (512ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (58ms)
+			AwakeInstancesAfterBackupRestoration (102ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 4.11 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 3.32 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5813 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 72 unused Assets / (3.4 MB). Loaded Objects now: 6414.
-Memory consumption went from 467.3 MB to 463.9 MB.
-Total: 22.424791 ms (FindLiveObjects: 2.048709 ms CreateObjectMapping: 0.417209 ms MarkObjects: 17.358542 ms  DeleteObjects: 2.599209 ms)
+Unloading 72 unused Assets / (3.3 MB). Loaded Objects now: 6472.
+Memory consumption went from 465.5 MB to 462.1 MB.
+Total: 8.013709 ms (FindLiveObjects: 0.432625 ms CreateObjectMapping: 0.366000 ms MarkObjects: 5.106917 ms  DeleteObjects: 2.106959 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -378,59 +1525,38 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002777 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image /Users/brodiesmith/Documents/coding/metaranger_v1/MetaRanger_v1/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 2.62 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.548 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3551ms)
-		BeginReloadAssembly (388ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (44ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (135ms)
-		EndReloadAssembly (2882ms)
-			LoadAssemblies (151ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (538ms)
-			ReleaseScriptCaches (25ms)
-			RebuildScriptCaches (70ms)
-			SetupLoadedEditorAssemblies (1766ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (37ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (221ms)
-				ProcessInitializeOnLoadAttributes (1175ms)
-				ProcessInitializeOnLoadMethodAttributes (326ms)
-				AfterProcessingInitializeOnLoad (1ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (57ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.68 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5813 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 72 unused Assets / (3.3 MB). Loaded Objects now: 6417.
-Memory consumption went from 467.5 MB to 464.2 MB.
-Total: 27.407791 ms (FindLiveObjects: 1.203250 ms CreateObjectMapping: 0.321125 ms MarkObjects: 23.774375 ms  DeleteObjects: 2.103958 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 2046.303066 seconds.
+  path: Assets/FPS/Tutorials/BuildAndPublish/WT-Upload.png
+  artifactKey: Guid(8397db88d32d5418e8ebc7e6bb6ccafc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FPS/Tutorials/BuildAndPublish/WT-Upload.png using Guid(8397db88d32d5418e8ebc7e6bb6ccafc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5810ab6da244f91348243424303855cd') in 0.297558 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 373.484365 seconds.
+  path: Assets/UI/Images/MenuButton/MenuClickedButton.png
+  artifactKey: Guid(30524628e6fed47f59b3baeb545ba0dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Images/MenuButton/MenuClickedButton.png using Guid(30524628e6fed47f59b3baeb545ba0dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91b4cbdcd68862ec64a75d0e16bbe5f8') in 0.082236 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.936746 seconds.
+  path: Assets/UI/Images/MenuButton/MenuClickedButton.png
+  artifactKey: Guid(30524628e6fed47f59b3baeb545ba0dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Images/MenuButton/MenuClickedButton.png using Guid(30524628e6fed47f59b3baeb545ba0dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '744ee697cedacb718c712e504a149d8c') in 0.240731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 214.235900 seconds.
+  path: Assets/ModAssets/Prefabs/Hat Prefabs/TopHat.prefab
+  artifactKey: Guid(774a4248793f3461bb91a4fe8170cdd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ModAssets/Prefabs/Hat Prefabs/TopHat.prefab using Guid(774a4248793f3461bb91a4fe8170cdd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '464c935416e7589438a0034963efb1bf') in 1.140865 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 504.060935 seconds.
+  path: Assets/UI/Images/MenuButton/MenuClickedButton.png
+  artifactKey: Guid(30524628e6fed47f59b3baeb545ba0dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Images/MenuButton/MenuClickedButton.png using Guid(30524628e6fed47f59b3baeb545ba0dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c33d03f68b543e682db57aeb54ee876') in 0.063290 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.737387 seconds.
+  path: Assets/UI/Images/MenuButton/MenuClickedButton.png
+  artifactKey: Guid(30524628e6fed47f59b3baeb545ba0dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Images/MenuButton/MenuClickedButton.png using Guid(30524628e6fed47f59b3baeb545ba0dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abb338bf56262369b1dd348bc40e6745') in 0.043987 seconds 
