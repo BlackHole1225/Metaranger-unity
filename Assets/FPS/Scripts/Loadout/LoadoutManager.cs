@@ -11,6 +11,7 @@ namespace Unity.FPS.Game
     public class LoadoutManager : MonoBehaviour
     {
         public static string loadoutState = "None";
+        public static string gameItemViewing = "None";
 
         static void Start()
         {
@@ -22,6 +23,12 @@ namespace Unity.FPS.Game
         {
             Debug.Log("New State " + newState);
             loadoutState = newState;
+        }
+
+        public static void ChangeGameItemViewing(string currentGameItemViewed)
+        {
+            Debug.Log("Current Game Item Viewed " + currentGameItemViewed);
+            gameItemViewing = currentGameItemViewed;
         }
 
     }
