@@ -12,27 +12,27 @@ EditorBuildSettings:
     path: Assets/Scenes/ArenaSelection.unity
     guid: af6afd099d0814ec1aecf19f474f062a
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/HellStation.unity
     guid: d794a2ef8ba31d847ad3c19d03e2ddb9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SecondaryScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WinScene.unity
     guid: 037d06fbede2b4041a843d9ee6fe750c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LoseScene.unity
     guid: 72e5c65a45893714484002914e3fd521
   - enabled: 1
-    path: Assets/Scenes/SnowOutpost.unity
+    path: Assets/Scenes/SunsetOutpost.unity
     guid: e8cf1d29775c7e24f9dd35148a6437c0
   - enabled: 1
-    path: Assets/Scenes/IndustrialScene.unity
+    path: Assets/Scenes/PlasmaRefinery.unity
     guid: b2fa8882363c4644b93046de18bcbf19
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AlienWorldScene.unity
     guid: 1087aaeff440f7748a7bef1a7ec81c74
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DesertOutpost.unity
     guid: b42ca4c5c936383429d2318c931f7ad2
   - enabled: 1
