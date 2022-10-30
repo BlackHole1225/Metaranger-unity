@@ -290,7 +290,7 @@ PrefabInstance:
     - target: {fileID: 7397790030346348366, guid: 111fb03a810a64eb9a9eb6359283397b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7397790030346348366, guid: 111fb03a810a64eb9a9eb6359283397b,
         type: 3}
@@ -431,7 +431,7 @@ PrefabInstance:
     - target: {fileID: 7397790030346348366, guid: 111fb03a810a64eb9a9eb6359283397b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7397790030346348366, guid: 111fb03a810a64eb9a9eb6359283397b,
         type: 3}
@@ -541,7 +541,7 @@ PrefabInstance:
     - target: {fileID: 3092868195103748356, guid: 111fb03a810a64eb9a9eb6359283397b,
         type: 3}
       propertyPath: SceneName
-      value: SunsetOutpost
+      value: PlasmaRefinery
       objectReference: {fileID: 0}
     - target: {fileID: 3515943242301803406, guid: 111fb03a810a64eb9a9eb6359283397b,
         type: 3}
@@ -572,7 +572,7 @@ PrefabInstance:
     - target: {fileID: 7397790030346348366, guid: 111fb03a810a64eb9a9eb6359283397b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7397790030346348366, guid: 111fb03a810a64eb9a9eb6359283397b,
         type: 3}
@@ -1176,10 +1176,10 @@ RectTransform:
   m_Children:
   - {fileID: 1833309140}
   - {fileID: 1834908383}
-  - {fileID: 196263928}
   - {fileID: 381920302}
   - {fileID: 329008034}
   - {fileID: 470058050}
+  - {fileID: 196263928}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

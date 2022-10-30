@@ -11484,8 +11484,32 @@ PrefabInstance:
     - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
         type: 3}
       propertyPath: spawnRate
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_Roller
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: c12536744dfea423aa12562522f01bed,
+        type: 3}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_Swarmer
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: c12536744dfea423aa12562522f01bed,
+        type: 3}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_Hoverbot
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: ad3f1a0c8b9b94016802e181efcf9395,
+        type: 3}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_SpecialOps
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: 9eeb4a7f88ee8474a96b1681340d7343,
+        type: 3}
     - target: {fileID: 7582972796313274724, guid: f59850047c68643318c2875933c0fddf,
         type: 3}
       propertyPath: m_Name
@@ -28876,8 +28900,32 @@ PrefabInstance:
     - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
         type: 3}
       propertyPath: spawnRate
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_Roller
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: c12536744dfea423aa12562522f01bed,
+        type: 3}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_Swarmer
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: c12536744dfea423aa12562522f01bed,
+        type: 3}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_Hoverbot
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: ad3f1a0c8b9b94016802e181efcf9395,
+        type: 3}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_SpecialOps
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: 9eeb4a7f88ee8474a96b1681340d7343,
+        type: 3}
     - target: {fileID: 7582972796313274724, guid: f59850047c68643318c2875933c0fddf,
         type: 3}
       propertyPath: m_Name
@@ -32955,8 +33003,32 @@ PrefabInstance:
     - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
         type: 3}
       propertyPath: spawnRate
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_Roller
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: c12536744dfea423aa12562522f01bed,
+        type: 3}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_Swarmer
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: c12536744dfea423aa12562522f01bed,
+        type: 3}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_Hoverbot
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: ad3f1a0c8b9b94016802e181efcf9395,
+        type: 3}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_SpecialOps
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: 9eeb4a7f88ee8474a96b1681340d7343,
+        type: 3}
     - target: {fileID: 7582972796313274724, guid: f59850047c68643318c2875933c0fddf,
         type: 3}
       propertyPath: m_Name
@@ -34051,8 +34123,32 @@ PrefabInstance:
     - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
         type: 3}
       propertyPath: spawnRate
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_Roller
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: c12536744dfea423aa12562522f01bed,
+        type: 3}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_Swarmer
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: c12536744dfea423aa12562522f01bed,
+        type: 3}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_Hoverbot
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: ad3f1a0c8b9b94016802e181efcf9395,
+        type: 3}
+    - target: {fileID: 7582972796313274722, guid: f59850047c68643318c2875933c0fddf,
+        type: 3}
+      propertyPath: Enemy_SpecialOps
+      value: 
+      objectReference: {fileID: 2015434656898269652, guid: 9eeb4a7f88ee8474a96b1681340d7343,
+        type: 3}
     - target: {fileID: 7582972796313274724, guid: f59850047c68643318c2875933c0fddf,
         type: 3}
       propertyPath: m_Name

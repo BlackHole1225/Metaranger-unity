@@ -13,9 +13,6 @@ namespace Unity.FPS.AI
         [Tooltip("The max distance at which the enemy can see targets")]
         public float DetectionRange = 20f;
 
-        [Tooltip("The max distance at which the enemy can attack its target")]
-        public float AttackRange = 10f;
-
         [Tooltip("Time before an enemy abandons a known target that it can't see anymore")]
         public float KnownTargetTimeout = 4f;
 
@@ -43,7 +40,7 @@ namespace Unity.FPS.AI
             DebugUtility.HandleErrorIfNullFindObject<ActorsManager, DetectionModule>(m_ActorsManager, this);
         }
 
-        public virtual void HandleTargetDetection(Actor actor, Collider[] selfColliders)
+        public virtual void HandleTargetDetection(Actor actor, Collider[] selfColliders, float attackRange)
         {
 
 
@@ -65,7 +62,7 @@ namespace Unity.FPS.AI
 
             IsTargetInAttackRange = KnownDetectedTarget != null &&
                                     Vector3.Distance(transform.position, KnownDetectedTarget.transform.position) <=
-                                    AttackRange;
+                                    attackRange;
 
             // Detection events
             if (!HadKnownTarget &&
