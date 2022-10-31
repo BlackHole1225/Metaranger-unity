@@ -10,26 +10,60 @@ namespace Unity.FPS.Game
 
     public class LoadoutManager : MonoBehaviour
     {
-        public static string loadoutState = "None";
-        public static string gameItemViewing = "None";
+        public string loadoutState = "None";
+        public string gameItemViewing = "None";
 
-        static void Start()
+        [Header("Power Up Game Items")]
+        [Tooltip("The Game Items displayed when 'PowerUps' is selected")]
+        public GameObject[] PowerUpItems;
+
+        [Header("Weapon Game Items")]
+        [Tooltip("The Game Items displayed when 'Weapons' is selected")]
+        public GameObject[] Weapons;
+
+        void Start()
         {
             // Resets the state once the player reaches the Loadout menu
             loadoutState = "None";
         }
 
-        public static void ChangeLoadoutState(string newState)
+        void SetItemsActive(GameObject[] gameObjects, bool active)
+        {
+            foreach (GameObject gameObject in gameObjects)
+            {
+                gameObject.SetActive(active);
+            }
+        }
+
+        void DisplayGameItems(string state)
+        {
+            if (state == "Weapons")
+            {
+                SetItemsActive(PowerUpItems, false);
+                SetItemsActive(Weapons, true);
+            }
+
+            if (state == "PowerUps")
+            {
+                SetItemsActive(Weapons, false);
+                SetItemsActive(PowerUpItems, true);
+            }
+        }
+
+        public void ChangeLoadoutState(string newState)
         {
             Debug.Log("New State " + newState);
             loadoutState = newState;
+            DisplayGameItems(newState);
         }
 
-        public static void ChangeGameItemViewing(string currentGameItemViewed)
+        public void ChangeGameItemViewing(string currentGameItemViewed)
         {
             Debug.Log("Current Game Item Viewed " + currentGameItemViewed);
             gameItemViewing = currentGameItemViewed;
         }
+
+
 
     }
 

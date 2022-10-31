@@ -45,11 +45,15 @@ namespace Unity.FPS.UI
         [Tooltip("The Image that is displayed if the Game Item has not been purchased")]
         public GameObject UnavailableImage;
 
+        [Tooltip("Reference to the LoadoutManager")]
+        public Unity.FPS.Game.LoadoutManager loadoutManager;
+
         // Internal reference as to whether this Game Item has been unlocked or not
-        bool Unlocked;
+        bool Unlocked = false;
 
         void Start()
         {
+            if (UnlockedByDefault) Unlocked = true;
             CheckItemStatuses();
         }
 
@@ -61,7 +65,7 @@ namespace Unity.FPS.UI
 
         public void SetGameItemViewing()
         {
-            LoadoutManager.ChangeGameItemViewing(GameItemTitle);
+            loadoutManager.ChangeGameItemViewing(GameItemTitle);
         }
 
         // TODO Implement this when the smart contracts have been deployed
@@ -102,7 +106,7 @@ namespace Unity.FPS.UI
             // TODO Implement this when smart contracts uploaded
             // CheckIfUnlocked();
 
-            if (!Unlocked)
+            if (Unlocked == false)
             {
                 ActivateIndicators(false);
                 PurchasedImage.SetActive(false);
@@ -116,10 +120,13 @@ namespace Unity.FPS.UI
                 UnavailableImage.SetActive(false);
                 PriceObject.SetActive(false);
 
+                Debug.Log("Reached here, the price object should be false");
+
                 if (UnlockedByDefault)
                 {
                     CurrentValueText.text = CurrentValue.ToString();
                     CurrentValueObject.SetActive(true);
+                    Debug.Log("Reached here as well; the Current Value should be showing");
                 }
                 else
                 {

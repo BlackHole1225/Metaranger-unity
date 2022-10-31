@@ -11,9 +11,11 @@ namespace Unity.FPS.UI
         [Tooltip("The Loadout state that is loaded when the user presses this button")]
         public string buttonState;
 
+        public Unity.FPS.Game.LoadoutManager loadoutManager;
+
         public void SetLoadoutState()
         {
-            LoadoutManager.ChangeLoadoutState(buttonState);
+            loadoutManager.ChangeLoadoutState(buttonState);
         }
     }
 }
