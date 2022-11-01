@@ -9,17 +9,25 @@ namespace Unity.FPS.UI
 {
     public class LoadoutGameItem : MonoBehaviour
     {
+        [Header("Basic Game Item Variables")]
         [Tooltip("The name of the Game Item")]
         public string GameItemTitle;
 
         [Tooltip("The text component that visually displays the name of the Game Item")]
         public TMPro.TextMeshProUGUI GameItemText;
 
+        [Tooltip("Reference to the LoadoutManager")]
+        public Unity.FPS.Game.LoadoutManager loadoutManager;
+
         [Tooltip("Determines if the Game Item is unlocked by default or not")]
         public bool UnlockedByDefault;
 
+        [Tooltip("'Upgrade' text displayed when the item is purchased, but not any upgrades")]
+        public GameObject UpgradeTextObject;
+
+        [Header("Current Value Variables")]
         [Tooltip("The current value of the Game Item, if this item has a value")]
-        public int CurrentValue;
+        public string CurrentValue;
 
         [Tooltip("The text component associated with the Current Value of this Game Item")]
         public TMPro.TextMeshProUGUI CurrentValueText;
@@ -27,6 +35,7 @@ namespace Unity.FPS.UI
         [Tooltip("The gameObject that represents the Current Value of this Game Item")]
         public GameObject CurrentValueObject;
 
+        [Header("Price Variables")]
         [Tooltip("The price of the Game Item in METR")]
         public int Price;
 
@@ -36,23 +45,24 @@ namespace Unity.FPS.UI
         [Tooltip("The gameObject that represents the text price and the METR Icon")]
         public GameObject PriceObject;
 
+        [Header("Game Item Images and Indicators")]
+        [Tooltip("The Image that is displayed if the Game Item has been purchased")]
+        public GameObject PurchasedImage;
+        [Tooltip("The Image that is displayed if the Game Item has not been purchased")]
+        public GameObject UnavailableImage;
         [Tooltip("The list of UpgradeIndicators, if the Game Item has them")]
         public GameObject[] UpgradeIndicators;
 
-        [Tooltip("The Image that is displayed if the Game Item has been purchased")]
-        public GameObject PurchasedImage;
 
-        [Tooltip("The Image that is displayed if the Game Item has not been purchased")]
-        public GameObject UnavailableImage;
 
-        [Tooltip("Reference to the LoadoutManager")]
-        public Unity.FPS.Game.LoadoutManager loadoutManager;
+
 
         // Internal reference as to whether this Game Item has been unlocked or not
         bool Unlocked = false;
 
         void Start()
         {
+            GameItemText.text = GameItemTitle;
             if (UnlockedByDefault) Unlocked = true;
             CheckItemStatuses();
         }
@@ -82,28 +92,29 @@ namespace Unity.FPS.UI
 
         void ActivateIndicators(bool whichOne)
         {
-            foreach (GameObject indicator in UpgradeIndicators)
-            {
-                if (whichOne) // True means we are showing the indicators
-                {
-                    bool result = CheckIfUnlocked(indicator.name);
-                    if (result)
-                    {
-                        indicator.SetActive(whichOne);
-                    }
-                }
-                else
-                {
-                    indicator.SetActive(whichOne);
-                }
-            }
+            // foreach (GameObject indicator in UpgradeIndicators)
+            // {
+            //     if (whichOne) // True means we are showing the indicators
+            //     {
+            //         bool result = CheckIfUnlocked(indicator.name);
+            //         if (result)
+            //         {
+            //             UpgradeTextObject.SetActive(false);
+            //             indicator.SetActive(whichOne);
+            //         }
+            //     }
+            //     else
+            //     {
+            //         indicator.SetActive(whichOne);
+            //     }
+            // }
         }
 
         // TODO Decide if this should be called whenever a purchased has been made or something?
         public void CheckItemStatuses()
         {
             // Check if this item has been unlocked
-            // TODO Implement this when smart contracts uploaded
+            // TODO Implement this when smart contracts deployed
             // CheckIfUnlocked();
 
             if (Unlocked == false)
@@ -119,14 +130,14 @@ namespace Unity.FPS.UI
                 PurchasedImage.SetActive(true);
                 UnavailableImage.SetActive(false);
                 PriceObject.SetActive(false);
+                UpgradeTextObject.SetActive(true);
 
-                Debug.Log("Reached here, the price object should be false");
-
-                if (UnlockedByDefault)
+                if (UnlockedByDefault && GameItemTitle != "BLASTER")
                 {
+                    Debug.Log(GameItemTitle);
+                    UpgradeTextObject.SetActive(false);
                     CurrentValueText.text = CurrentValue.ToString();
                     CurrentValueObject.SetActive(true);
-                    Debug.Log("Reached here as well; the Current Value should be showing");
                 }
                 else
                 {

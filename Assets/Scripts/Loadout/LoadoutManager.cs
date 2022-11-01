@@ -2,16 +2,21 @@ using System;
 using System.Collections.Generic;
 using Unity.FPS.Game;
 using UnityEngine;
-
-
 namespace Unity.FPS.Game
 {
 
 
     public class LoadoutManager : MonoBehaviour
     {
-        public string loadoutState = "None";
-        public string gameItemViewing = "None";
+
+        private string loadoutState = "None";
+        private string gameItemViewing = "None";
+
+        [Header("Title Text GameObjects")]
+        [Tooltip("The main large title text to the right")]
+        public GameObject MainTitleText;
+        [Tooltip("The title text that appears over the menu buttons")]
+        public GameObject MenuTitleText;
 
         [Header("Power Up Game Items")]
         [Tooltip("The Game Items displayed when 'PowerUps' is selected")]
@@ -20,6 +25,7 @@ namespace Unity.FPS.Game
         [Header("Weapon Game Items")]
         [Tooltip("The Game Items displayed when 'Weapons' is selected")]
         public GameObject[] Weapons;
+
 
         void Start()
         {
@@ -37,6 +43,9 @@ namespace Unity.FPS.Game
 
         void DisplayGameItems(string state)
         {
+            MainTitleText.SetActive(false);
+            MenuTitleText.SetActive(true);
+
             if (state == "Weapons")
             {
                 SetItemsActive(PowerUpItems, false);
