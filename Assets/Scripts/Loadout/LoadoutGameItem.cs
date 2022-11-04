@@ -13,6 +13,12 @@ namespace Unity.FPS.UI
         [Tooltip("The name of the Game Item")]
         public string GameItemTitle;
 
+        [Tooltip("The upgrade tree associated with this Game Item")]
+        public string UpgradeTreeName;
+
+        [Tooltip("The description for this Game Item")]
+        public string GameItemDescription;
+
         [Tooltip("The text component that visually displays the name of the Game Item")]
         public TMPro.TextMeshProUGUI GameItemText;
 
@@ -54,9 +60,6 @@ namespace Unity.FPS.UI
         public GameObject[] UpgradeIndicators;
 
 
-
-
-
         // Internal reference as to whether this Game Item has been unlocked or not
         bool Unlocked = false;
 
@@ -69,13 +72,14 @@ namespace Unity.FPS.UI
 
         // TODO Determine if this is needed
         // If this runs every frame, it might consume computation and make the game slow
-        static void Update()
+        void Update()
         {
+            CheckItemStatuses();
         }
 
         public void SetGameItemViewing()
         {
-            loadoutManager.ChangeGameItemViewing(GameItemTitle);
+            loadoutManager.ChangeGameItemViewing(GameItemTitle, UpgradeTreeName, GameItemDescription);
         }
 
         // TODO Implement this when the smart contracts have been deployed
@@ -134,7 +138,6 @@ namespace Unity.FPS.UI
 
                 if (UnlockedByDefault && GameItemTitle != "BLASTER")
                 {
-                    Debug.Log(GameItemTitle);
                     UpgradeTextObject.SetActive(false);
                     CurrentValueText.text = CurrentValue.ToString();
                     CurrentValueObject.SetActive(true);

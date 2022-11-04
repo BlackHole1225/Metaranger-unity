@@ -2,21 +2,28 @@ using System;
 using System.Collections.Generic;
 using Unity.FPS.Game;
 using UnityEngine;
+using TMPro;
+
 namespace Unity.FPS.Game
 {
 
-
     public class LoadoutManager : MonoBehaviour
     {
+        public string loadoutState = "None";
+        public string gameItemViewing = "None";
+        public string gameItemUpgradeTree = "None";
 
-        private string loadoutState = "None";
-        private string gameItemViewing = "None";
+        [Header("Text")]
 
-        [Header("Title Text GameObjects")]
         [Tooltip("The main large title text to the right")]
-        public GameObject MainTitleText;
+        public GameObject MainTitleTextObject;
+        public TMPro.TextMeshProUGUI MainTitleText;
         [Tooltip("The title text that appears over the menu buttons")]
-        public GameObject MenuTitleText;
+        public GameObject SideTitleTextObject;
+        public TMPro.TextMeshProUGUI SideTitleText;
+        [Tooltip("The description text that appears underneath the SideTitle Text")]
+        public GameObject DescriptionTextObject;
+        public TMPro.TextMeshProUGUI DescriptionText;
 
         [Header("Power Up Game Items")]
         [Tooltip("The Game Items displayed when 'PowerUps' is selected")]
@@ -25,6 +32,15 @@ namespace Unity.FPS.Game
         [Header("Weapon Game Items")]
         [Tooltip("The Game Items displayed when 'Weapons' is selected")]
         public GameObject[] Weapons;
+
+        [Header("Upgrade Trees")]
+        [Tooltip("All the Upgrade Item Trees")]
+        public GameObject[] UpgradeTrees;
+        [Tooltip("The background image for the Upgrade Trees")]
+        public GameObject UpgradeTreeBackground;
+
+        [Header("Other")]
+        public GameObject LoadoutMenuButtons;
 
 
         void Start()
@@ -43,8 +59,8 @@ namespace Unity.FPS.Game
 
         void DisplayGameItems(string state)
         {
-            MainTitleText.SetActive(false);
-            MenuTitleText.SetActive(true);
+            MainTitleTextObject.SetActive(false);
+            SideTitleTextObject.SetActive(true);
 
             if (state == "Weapons")
             {
@@ -59,21 +75,52 @@ namespace Unity.FPS.Game
             }
         }
 
+        void DisplayUpgradeTree(string upgradeTreeName)
+        {
+            if (upgradeTreeName != "NoUpgradeTree")
+            {
+                UpgradeTreeBackground.SetActive(true);
+                // Hide all the trees initially
+                SetItemsActive(UpgradeTrees, false);
+                foreach (GameObject upgradeTree in UpgradeTrees)
+                {
+                    if (upgradeTree.name == upgradeTreeName)
+                    {
+                        upgradeTree.SetActive(true);
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                // This is where you would show the purchase modal for the non-upgradable items
+            }
+
+        }
+
         public void ChangeLoadoutState(string newState)
         {
-            Debug.Log("New State " + newState);
+            gameItemViewing = "None";
+            gameItemUpgradeTree = "None";
+            SideTitleText.text = "LOADOUT";
+            UpgradeTreeBackground.SetActive(false);
+            DescriptionTextObject.SetActive(false);
+            LoadoutMenuButtons.SetActive(true);
             loadoutState = newState;
             DisplayGameItems(newState);
         }
 
-        public void ChangeGameItemViewing(string currentGameItemViewed)
+        public void ChangeGameItemViewing(string GITitle, string GIUpgradeTree, string GIDescription)
         {
-            Debug.Log("Current Game Item Viewed " + currentGameItemViewed);
-            gameItemViewing = currentGameItemViewed;
+            SetItemsActive(Weapons, false);
+            SetItemsActive(PowerUpItems, false);
+            gameItemViewing = GITitle;
+            DisplayUpgradeTree(GIUpgradeTree);
+            SideTitleText.text = GITitle;
+            DescriptionText.text = GIDescription;
+            DescriptionTextObject.SetActive(true);
+            LoadoutMenuButtons.SetActive(false);
         }
-
-
-
     }
 
 

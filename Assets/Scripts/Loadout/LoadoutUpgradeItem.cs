@@ -5,17 +5,17 @@ using UnityEngine;
 
 namespace Unity.FPS.UI
 {
+    // Enum to represnt the state of the button
+
+    public enum State
+    {
+        Unavailable,
+        Available,
+        Owned,
+    }
+
     public class LoadoutUpgradeItem : MonoBehaviour
     {
-
-        // Enum to represnt the state of the button
-        enum State
-        {
-            Unavailable,
-            Available,
-            Owned,
-        }
-
         [Header("Upgrade Name")]
         public string UpgradeName;
 
@@ -30,12 +30,13 @@ namespace Unity.FPS.UI
         [Header("Prerequisite Game Items")]
         public LoadoutUpgradeItem[] prerequisites;
 
-        private State upgradeState = State.Unavailable;
+        public State upgradeState = State.Unavailable;
 
-        void CheckOwned()
+        bool CheckOwned()
         {
             // TODO
             // This is where you would check if this Game Item is owned
+            return false;
         }
 
         // This function is called by other Game Items, to see if it is owned already
@@ -45,11 +46,11 @@ namespace Unity.FPS.UI
             return upgradeState;
         }
 
-        void CheckStatus()
+        public void CheckStatus()
         {
             // If the item has no prerequisites, it is Owned
             // If the user has the game item, then it is Owned
-            bool result = CheckGameItem();
+            bool result = CheckOwned();
             if (result || prerequisites.Length == 0)
             {
                 upgradeState = State.Owned;
@@ -63,7 +64,7 @@ namespace Unity.FPS.UI
             OwnedButton.SetActive(false);
 
             // If the user doesn't have all the prerequisities, it is Unavailable
-            foreach (GameObject prereq in prerequisites)
+            foreach (LoadoutUpgradeItem prereq in prerequisites)
             {
                 State prereqStatus = prereq.ItemStatus();
                 if (prereqStatus == State.Unavailable || prereqStatus == State.Available)
@@ -82,6 +83,11 @@ namespace Unity.FPS.UI
         }
 
         void Start()
+        {
+            CheckStatus();
+        }
+
+        void Update()
         {
             CheckStatus();
         }

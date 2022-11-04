@@ -94,7 +94,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4860460372294641737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 160}
+  m_SizeDelta: {x: 140, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2691595432952887133
 CanvasRenderer:
@@ -216,7 +216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6765771279184560560
 RectTransform:
   m_ObjectHideFlags: 0
@@ -235,7 +235,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 160}
+  m_SizeDelta: {x: 140, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3010320460660351999
 CanvasRenderer:
@@ -357,7 +357,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 160}
+  m_SizeDelta: {x: 140, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7950559301557696681
 CanvasRenderer:
@@ -451,6 +451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5901168799246139778}
+  - component: {fileID: 4944897584699699062}
   m_Layer: 5
   m_Name: UpgradeItem
   m_TagString: Untagged
@@ -482,3 +483,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4944897584699699062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6805776692732843262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc40b460f38864665bfab5ea9d6bbc15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeName: 
+  UnavailableButton: {fileID: 2411376360913963767}
+  AvailableButton: {fileID: 2928308644077529983}
+  OwnedButton: {fileID: 2295330308957953888}
+  prerequisites: []
+  upgradeState: 0

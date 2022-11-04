@@ -13,9 +13,21 @@ namespace Unity.FPS.UI
 
         public Unity.FPS.Game.LoadoutManager loadoutManager;
 
+        [Tooltip("Coming Soon Items")]
+        public bool comingSoon;
+        public GameObject ComingSoonModal;
+
         public void SetLoadoutState()
         {
-            loadoutManager.ChangeLoadoutState(buttonState);
+            if (comingSoon)
+            {
+                ComingSoonModal.SetActive(true);
+            }
+            else
+            {
+
+                loadoutManager.ChangeLoadoutState(buttonState);
+            }
         }
     }
 }
