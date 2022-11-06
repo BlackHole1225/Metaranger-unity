@@ -471,6 +471,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+  MaxArmour: 10
+  MaxShields: 10
+  isPlayer: 1
   CriticalHealthRatio: 0.3
 --- !u!114 &298744117520805562
 MonoBehaviour:

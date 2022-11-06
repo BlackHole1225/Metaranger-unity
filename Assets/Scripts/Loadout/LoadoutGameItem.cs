@@ -25,6 +25,9 @@ namespace Unity.FPS.UI
         [Tooltip("Reference to the LoadoutManager")]
         public Unity.FPS.Game.LoadoutManager loadoutManager;
 
+        [Tooltip("Reference to the Game Item Purchase Modal")]
+        public LoadoutPurchaseModal gameItemPurchaseModal;
+
         [Tooltip("Determines if the Game Item is unlocked by default or not")]
         public bool UnlockedByDefault;
 
@@ -58,7 +61,12 @@ namespace Unity.FPS.UI
         public GameObject UnavailableImage;
         [Tooltip("The list of UpgradeIndicators, if the Game Item has them")]
         public GameObject[] UpgradeIndicators;
-
+        [Tooltip("Reference to this Game Item's image")]
+        public Sprite GameItemImage;
+        [Tooltip("Images's width when displayed on the Modal")]
+        public float imgWidth;
+        [Tooltip("Image's height when displayed on the Modal")]
+        public float imgHeight;
 
         // Internal reference as to whether this Game Item has been unlocked or not
         bool Unlocked = false;
@@ -77,9 +85,18 @@ namespace Unity.FPS.UI
             CheckItemStatuses();
         }
 
-        public void SetGameItemViewing()
+        public void SelectGameItem()
         {
-            loadoutManager.ChangeGameItemViewing(GameItemTitle, UpgradeTreeName, GameItemDescription);
+
+
+            if (!Unlocked || UpgradeTreeName == "NoUpgradeTree")
+            {
+                gameItemPurchaseModal.PurchaseGameItem(GameItemTitle, Price, GameItemImage, imgWidth, imgHeight);
+            }
+            else
+            {
+                loadoutManager.ChangeGameItemViewing(GameItemTitle, UpgradeTreeName, GameItemDescription);
+            }
         }
 
         // TODO Implement this when the smart contracts have been deployed

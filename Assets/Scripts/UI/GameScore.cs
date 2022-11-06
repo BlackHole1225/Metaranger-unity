@@ -21,9 +21,25 @@ namespace Unity.FPS.UI
             GameScoreLabel.text = $"SCORE: {playerScore}";
         }
 
-        void OnKillEnemy(EnemyKillEvent evt)
+        async void OnKillEnemy(EnemyKillEvent evt)
         {
-            playerScore += 10;
+            string enemyName = evt.Enemy.name;
+            int scoreIncrement = 0;
+
+            if (enemyName.Contains("Enemy_HoverBot") || enemyName.Contains("Enemy_Swarmer"))
+            {
+                scoreIncrement = 10;
+            }
+            else if (enemyName.Contains("Enemy_Roller"))
+            {
+                scoreIncrement = 15;
+            }
+            else if (enemyName.Contains("Enemy_SpecialOps"))
+            {
+                scoreIncrement = 20;
+            }
+
+            playerScore += scoreIncrement;
             GameScoreLabel.text = $"SCORE: {playerScore}";
         }
 

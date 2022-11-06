@@ -441,7 +441,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6219272120860149329}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4944897584699699062}
+        m_TargetAssemblyTypeName: Unity.FPS.UI.LoadoutUpgradeItem, Assembly-CSharp
+        m_MethodName: PurchaseGameItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6805776692732843262
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,4 +512,7 @@ MonoBehaviour:
   AvailableButton: {fileID: 2928308644077529983}
   OwnedButton: {fileID: 2295330308957953888}
   prerequisites: []
+  price: 0
+  LPM: {fileID: 0}
+  UpgradeItemImage: {fileID: 0}
   upgradeState: 0

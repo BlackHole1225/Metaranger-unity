@@ -7,7 +7,7 @@ namespace Unity.FPS.UI
 {
     public class PlayerHealthBar : MonoBehaviour
     {
-        [Tooltip("Image component dispplaying current health")]
+        [Tooltip("Image component displaying current health")]
         public Image HealthFillImage;
 
         Health m_PlayerHealth;

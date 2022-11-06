@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using Unity.FPS.Game;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 namespace Unity.FPS.UI
 {
@@ -29,6 +31,20 @@ namespace Unity.FPS.UI
 
         [Header("Prerequisite Game Items")]
         public LoadoutUpgradeItem[] prerequisites;
+
+        [Tooltip("The price of this upgrade")]
+        public int price;
+
+        [Tooltip("Reference to the LoadoutPurchaseModal")]
+        public LoadoutPurchaseModal LPM;
+
+        [Tooltip("Reference to this Game Item's image")]
+        public Sprite UpgradeItemImage;
+
+        [Tooltip("Images's width when displayed on the Modal")]
+        public float imgWidth;
+        [Tooltip("Image's height when displayed on the Modal")]
+        public float imgHeight;
 
         public State upgradeState = State.Unavailable;
 
@@ -81,6 +97,16 @@ namespace Unity.FPS.UI
                 AvailableButton.SetActive(true);
             }
         }
+
+        public void PurchaseGameItem()
+        {
+            if (upgradeState == State.Available)
+            {
+                LPM.PurchaseGameItem(UpgradeName, price, UpgradeItemImage, imgWidth, imgHeight);
+            }
+        }
+
+
 
         void Start()
         {

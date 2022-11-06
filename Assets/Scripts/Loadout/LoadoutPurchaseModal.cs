@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.FPS.Game;
 using Unity.FPS.UI;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 namespace Unity.FPS.UI
@@ -13,7 +14,7 @@ namespace Unity.FPS.UI
         public TMPro.TextMeshProUGUI TitleLabel;
 
         [Tooltip("The Modal Image, which should hold an image of the Game Item being purchased")]
-        public Sprite GameItemImage;
+        public Image GameItemImage;
 
         [Tooltip("The price of the Game item being purchased")]
         public TMPro.TextMeshProUGUI PriceLabel;
@@ -24,13 +25,16 @@ namespace Unity.FPS.UI
         void CompletePurchase()
         {
             // This is where you would make the blockchain transaction to purchase the item
+            Debug.Log("Let's purchase the Game Item");
+            thisModal.SetActive(false);
         }
 
         // This function will populate the modal and show it
-        void PurchaseGameItem(string GIName, Sprite GIImage, int GIPrice)
+        public void PurchaseGameItem(string GIName, int GIPrice, Sprite GIImage, float imgWidth, float imgHeight)
         {
             TitleLabel.text = GIName;
-            GameItemImage = GIImage;
+            GameItemImage.sprite = GIImage;
+            GameItemImage.rectTransform.sizeDelta = new Vector2(imgWidth, imgHeight);
             PriceLabel.text = GIPrice.ToString();
             thisModal.SetActive(true);
         }
