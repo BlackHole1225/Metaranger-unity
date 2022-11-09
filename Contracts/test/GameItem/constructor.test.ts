@@ -2,7 +2,7 @@ import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 import { expect } from "chai";
 import { ethers } from "hardhat";
 import { DEFAULT_ADMIN_ROLE, MINTER_ROLE } from "../../constants/roles";
-import { GameItem, GameItem__factory } from "../../typechain";
+import { GameItem__factory } from "../../typechain";
 import deployFixture from "./deployFixture";
 
 describe("GameItem constructor tests", () => {

@@ -20,7 +20,7 @@ contract GameManager is IGameManager {
         gameToken = new METRToken(digitalKey);
 
         // 3. Deploy Game Item contracts, using METR contract address
-        for(uint i; i < gameItemTokens.length){
+        for(uint i; i < gameItemTokens.length;){
             GameItem gameItem = new GameItem(gameItemTokens[i].gameItems, address(gameToken));
             gameItemContracts[gameItemTokens[i].contractName] = GameContractDetails(address(gameItem), true);
             gameToken.grantRolesToGameItem(address(gameItem), digitalKey);

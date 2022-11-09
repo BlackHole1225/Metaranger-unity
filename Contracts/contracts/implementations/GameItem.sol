@@ -27,7 +27,7 @@ contract GameItem is ERC1155, AccessControl, IGameItem {
         if(itemsToInitialise.length < 1) revert NoItemsToInitialise();
 
         // Populates contract's internal gameItems based on deployment variables
-        for(uint i; i < itemsToInitialise.length){
+        for(uint i; i < itemsToInitialise.length;){
             ItemInitialiser memory item = itemsToInitialise[i]; // Abbreviation for readibility
             if(item.price < 1) revert InadequatePrice();
             gameItems[item.itemName] = ItemValues(i,item.prereqs,item.price, true);
@@ -67,7 +67,7 @@ contract GameItem is ERC1155, AccessControl, IGameItem {
         string[] memory prereqs = getPrereqs(itemName);
         if(prereqs.length == 0) return true;
 
-        for(uint i; i < prereqs.length){
+        for(uint i; i < prereqs.length;){
             uint256 prereqIndex = getIndex(prereqs[i]);
             uint256 buyerBalance = this.balanceOf(account, prereqIndex);
             if(buyerBalance < 1) return false;

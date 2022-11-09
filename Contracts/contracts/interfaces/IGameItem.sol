@@ -19,16 +19,6 @@ interface IGameItem is IGameItemCommon{
     }
 
     ////////////
-    // EVENTS
-    ////////////
-
-    /// @notice Emits event that an in-game item has been minted
-    /// @dev Emits event that an in-game item has been minted
-    /// @param account The address that received the in-game item
-    /// @param item The name of the item that was minted
-    event ItemMinted(address indexed account, string indexed item);
-
-    ////////////
     // FUNCTIONS
     ////////////
 
@@ -58,25 +48,9 @@ interface IGameItem is IGameItemCommon{
     // ERRORS
     ////////////
 
-    /// @notice User doesn't own enough METR to mint requested in-game token
-    error InadequateMETR();
-
     /// @notice User doesn't own prerequisite tokens to mint requested in-game token 
     error InadequatePreReqs();
 
-    /// @notice Provided token name doesn't exist on token contract
-    error ItemDoesntExist();
-
-    /// @notice Required initial values are missing
-    // ! Possibly don't need this
-    error InvalidInitialiserFormat();
-
-    /// @notice Contract has been initialised without any game items to instantiate
-    error NoItemsToInitialise();
-
     /// @notice Buyer already owns this token
     error AlreadyOwned();
-
-    /// @notice Can't set a price for an item below 1
-    error InadequatePrice();
 }
