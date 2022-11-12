@@ -10,8 +10,11 @@ namespace Unity.FPS.UI
     public class LoadoutGameItem : MonoBehaviour
     {
         [Header("Basic Game Item Variables")]
-        [Tooltip("The name of the Game Item")]
+        [Tooltip("The title of the Game Item")]
         public string GameItemTitle;
+
+        [Tooltip("The name of the Game Item, to be interpreted by the smart contracts")]
+        public string GameItemName;
 
         [Tooltip("The upgrade tree associated with this Game Item")]
         public string UpgradeTreeName;
@@ -91,7 +94,7 @@ namespace Unity.FPS.UI
 
             if (!Unlocked || UpgradeTreeName == "NoUpgradeTree")
             {
-                gameItemPurchaseModal.PurchaseGameItem(GameItemTitle, Price, GameItemImage, imgWidth, imgHeight);
+                gameItemPurchaseModal.PurchaseGameItem(GameItemName, Price, GameItemImage, imgWidth, imgHeight);
             }
             else
             {

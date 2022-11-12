@@ -1774,6 +1774,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
+      propertyPath: GameItemName
+      value: ShotgunBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
       propertyPath: GameItemImage
       value: 
       objectReference: {fileID: 21300000, guid: bbb1b7bf9ca3641b7aa69d1e0e0ebc31,
@@ -3536,6 +3541,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
+      propertyPath: GameItemName
+      value: JetpackBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
       propertyPath: GameItemImage
       value: 
       objectReference: {fileID: 21300000, guid: 1f0341bdf0b1448bc8d17cc8646c880d,
@@ -4213,6 +4223,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
+      propertyPath: GameItemName
+      value: Shields
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
       propertyPath: GameItemImage
       value: 
       objectReference: {fileID: 21300000, guid: 28e4b77668c614ebf81c77df9ec349b7,
@@ -4769,6 +4784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
+      propertyPath: GameItemName
+      value: BlasterBase
       objectReference: {fileID: 0}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
@@ -8877,6 +8897,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
+      propertyPath: GameItemName
+      value: SniperBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
       propertyPath: GameItemImage
       value: 
       objectReference: {fileID: 21300000, guid: 13308d51284bb4ce5b0dcd7827fc4ccc,
@@ -10249,6 +10274,11 @@ PrefabInstance:
         type: 3}
       propertyPath: imgHeight
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
+      propertyPath: GameItemName
+      value: DiscLauncherBase
       objectReference: {fileID: 0}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
@@ -13133,6 +13163,11 @@ PrefabInstance:
         type: 3}
       propertyPath: CurrentValue
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
+      propertyPath: GameItemName
+      value: Armour
       objectReference: {fileID: 0}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
@@ -17837,6 +17872,11 @@ PrefabInstance:
         type: 3}
       propertyPath: CurrentValue
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
+      propertyPath: GameItemName
+      value: Health
       objectReference: {fileID: 0}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
