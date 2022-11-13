@@ -18,6 +18,8 @@ public class WebLogin : MonoBehaviour
     private int expirationTime;
     private string account; 
 
+    public Web3Manager Web3Manager;
+
     public void OnLogin()
     {
         Web3Connect();
@@ -35,11 +37,8 @@ public class WebLogin : MonoBehaviour
         PlayerPrefs.SetString("Account", account);
         // reset login message
         SetConnectAccount("");
-        // load next scene
-        /*
-        Temporarily commenting this out for testing
-        */
-        //  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        Web3Manager.getMETRBalance();
     }
 
     public void OnSkip()

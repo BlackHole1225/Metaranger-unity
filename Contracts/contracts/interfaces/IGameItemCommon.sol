@@ -10,8 +10,9 @@ interface IGameItemCommon {
     /// @notice Emits event that an in-game item has been minted
     /// @dev Emits event that an in-game item has been minted
     /// @param account The address that received the in-game item
-    /// @param item The name of the item that was minted
-    event ItemMinted(address indexed account, string indexed item);
+    /// @param indexedItem The indexed version of the item
+    /// @param item The name of the item that was minted, in human-readable form
+    event ItemMinted(address indexed account, string indexed indexedItem, string item);
 
     ////////////
     // STRUCTS

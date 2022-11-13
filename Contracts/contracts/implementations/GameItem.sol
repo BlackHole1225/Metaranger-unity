@@ -89,7 +89,7 @@ contract GameItem is ERC1155, AccessControl, IGameItem {
 
         METRTokenContract.burnToken(account, getPrice(itemName));
         _mint(account, getIndex(itemName), 1, "");
-        emit ItemMinted(account, itemName);
+        emit ItemMinted(account, itemName, itemName);
     }
 
     // Checks to see if a game token is owned by a specific address

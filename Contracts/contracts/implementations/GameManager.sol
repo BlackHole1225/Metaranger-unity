@@ -13,30 +13,24 @@ contract GameManager is IGameManager {
     VitalityItem private vitalityItemContract; // In-contract reference to the VitalityItem contract
     mapping(string => GameContractDetails) public gameItemContracts; // References to the Game Item contracts
 
-
-    constructor(GameItemDetails[] memory gameItemTokens, string memory digitalKey){
+    constructor(string memory digitalKey, address metrContractAddress, address vitalityContractAddress){
         // 1. Assign digital key
         _digitalKey = digitalKey;
 
-        // 2. Deploy METR contract
-        gameToken = new METRToken(digitalKey);
-        emit ContractDeployed(address(gameToken), "METRToken", "METRToken");
+        // 2. Instantiate METRToken contract
+        gameToken = METRToken(metrContractAddress);
 
-        // 3. Deploy Game Item contracts, using METR contract address
-        for(uint i; i < gameItemTokens.length;){
-            GameItem gameItem = new GameItem(gameItemTokens[i].gameItems, address(gameToken));
-            emit ContractDeployed(address(gameItem), gameItemTokens[i].contractName, gameItemTokens[i].contractName);
-            gameItemContracts[gameItemTokens[i].contractName] = GameContractDetails(address(gameItem), true);
-            gameToken.grantRolesToGameItem(address(gameItem), digitalKey);
-            unchecked{
-                ++i;
-            }
-        }
+        // 3. Instantiate VitalityItemContract
+        vitalityItemContract = VitalityItem(vitalityContractAddress);
+    }
 
-        // 4. Deploy Vitality Item contract
-        vitalityItemContract = new VitalityItem(address(gameToken));
-        emit ContractDeployed(address(vitalityItemContract), "VitalityItem", "VitalityItem");
-        gameToken.grantRolesToGameItem(address(vitalityItemContract), digitalKey);
+    function createGameItem(GameItemDetails memory newGameItem, string memory digitalKey) external {
+        if(keccak256(bytes(_digitalKey)) != keccak256(bytes(digitalKey))) revert InvalidDigitalKey();
+        if(gameItemContracts[newGameItem.contractName].exists) revert GameItemAlreadyExists();
+        GameItem gameItem = new GameItem(newGameItem.gameItems, address(gameToken));
+        gameItemContracts[newGameItem.contractName] = GameContractDetails(address(gameItem), true);
+        gameToken.grantRolesToGameItem(address(gameItem), digitalKey);
+        emit ContractDeployed(address(gameItem), newGameItem.contractName, newGameItem.contractName);
     }
 
     function mintMETR(address account, uint256 amount, string memory digitalKey) external {

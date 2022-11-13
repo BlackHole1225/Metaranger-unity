@@ -15,7 +15,7 @@ describe("VitalityItem mintVitalityItem tests", () => {
   });
 
   // Item doesn't exist
-  it("Should revert if attempting to mint item that doens't exist", async () => {
+  it("Should revert if attempting to mint item that doesn't exist", async () => {
     const { VitalityItemContract, Alice } = await loadFixture(deployFixture);
     await expect(
       VitalityItemContract.mintVitalityItem(Alice.address, "ItemDoesntExist")

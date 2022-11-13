@@ -28,8 +28,10 @@ describe("GameManager purchaseGameItem tests", () => {
     ).be.revertedWithCustomError(GameManagerContract, "ContractDoesntExist");
   });
   it("Should mint game item", async () => {
-    const { GameManagerContract, Alice, digitalKey, MINT_AMOUNT } =
+    const { GameManagerContract, Alice, digitalKey, MINT_AMOUNT, TokenA } =
       await loadFixture(deployFixture);
+
+    await GameManagerContract.createGameItem(TokenA, digitalKey);
     await GameManagerContract.mintMETR(Alice.address, MINT_AMOUNT, digitalKey);
     await expect(
       GameManagerContract.purchaseGameItem(

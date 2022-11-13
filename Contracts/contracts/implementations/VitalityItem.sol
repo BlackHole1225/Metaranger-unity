@@ -65,7 +65,7 @@ contract VitalityItem is ERC1155, AccessControl, IVitalityItem {
 
         METRTokenContract.burnToken(account, getPrice(itemName));
         _mint(account, getIndex(itemName), 1, "");
-        emit ItemMinted(account, itemName);
+        emit ItemMinted(account, itemName, itemName);
     }
 
     // The following functions are overrides required by Solidity.

@@ -33,17 +33,20 @@ interface IGameManager is IGameItemCommon {
 
     /// @notice Alerts user that they have successfully received the game item
     /// @param account The address that received the game item
-    /// @param itemName The name of the item that was purchased
+    /// @param indexedItemName The indexed version of the item
+    /// @param itemName The name of the item that was minted, in human-readable form
     event GameItemPurchased(address indexed account, string indexed indexedItemName, string itemName);
 
     /// @notice Alerts user that they have successfully received the vitality item
     /// @param account The address that received the vitality item
-    /// @param itemName The name of the item that was purchased
+    /// @param indexedItemName The indexed version of the item
+    /// @param itemName The name of the item that was minted, in human-readable form
     event VitalityItemPurchased(address indexed account, string indexed indexedItemName, string itemName);
 
     /// @notice Event emitted when the GameManager deploys a contract
     /// @param contractAddress The address that the contract was deployed to
-    /// @param contractType The type of contract that was deployed
+    /// @param indexedContractType The indexed version of the contract type
+    /// @param contractType The type of contract that was deployed, in human-readable form
     event ContractDeployed(address indexed contractAddress, string indexed indexedContractType, string contractType);
 
     ////////////
@@ -72,6 +75,12 @@ interface IGameManager is IGameItemCommon {
     /// @param digitalKey String hash that verifies the game is making the contract call
     function purchaseVitalityItem(address account, string memory itemName, string memory digitalKey) external;
 
+    /// @notice Creates a game item
+    /// @dev Deploys a game item contract based on the "item" parameter
+    /// @param newGameItem The game item to be created
+    /// @param digitalKey String has to verify and authorise the function call
+    function createGameItem(GameItemDetails memory newGameItem, string memory digitalKey) external;
+
     ////////////
     // ERRORS
     ////////////
@@ -79,4 +88,6 @@ interface IGameManager is IGameItemCommon {
     /// @notice Contract name doesn't exist
     error ContractDoesntExist();
 
+    /// @notice Game Item contract name already exists
+    error GameItemAlreadyExists();
 }

@@ -1,12 +1,16 @@
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { ethers } from "hardhat";
-import { GameManager } from "../../typechain";
+import { BURNER_ROLE, MINTER_ROLE } from "../../constants/roles";
+import { GameManager, METRToken, VitalityItem } from "../../typechain";
+require("dotenv").config({ path: __dirname + "/.env" });
 
 let Deployer: SignerWithAddress;
 let Alice: SignerWithAddress;
 let Bob: SignerWithAddress;
 
 let GameManagerContract: GameManager;
+let METR: METRToken;
+let VitalityItems: VitalityItem;
 
 const MINT_AMOUNT = ethers.utils.parseEther("1000");
 const MINT_AMOUNT_2 = ethers.utils.parseEther("3000");
@@ -70,28 +74,56 @@ const TokenB4 = {
   exists: true,
 };
 
-const TokenDetails = [
-  {
-    contractName: "TokenA",
-    gameItems: [TokenA1, TokenA2, TokenA3, TokenA4],
-    exists: true,
-  },
-  {
-    contractName: "TokenB",
-    gameItems: [TokenB1, TokenB2, TokenB3, TokenB4],
-    exists: true,
-  },
-];
+const TokenA = {
+  contractName: "TokenA",
+  gameItems: [TokenA1, TokenA2, TokenA3, TokenA4],
+  exists: true,
+};
 
-const digitalKey =
-  "2cd347f69a4cbb6545677cf5b3f50019370cdb858579315d08f15b23e89f4b15e4773d3eda46f393c98e57ef179babcd096c415301955bf043faa30c058807cbe233290dc1f69d9e77e5b5e222a27ca681b50d548b639875ae74844ee338cc567d0ce4b2e9f79fc19656fc601d23ff0180a0dda2d8a961bb9b378fa36b49e4d10fde93c8927a2a94be7ef4d41cff87878d8a104ade3d38a9c82e66148214568f27f4e995907407e10b271409cba8daf1f5be1c93929f38d3a8da3df97eab90d909482986edb05eec";
+const TokenB = {
+  contractName: "TokenB",
+  gameItems: [TokenB1, TokenB2, TokenB3, TokenB4],
+  exists: true,
+};
 
 const deployFixture = async () => {
+  const { DIGITAL_KEY } = process.env;
+
+  const digitalKey = DIGITAL_KEY as string;
+
   [Deployer, Alice, Bob] = await ethers.getSigners();
 
+  // Instance of the METR Contract
+  const METR_CONTRACT = await ethers.getContractFactory("METRToken", Deployer);
+  METR = await METR_CONTRACT.deploy(digitalKey);
+
+  // Instance of the VitalityItem Contract
+  const VitalityItemContract = await ethers.getContractFactory(
+    "VitalityItem",
+    Deployer
+  );
+  VitalityItems = await VitalityItemContract.deploy(METR.address);
+
+  // Instance of the GameManager Contract
   const GameManager = await ethers.getContractFactory("GameManager", Deployer);
-  GameManagerContract = await GameManager.deploy(TokenDetails, digitalKey);
+  GameManagerContract = await GameManager.deploy(
+    digitalKey,
+    METR.address,
+    VitalityItems.address
+  );
+
+  // Deployments
+  await METR.deployed();
+  await VitalityItems.deployed();
   await GameManagerContract.deployed();
+
+  // Roles
+  await METR.grantRole(MINTER_ROLE, Deployer.address);
+  await METR.grantRole(BURNER_ROLE, Deployer.address);
+  await METR.grantRole(MINTER_ROLE, GameManagerContract.address);
+  await METR.grantRole(BURNER_ROLE, GameManagerContract.address);
+  await METR.grantRole(BURNER_ROLE, VitalityItems.address);
+  await VitalityItems.grantRole(MINTER_ROLE, GameManagerContract.address);
 
   return {
     GameManagerContract,
@@ -101,6 +133,8 @@ const deployFixture = async () => {
     MINT_AMOUNT,
     MINT_AMOUNT_2,
     digitalKey,
+    TokenA,
+    TokenB,
   };
 };
 
