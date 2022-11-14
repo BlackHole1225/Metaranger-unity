@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -10,9 +11,9 @@ public class Web3Manager : MonoBehaviour
     // All contracts will share these aspects
     string chain = "polygon";
     string network = "mumbai";
+    string rpc = "https://rpc-mumbai.matic.today";
 
     private string digitalKey = "2cd347f69a4cbb6545677cf5b3f50019370cdb858579315d08f15b23e89f4b15e4773d3eda46f393c98e57ef179babcd096c415301955bf043faa30c058807cbe233290dc1f69d9e77e5b5e222a27ca681b50d548b639875ae74844ee338cc567d0ce4b2e9f79fc19656fc601d23ff0180a0dda2d8a961bb9b378fa36b49e4d10fde93c8927a2a94be7ef4d41cff87878d8a104ade3d38a9c82e66148214568f27f4e995907407e10b271409cba8daf1f5be1c93929f38d3a8da3df97eab90d909482986edb05eec";
-    // string playerAddress = PlayerPrefs.GetString("Account");
     string playerAddress;
 
     // Game Manger Contract
@@ -52,9 +53,18 @@ public class Web3Manager : MonoBehaviour
     // GAME MANAGER FUNCTIONS
     public async void mintMETR(int amount)
     {
-        string[] obj = { playerAddress, amount.ToString(), digitalKey };
+        string[] obj = { playerAddress, amount.ToString() + "000000000000000000", digitalKey }; // Convert amount to wei
         string args = JsonConvert.SerializeObject(obj);
-        string response = await EVM.Call(chain, network, gameManagerAddress, gameManagerABI, "mintMETR", args);
+        // string response = await EVM.Call(chain, network, gameManagerAddress, gameManagerABI, "mintMETR", args, rpc);
+
+        // For testing
+        string value = "0";
+        // gas limit OPTIONAL
+        string gasLimit = "";
+        // gas price OPTIONAL
+        string gasPrice = "";
+
+        string response = await Web3GL.SendContract("mintMETR", gameManagerABI, gameManagerAddress, args, value, gasLimit, gasPrice);
         Debug.Log("Response from mintMETR in Web3Manager " + response);
     }
 
@@ -62,7 +72,7 @@ public class Web3Manager : MonoBehaviour
     {
         string[] obj = { playerAddress, contractName, itemName, digitalKey };
         string args = JsonConvert.SerializeObject(obj);
-        string response = await EVM.Call(chain, network, gameManagerAddress, gameManagerABI, "purchaseGameItem", args);
+        string response = await EVM.Call(chain, network, gameManagerAddress, gameManagerABI, "purchaseGameItem", args, rpc);
         Debug.Log("Response from purchaseGameItem in Web3Manager " + response);
     }
 
@@ -70,7 +80,7 @@ public class Web3Manager : MonoBehaviour
     {
         string[] obj = { playerAddress, itemName, digitalKey };
         string args = JsonConvert.SerializeObject(obj);
-        string response = await EVM.Call(chain, network, gameManagerAddress, gameManagerABI, "purchaseVitalityItem", args);
+        string response = await EVM.Call(chain, network, gameManagerAddress, gameManagerABI, "purchaseVitalityItem", args, rpc);
         Debug.Log("Response from purchaseVitalityItem in Web3Manager " + response);
     }
 
@@ -82,7 +92,7 @@ public class Web3Manager : MonoBehaviour
         GameContract gameContract = gameContracts[contractName];
         string[] obj = { itemName };
         string args = JsonConvert.SerializeObject(obj);
-        string response = await EVM.Call(chain, network, gameContract.Address, gameContract.ABI, "getPrice", args);
+        string response = await EVM.Call(chain, network, gameContract.Address, gameContract.ABI, "getPrice", args, rpc);
         Debug.Log("Response from getPrice in Web3Manager " + response);
     }
 
@@ -92,7 +102,7 @@ public class Web3Manager : MonoBehaviour
         GameContract gameContract = gameContracts[contractName];
         string[] obj = { playerAddress, itemName };
         string args = JsonConvert.SerializeObject(obj);
-        string response = await EVM.Call(chain, network, gameContract.Address, gameContract.ABI, "ownsGameItem", args);
+        string response = await EVM.Call(chain, network, gameContract.Address, gameContract.ABI, "ownsGameItem", args, rpc);
         Debug.Log("Response from ownsGameItem in Web3Manager " + response);
     }
 
@@ -102,7 +112,7 @@ public class Web3Manager : MonoBehaviour
     {
         string[] obj = { playerAddress, itemName };
         string args = JsonConvert.SerializeObject(obj);
-        string response = await EVM.Call(chain, network, gameContracts["VitalityItemContract"].Address, gameContracts["VitalityItemContract"].ABI, "getBalance", args);
+        string response = await EVM.Call(chain, network, gameContracts["VitalityItemContract"].Address, gameContracts["VitalityItemContract"].ABI, "getBalance", args, rpc);
         Debug.Log("Response from getBalance in Web3Manager " + response);
     }
 
