@@ -79,6 +79,11 @@ namespace Unity.FPS.UI
             GameItemText.text = GameItemTitle;
             if (UnlockedByDefault) Unlocked = true;
             CheckItemStatuses();
+
+            if (UnlockedByDefault && GameItemTitle != "BLASTER")
+            {
+                GetVitalityItemValue();
+            }
         }
 
         // TODO Determine if this is needed
@@ -111,7 +116,11 @@ namespace Unity.FPS.UI
             */
 
             return true;
+        }
 
+        void GetVitalityItemValue()
+        {
+            CurrentValue = loadoutManager.GetVitalityItemValue(GameItemName);
         }
 
         void ActivateIndicators(bool whichOne)

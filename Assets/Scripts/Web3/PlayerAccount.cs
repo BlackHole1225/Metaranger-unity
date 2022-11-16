@@ -12,7 +12,6 @@ public class PlayerAccount : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Player Account " + PlayerPrefs.GetString("Account"));
         string account = PlayerPrefs.GetString("Account");
         playerAccount.text = account;
     }
@@ -20,6 +19,7 @@ public class PlayerAccount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        string account = PlayerPrefs.GetString("Account");
+        playerAccount.text = account;
     }
 }

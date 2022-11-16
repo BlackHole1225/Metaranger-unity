@@ -33,10 +33,12 @@ public class WebLogin : MonoBehaviour
             await new WaitForSeconds(1f);
             account = ConnectAccount();
         };
+
+        Debug.Log("Account in OnConnected " + account);
         // save account for next scene
         PlayerPrefs.SetString("Account", account);
         // reset login message
-        SetConnectAccount("");
+        // SetConnectAccount("");
 
         Web3Manager.getMETRBalance();
     }
@@ -44,12 +46,7 @@ public class WebLogin : MonoBehaviour
     public void OnSkip()
     {
         // burner account for skipped sign in screen
-        PlayerPrefs.SetString("Account", "");
-        // move to next scene
-        /*
-        Temporarily commenting this out for testing
-        */
-        //  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // PlayerPrefs.SetString("Account", "");
     }
 }
 #endif

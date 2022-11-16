@@ -6,15 +6,20 @@ using System.Numerics;
 using UnityEngine;
 using Newtonsoft.Json;
 
+#if UNITY_WEBGL
 public class Web3Manager : MonoBehaviour
 {
     // All contracts will share these aspects
     string chain = "polygon";
     string network = "mumbai";
     string rpc = "https://rpc-mumbai.matic.today";
-
+    string value = "0";
+    string gasLimit = "";
+    string gasPrice = "";
     private string digitalKey = "2cd347f69a4cbb6545677cf5b3f50019370cdb858579315d08f15b23e89f4b15e4773d3eda46f393c98e57ef179babcd096c415301955bf043faa30c058807cbe233290dc1f69d9e77e5b5e222a27ca681b50d548b639875ae74844ee338cc567d0ce4b2e9f79fc19656fc601d23ff0180a0dda2d8a961bb9b378fa36b49e4d10fde93c8927a2a94be7ef4d41cff87878d8a104ade3d38a9c82e66148214568f27f4e995907407e10b271409cba8daf1f5be1c93929f38d3a8da3df97eab90d909482986edb05eec";
     string playerAddress;
+    BigInteger gweiConverter = 1000000000000000000;
+
 
     // Game Manger Contract
     string gameManagerAddress = "0xe9BE279252f3cb9FE70A8B146955F04Ad2957f90";
@@ -22,6 +27,7 @@ public class Web3Manager : MonoBehaviour
 
     // METR Contract
     string METRAddress = "0x6af3D87F0c37d73142765314f3773eC692996638";
+    // string erc20ABI = "[ { \"inputs\": [ { \"internalType\": \"string\", \"name\": \"name_\", \"type\": \"string\" }, { \"internalType\": \"string\", \"name\": \"symbol_\", \"type\": \"string\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"constructor\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"owner\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" }, { \"indexed\": false, \"internalType\": \"uint256\", \"name\": \"value\", \"type\": \"uint256\" } ], \"name\": \"Approval\", \"type\": \"event\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"from\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"address\", \"name\": \"to\", \"type\": \"address\" }, { \"indexed\": false, \"internalType\": \"uint256\", \"name\": \"value\", \"type\": \"uint256\" } ], \"name\": \"Transfer\", \"type\": \"event\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"owner\", \"type\": \"address\" }, { \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" } ], \"name\": \"allowance\", \"outputs\": [ { \"internalType\": \"uint256\", \"name\": \"\", \"type\": \"uint256\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"amount\", \"type\": \"uint256\" } ], \"name\": \"approve\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" } ], \"name\": \"balanceOf\", \"outputs\": [ { \"internalType\": \"uint256\", \"name\": \"\", \"type\": \"uint256\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"decimals\", \"outputs\": [ { \"internalType\": \"uint8\", \"name\": \"\", \"type\": \"uint8\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"subtractedValue\", \"type\": \"uint256\" } ], \"name\": \"decreaseAllowance\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"addedValue\", \"type\": \"uint256\" } ], \"name\": \"increaseAllowance\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"name\", \"outputs\": [ { \"internalType\": \"string\", \"name\": \"\", \"type\": \"string\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"symbol\", \"outputs\": [ { \"internalType\": \"string\", \"name\": \"\", \"type\": \"string\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"totalSupply\", \"outputs\": [ { \"internalType\": \"uint256\", \"name\": \"\", \"type\": \"uint256\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"recipient\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"amount\", \"type\": \"uint256\" } ], \"name\": \"transfer\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"sender\", \"type\": \"address\" }, { \"internalType\": \"address\", \"name\": \"recipient\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"amount\", \"type\": \"uint256\" } ], \"name\": \"transferFrom\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" } ]";
 
     // METR Balance
     public BigInteger METRBalance;
@@ -47,7 +53,6 @@ public class Web3Manager : MonoBehaviour
     void Update()
     {
         playerAddress = PlayerPrefs.GetString("Account");
-
     }
 
     // GAME MANAGER FUNCTIONS
@@ -55,15 +60,6 @@ public class Web3Manager : MonoBehaviour
     {
         string[] obj = { playerAddress, amount.ToString() + "000000000000000000", digitalKey }; // Convert amount to wei
         string args = JsonConvert.SerializeObject(obj);
-        // string response = await EVM.Call(chain, network, gameManagerAddress, gameManagerABI, "mintMETR", args, rpc);
-
-        // For testing
-        string value = "0";
-        // gas limit OPTIONAL
-        string gasLimit = "";
-        // gas price OPTIONAL
-        string gasPrice = "";
-
         string response = await Web3GL.SendContract("mintMETR", gameManagerABI, gameManagerAddress, args, value, gasLimit, gasPrice);
         Debug.Log("Response from mintMETR in Web3Manager " + response);
     }
@@ -112,14 +108,27 @@ public class Web3Manager : MonoBehaviour
     {
         string[] obj = { playerAddress, itemName };
         string args = JsonConvert.SerializeObject(obj);
-        string response = await EVM.Call(chain, network, gameContracts["VitalityItemContract"].Address, gameContracts["VitalityItemContract"].ABI, "getBalance", args, rpc);
+        string response = await EVM.Call(chain, network, gameContracts["VitalityItemsContract"].Address, gameContracts["VitalityItemsContract"].ABI, "getBalance", args, rpc);
         Debug.Log("Response from getBalance in Web3Manager " + response);
     }
 
     // METR FUNCTIONS
     public async void getMETRBalance()
     {
-        BigInteger balance = await ERC20.BalanceOf(chain, network, METRAddress, playerAddress);
-        METRBalance = balance;
+        // Waits until we actually have a value for the playerAddress
+        while (playerAddress == "") {
+            await new WaitForSeconds(1f);
+        };
+
+        BigInteger balance = await ERC20.BalanceOf(chain, network, METRAddress, playerAddress, rpc);
+
+        if(balance == 0){
+            METRBalance = balance;
+        } else {
+            METRBalance = balance / gweiConverter;
+            Debug.Log("METR Balance " + balance / gweiConverter);
+        };
+
     }
 }
+#endif

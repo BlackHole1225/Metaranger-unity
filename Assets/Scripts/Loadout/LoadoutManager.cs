@@ -14,7 +14,6 @@ namespace Unity.FPS.Game
         public string gameItemUpgradeTree = "None";
 
         [Header("Text")]
-
         [Tooltip("The main large title text to the right")]
         public GameObject MainTitleTextObject;
         public TMPro.TextMeshProUGUI MainTitleText;
@@ -41,6 +40,7 @@ namespace Unity.FPS.Game
 
         [Header("Other")]
         public GameObject LoadoutMenuButtons;
+        public Web3Manager Web3Manager;
 
 
         void Start()
@@ -121,6 +121,21 @@ namespace Unity.FPS.Game
             DescriptionTextObject.SetActive(true);
             LoadoutMenuButtons.SetActive(false);
         }
+
+        public string GetVitalityItemValue(string itemName)
+        {
+            Web3Manager.getBalance(itemName);
+            return "1000Test";
+        }
+
+        // public bool CheckIfUnlocked(string contractName, string itemName, bool vitalityItem)
+        // {
+        //     if(vitalityItem)
+        //     {
+        //         return Web3Manager.
+        //     }
+        //     return Web3Manager.Chec
+        // }
     }
 
 
