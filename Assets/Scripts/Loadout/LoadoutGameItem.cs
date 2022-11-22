@@ -90,7 +90,7 @@ namespace Unity.FPS.UI
         // If this runs every frame, it might consume computation and make the game slow
         void Update()
         {
-            CheckItemStatuses();
+            // CheckItemStatuses();
         }
 
         public void SelectGameItem()
@@ -118,9 +118,17 @@ namespace Unity.FPS.UI
             return true;
         }
 
-        void GetVitalityItemValue()
+        public async void GetVitalityItemValue()
         {
-            CurrentValue = loadoutManager.GetVitalityItemValue(GameItemName);
+            string onChainValue = await loadoutManager.GetVitalityItemValue(GameItemName);
+            Debug.Log(GameItemName + " onChainValue in LoadoutGameItem " + onChainValue);
+            if (onChainValue != "0")
+            {
+                Debug.Log("New Current Value for " + GameItemName + " " + (Int32.Parse(CurrentValue) + Int32.Parse(onChainValue)).ToString());
+                CurrentValue = (Int32.Parse(CurrentValue) + Int32.Parse(onChainValue)).ToString();
+                CurrentValueText.text = CurrentValue.ToString();
+
+            }
         }
 
         void ActivateIndicators(bool whichOne)
@@ -165,10 +173,12 @@ namespace Unity.FPS.UI
                 PriceObject.SetActive(false);
                 UpgradeTextObject.SetActive(true);
 
+                // If this is a Vitality Item
                 if (UnlockedByDefault && GameItemTitle != "BLASTER")
                 {
                     UpgradeTextObject.SetActive(false);
                     CurrentValueText.text = CurrentValue.ToString();
+                    Debug.Log("\n\tCurrentValue " + CurrentValue.ToString());
                     CurrentValueObject.SetActive(true);
                 }
                 else

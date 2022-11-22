@@ -6,17 +6,23 @@ import deployFixture from "./deployfixture";
 describe("VitalityItem getPrice tests", () => {
   it("Should get price of Health Item", async () => {
     const { VitalityItemContract } = await loadFixture(deployFixture);
-    expect(await VitalityItemContract.getPrice("Health")).to.equal(200);
+    expect(await VitalityItemContract.getPrice("Health")).to.equal(
+      ethers.utils.parseEther("200")
+    );
   });
 
   it("Should get price of Armour Item", async () => {
     const { VitalityItemContract } = await loadFixture(deployFixture);
-    expect(await VitalityItemContract.getPrice("Armour")).to.equal(210);
+    expect(await VitalityItemContract.getPrice("Armour")).to.equal(
+      ethers.utils.parseEther("210")
+    );
   });
 
   it("Should get price of Shields Item", async () => {
     const { VitalityItemContract } = await loadFixture(deployFixture);
-    expect(await VitalityItemContract.getPrice("Shields")).to.equal(220);
+    expect(await VitalityItemContract.getPrice("Shields")).to.equal(
+      ethers.utils.parseEther("220")
+    );
   });
 
   it("Should identify that item doesn't exist on contract", async () => {

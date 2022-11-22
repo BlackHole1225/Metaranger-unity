@@ -6,31 +6,34 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class ClaimMETRButton : MonoBehaviour
+namespace Unity.FPS.Game
 {
-    [Tooltip("Warning Modal GameObject")]
-    public GameObject WarningModal;
-
-    [Tooltip("Web3 Manager instance")]
-    public Web3Manager Web3Manager;
-
-    // Used to prevent double dipping
-    private bool hasClaimed = false;
-
-    public void ClaimMETR()
+    public class ClaimMETRButton : MonoBehaviour
     {
-        if (!hasClaimed)
+        [Tooltip("Warning Modal GameObject")]
+        public GameObject WarningModal;
+
+        [Tooltip("Web3 Manager instance")]
+        public Web3Manager Web3Manager;
+
+        // Used to prevent double dipping
+        private bool hasClaimed = false;
+
+        public void ClaimMETR()
         {
-            if (PlayerPrefs.GetString("Account") == "")
+            if (!hasClaimed)
             {
-                WarningModal.SetActive(true);
-            }
-            else
-            {
-                Web3Manager.mintMETR(GameScore.playerScore);
-                hasClaimed = true;
+                if (PlayerPrefs.GetString("Account") == "")
+                {
+                    WarningModal.SetActive(true);
+                }
+                else
+                {
+                    Web3Manager.mintMETR(GameScore.playerScore);
+                    hasClaimed = true;
+                }
             }
         }
-    }
 
+    }
 }

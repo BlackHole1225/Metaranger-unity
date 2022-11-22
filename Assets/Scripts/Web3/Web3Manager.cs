@@ -6,7 +6,7 @@ using System.Numerics;
 using UnityEngine;
 using Newtonsoft.Json;
 
-#if UNITY_WEBGL
+
 public class Web3Manager : MonoBehaviour
 {
     // All contracts will share these aspects
@@ -20,13 +20,12 @@ public class Web3Manager : MonoBehaviour
     string playerAddress;
     BigInteger gweiConverter = 1000000000000000000;
 
-
     // Game Manger Contract
-    string gameManagerAddress = "0xe9BE279252f3cb9FE70A8B146955F04Ad2957f90";
-    string gameManagerABI = "[ { \"inputs\": [ { \"internalType\": \"string\", \"name\": \"digitalKey\", \"type\": \"string\" }, { \"internalType\": \"address\", \"name\": \"metrContractAddress\", \"type\": \"address\" }, { \"internalType\": \"address\", \"name\": \"vitalityContractAddress\", \"type\": \"address\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"constructor\" }, { \"inputs\": [], \"name\": \"ContractDoesntExist\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"GameItemAlreadyExists\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"InadequateMETR\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"InadequatePrice\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"InvalidDigitalKey\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"InvalidRole\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"ItemDoesntExist\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"NoItemsToInitialise\", \"type\": \"error\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"contractAddress\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"string\", \"name\": \"indexedContractType\", \"type\": \"string\" }, { \"indexed\": false, \"internalType\": \"string\", \"name\": \"contractType\", \"type\": \"string\" } ], \"name\": \"ContractDeployed\", \"type\": \"event\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"string\", \"name\": \"indexedItemName\", \"type\": \"string\" }, { \"indexed\": false, \"internalType\": \"string\", \"name\": \"itemName\", \"type\": \"string\" } ], \"name\": \"GameItemPurchased\", \"type\": \"event\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"string\", \"name\": \"indexedItem\", \"type\": \"string\" }, { \"indexed\": false, \"internalType\": \"string\", \"name\": \"item\", \"type\": \"string\" } ], \"name\": \"ItemMinted\", \"type\": \"event\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"uint256\", \"name\": \"amount\", \"type\": \"uint256\" } ], \"name\": \"METREarned\", \"type\": \"event\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"string\", \"name\": \"indexedItemName\", \"type\": \"string\" }, { \"indexed\": false, \"internalType\": \"string\", \"name\": \"itemName\", \"type\": \"string\" } ], \"name\": \"VitalityItemPurchased\", \"type\": \"event\" }, { \"inputs\": [ { \"components\": [ { \"internalType\": \"string\", \"name\": \"contractName\", \"type\": \"string\" }, { \"components\": [ { \"internalType\": \"string\", \"name\": \"itemName\", \"type\": \"string\" }, { \"internalType\": \"string[]\", \"name\": \"prereqs\", \"type\": \"string[]\" }, { \"internalType\": \"uint256\", \"name\": \"price\", \"type\": \"uint256\" }, { \"internalType\": \"bool\", \"name\": \"exists\", \"type\": \"bool\" } ], \"internalType\": \"struct IGameItemCommon.ItemInitialiser[]\", \"name\": \"gameItems\", \"type\": \"tuple[]\" } ], \"internalType\": \"struct IGameManager.GameItemDetails\", \"name\": \"newGameItem\", \"type\": \"tuple\" }, { \"internalType\": \"string\", \"name\": \"digitalKey\", \"type\": \"string\" } ], \"name\": \"createGameItem\", \"outputs\": [], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"string\", \"name\": \"\", \"type\": \"string\" } ], \"name\": \"gameItemContracts\", \"outputs\": [ { \"internalType\": \"address\", \"name\": \"contractAddress\", \"type\": \"address\" }, { \"internalType\": \"bool\", \"name\": \"exists\", \"type\": \"bool\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"gameToken\", \"outputs\": [ { \"internalType\": \"contract METRToken\", \"name\": \"\", \"type\": \"address\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"amount\", \"type\": \"uint256\" }, { \"internalType\": \"string\", \"name\": \"digitalKey\", \"type\": \"string\" } ], \"name\": \"mintMETR\", \"outputs\": [], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"internalType\": \"string\", \"name\": \"contractName\", \"type\": \"string\" }, { \"internalType\": \"string\", \"name\": \"itemName\", \"type\": \"string\" }, { \"internalType\": \"string\", \"name\": \"digitalKey\", \"type\": \"string\" } ], \"name\": \"purchaseGameItem\", \"outputs\": [], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"internalType\": \"string\", \"name\": \"itemName\", \"type\": \"string\" }, { \"internalType\": \"string\", \"name\": \"digitalKey\", \"type\": \"string\" } ], \"name\": \"purchaseVitalityItem\", \"outputs\": [], \"stateMutability\": \"nonpayable\", \"type\": \"function\" } ] ";
+    string gameManagerAddress = "0xd45dEF180645269b81eFEaFE8D4D83f368B5adc6";
+    string gameManagerABI = "[ { \"inputs\": [ { \"internalType\": \"string\", \"name\": \"digitalKey\", \"type\": \"string\" }, { \"internalType\": \"address\", \"name\": \"metrContractAddress\", \"type\": \"address\" }, { \"internalType\": \"address\", \"name\": \"vitalityContractAddress\", \"type\": \"address\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"constructor\" }, { \"inputs\": [], \"name\": \"ContractDoesntExist\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"GameItemAlreadyExists\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"InadequateMETR\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"InadequatePrice\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"InvalidDigitalKey\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"InvalidRole\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"ItemDoesntExist\", \"type\": \"error\" }, { \"inputs\": [], \"name\": \"NoItemsToInitialise\", \"type\": \"error\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"indexedContractAddress\", \"type\": \"address\" }, { \"indexed\": false, \"internalType\": \"address\", \"name\": \"contractAddress\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"string\", \"name\": \"indexedContractType\", \"type\": \"string\" }, { \"indexed\": false, \"internalType\": \"string\", \"name\": \"contractType\", \"type\": \"string\" } ], \"name\": \"ContractDeployed\", \"type\": \"event\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"string\", \"name\": \"indexedItemName\", \"type\": \"string\" }, { \"indexed\": false, \"internalType\": \"string\", \"name\": \"itemName\", \"type\": \"string\" } ], \"name\": \"GameItemPurchased\", \"type\": \"event\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"string\", \"name\": \"indexedItem\", \"type\": \"string\" }, { \"indexed\": false, \"internalType\": \"string\", \"name\": \"item\", \"type\": \"string\" } ], \"name\": \"ItemMinted\", \"type\": \"event\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"uint256\", \"name\": \"amount\", \"type\": \"uint256\" } ], \"name\": \"METREarned\", \"type\": \"event\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"string\", \"name\": \"indexedItemName\", \"type\": \"string\" }, { \"indexed\": false, \"internalType\": \"string\", \"name\": \"itemName\", \"type\": \"string\" } ], \"name\": \"VitalityItemPurchased\", \"type\": \"event\" }, { \"inputs\": [ { \"components\": [ { \"internalType\": \"string\", \"name\": \"contractName\", \"type\": \"string\" }, { \"components\": [ { \"internalType\": \"string\", \"name\": \"itemName\", \"type\": \"string\" }, { \"internalType\": \"string[]\", \"name\": \"prereqs\", \"type\": \"string[]\" }, { \"internalType\": \"uint256\", \"name\": \"price\", \"type\": \"uint256\" }, { \"internalType\": \"bool\", \"name\": \"exists\", \"type\": \"bool\" } ], \"internalType\": \"struct IGameItemCommon.ItemInitialiser[]\", \"name\": \"gameItems\", \"type\": \"tuple[]\" } ], \"internalType\": \"struct IGameManager.GameItemDetails\", \"name\": \"newGameItem\", \"type\": \"tuple\" }, { \"internalType\": \"string\", \"name\": \"digitalKey\", \"type\": \"string\" } ], \"name\": \"createGameItem\", \"outputs\": [], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"string\", \"name\": \"\", \"type\": \"string\" } ], \"name\": \"gameItemContracts\", \"outputs\": [ { \"internalType\": \"address\", \"name\": \"contractAddress\", \"type\": \"address\" }, { \"internalType\": \"bool\", \"name\": \"exists\", \"type\": \"bool\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"gameToken\", \"outputs\": [ { \"internalType\": \"contract METRToken\", \"name\": \"\", \"type\": \"address\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"amount\", \"type\": \"uint256\" }, { \"internalType\": \"string\", \"name\": \"digitalKey\", \"type\": \"string\" } ], \"name\": \"mintMETR\", \"outputs\": [], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"internalType\": \"string\", \"name\": \"contractName\", \"type\": \"string\" }, { \"internalType\": \"string\", \"name\": \"itemName\", \"type\": \"string\" }, { \"internalType\": \"string\", \"name\": \"digitalKey\", \"type\": \"string\" } ], \"name\": \"purchaseGameItem\", \"outputs\": [], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" }, { \"internalType\": \"string\", \"name\": \"itemName\", \"type\": \"string\" }, { \"internalType\": \"string\", \"name\": \"digitalKey\", \"type\": \"string\" } ], \"name\": \"purchaseVitalityItem\", \"outputs\": [], \"stateMutability\": \"nonpayable\", \"type\": \"function\" } ]";
 
     // METR Contract
-    string METRAddress = "0x6af3D87F0c37d73142765314f3773eC692996638";
+    string METRAddress = "0x22Ac36f2932c73559df2b288A375e12c8fa9B7dB";
     // string erc20ABI = "[ { \"inputs\": [ { \"internalType\": \"string\", \"name\": \"name_\", \"type\": \"string\" }, { \"internalType\": \"string\", \"name\": \"symbol_\", \"type\": \"string\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"constructor\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"owner\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" }, { \"indexed\": false, \"internalType\": \"uint256\", \"name\": \"value\", \"type\": \"uint256\" } ], \"name\": \"Approval\", \"type\": \"event\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"from\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"address\", \"name\": \"to\", \"type\": \"address\" }, { \"indexed\": false, \"internalType\": \"uint256\", \"name\": \"value\", \"type\": \"uint256\" } ], \"name\": \"Transfer\", \"type\": \"event\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"owner\", \"type\": \"address\" }, { \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" } ], \"name\": \"allowance\", \"outputs\": [ { \"internalType\": \"uint256\", \"name\": \"\", \"type\": \"uint256\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"amount\", \"type\": \"uint256\" } ], \"name\": \"approve\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" } ], \"name\": \"balanceOf\", \"outputs\": [ { \"internalType\": \"uint256\", \"name\": \"\", \"type\": \"uint256\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"decimals\", \"outputs\": [ { \"internalType\": \"uint8\", \"name\": \"\", \"type\": \"uint8\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"subtractedValue\", \"type\": \"uint256\" } ], \"name\": \"decreaseAllowance\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"addedValue\", \"type\": \"uint256\" } ], \"name\": \"increaseAllowance\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"name\", \"outputs\": [ { \"internalType\": \"string\", \"name\": \"\", \"type\": \"string\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"symbol\", \"outputs\": [ { \"internalType\": \"string\", \"name\": \"\", \"type\": \"string\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"totalSupply\", \"outputs\": [ { \"internalType\": \"uint256\", \"name\": \"\", \"type\": \"uint256\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"recipient\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"amount\", \"type\": \"uint256\" } ], \"name\": \"transfer\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"sender\", \"type\": \"address\" }, { \"internalType\": \"address\", \"name\": \"recipient\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"amount\", \"type\": \"uint256\" } ], \"name\": \"transferFrom\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" } ]";
 
     // METR Balance
@@ -38,11 +37,12 @@ public class Web3Manager : MonoBehaviour
 
     // The different contracts in the game
     Dictionary<string, GameContract> gameContracts = new Dictionary<string, GameContract>(){
-       {"BlasterContract",new GameContract("0xFA75088e4ccC1653628968D485ae3bc937c38B26", gameItemABI) },
-       {"DiscLauncherContract",new GameContract("DiscLauncherContractAddress", gameItemABI) },
-       {"ShotgunContract",new GameContract("ShotgunContractAddress", gameItemABI) },
-       {"JetpackContract",new GameContract("JetpackContractAddress", gameItemABI) },
-       {"VitalityItemsContract",new GameContract("VitalityItemsContractAddress", vitalityItemABI) },
+       {"BlasterContract",new GameContract("0xcd8a7e2ec16fb3ff6fad142dc30cdb8c2237348b", gameItemABI) },
+       {"DiscLauncherContract",new GameContract("0x7d41e26d950908ab5d44611171cc7a2acc0a7aba", gameItemABI) },
+       {"ShotgunContract",new GameContract("0xbe8af99a91b85ab400ab7f0901556a9c28d08ad2", gameItemABI) },
+       {"JetpackContract",new GameContract("0xdf289994a3809592392cd3e4129d10fada0be03e", gameItemABI) },
+       {"SniperContract",new GameContract("0x71d3529831ea10706f617654188e6aabc9b102b2", gameItemABI) },
+       {"VitalityItemsContract",new GameContract("0x85B3C588912Cbd2F415bFBC4A34f069554385663", vitalityItemABI) },
     };
 
     void Start()
@@ -55,6 +55,17 @@ public class Web3Manager : MonoBehaviour
         playerAddress = PlayerPrefs.GetString("Account");
     }
 
+    // HELPER FUNCTIONS
+    string DetermineGameItemContract(string itemName)
+    {
+        if (itemName.Contains("Blaster")) return "BlasterContract";
+        if (itemName.Contains("DiscLauncher")) return "DiscLauncherContract";
+        if (itemName.Contains("Shotgun")) return "ShotgunContract";
+        if (itemName.Contains("Jetpack")) return "JetpackContract";
+        if (itemName.Contains("Sniper")) return "SniperContract";
+        return null;
+    }
+
     // GAME MANAGER FUNCTIONS
     public async void mintMETR(int amount)
     {
@@ -64,19 +75,22 @@ public class Web3Manager : MonoBehaviour
         Debug.Log("Response from mintMETR in Web3Manager " + response);
     }
 
-    public async void purchaseGameItem(string contractName, string itemName)
+    public async Task purchaseGameItem(string itemName)
     {
+        string contractName = DetermineGameItemContract(itemName);
         string[] obj = { playerAddress, contractName, itemName, digitalKey };
         string args = JsonConvert.SerializeObject(obj);
-        string response = await EVM.Call(chain, network, gameManagerAddress, gameManagerABI, "purchaseGameItem", args, rpc);
+        string response = await Web3GL.SendContract("purchaseGameItem", gameManagerABI, gameManagerAddress, args, value, gasLimit, gasPrice);
+        // string response = await EVM.Call(chain, network, gameManagerAddress, gameManagerABI, "purchaseGameItem", args, rpc);
         Debug.Log("Response from purchaseGameItem in Web3Manager " + response);
     }
 
-    public async void purchaseVitalityItem(string itemName)
+    public async Task purchaseVitalityItem(string itemName)
     {
         string[] obj = { playerAddress, itemName, digitalKey };
         string args = JsonConvert.SerializeObject(obj);
-        string response = await EVM.Call(chain, network, gameManagerAddress, gameManagerABI, "purchaseVitalityItem", args, rpc);
+        // string response = await EVM.Call(chain, network, gameManagerAddress, gameManagerABI, "purchaseVitalityItem", args, rpc);
+        string response = await Web3GL.SendContract("purchaseVitalityItem", gameManagerABI, gameManagerAddress, args, value, gasLimit, gasPrice);
         Debug.Log("Response from purchaseVitalityItem in Web3Manager " + response);
     }
 
@@ -104,31 +118,38 @@ public class Web3Manager : MonoBehaviour
 
     // VITALITY ITEM FUNCTIONS
     // TODO Find out how to get the price out of the string response
-    public async void getBalance(string itemName)
+    public async Task<string> getBalance(string itemName)
     {
         string[] obj = { playerAddress, itemName };
         string args = JsonConvert.SerializeObject(obj);
         string response = await EVM.Call(chain, network, gameContracts["VitalityItemsContract"].Address, gameContracts["VitalityItemsContract"].ABI, "getBalance", args, rpc);
         Debug.Log("Response from getBalance in Web3Manager " + response);
+        return response;
     }
 
     // METR FUNCTIONS
-    public async void getMETRBalance()
+    public async Task<bool> getMETRBalance()
     {
         // Waits until we actually have a value for the playerAddress
-        while (playerAddress == "") {
+        while (playerAddress == "")
+        {
             await new WaitForSeconds(1f);
         };
 
         BigInteger balance = await ERC20.BalanceOf(chain, network, METRAddress, playerAddress, rpc);
 
-        if(balance == 0){
+        if (balance == 0)
+        {
             METRBalance = balance;
-        } else {
+        }
+        else
+        {
             METRBalance = balance / gweiConverter;
             Debug.Log("METR Balance " + balance / gweiConverter);
         };
 
+        return true;
+
     }
 }
-#endif
+

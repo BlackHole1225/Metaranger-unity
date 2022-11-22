@@ -55,14 +55,50 @@ async function main() {
     // Deploy Game Items
     await GameManager.createGameItem(BlasterContract, DIGITAL_KEY);
     console.log("\n\tBlaster Contract deployed");
+    const blasterReference = await GameManager.gameItemContracts(
+      "BlasterContract"
+    );
+    console.log(
+      "\tBlaster Game Item Address ",
+      blasterReference.contractAddress
+    );
+
     await GameManager.createGameItem(DiscLauncherContract, DIGITAL_KEY);
     console.log("\n\tDiscLauncher Contract deployed");
+    const discLauncherReference = await GameManager.gameItemContracts(
+      "DiscLauncherContract"
+    );
+    console.log(
+      "\tDiscLauncher Game Item Address ",
+      discLauncherReference.contractAddress
+    );
+
     await GameManager.createGameItem(ShotgunContract, DIGITAL_KEY);
     console.log("\n\tShotgun Contract deployed");
+    const shotgunReference = await GameManager.gameItemContracts(
+      "ShotgunContract"
+    );
+    console.log(
+      "\tShotgun Game Item Address ",
+      shotgunReference.contractAddress
+    );
+
     await GameManager.createGameItem(SniperContract, DIGITAL_KEY);
     console.log("\n\tSniper Contract deployed");
+    const sniperReference = await GameManager.gameItemContracts(
+      "SniperContract"
+    );
+    console.log("\tSniper Game Item Address ", sniperReference.contractAddress);
+
     await GameManager.createGameItem(JetpackContract, DIGITAL_KEY);
     console.log("\n\tJetpack Contract deployed");
+    const jetpackReference = await GameManager.gameItemContracts(
+      "JetpackContract"
+    );
+    console.log(
+      "\tJetpack Game Item Address ",
+      jetpackReference.contractAddress
+    );
   } else {
     console.log("Something went wrong with the digital key");
     console.log("DIGITAL_KEY", DIGITAL_KEY);

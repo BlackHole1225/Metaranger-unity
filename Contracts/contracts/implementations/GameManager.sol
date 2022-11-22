@@ -30,7 +30,7 @@ contract GameManager is IGameManager {
         GameItem gameItem = new GameItem(newGameItem.gameItems, address(gameToken));
         gameItemContracts[newGameItem.contractName] = GameContractDetails(address(gameItem), true);
         gameToken.grantRolesToGameItem(address(gameItem), digitalKey);
-        emit ContractDeployed(address(gameItem), newGameItem.contractName, newGameItem.contractName);
+        emit ContractDeployed(address(gameItem), address(gameItem), newGameItem.contractName, newGameItem.contractName);
     }
 
     function mintMETR(address account, uint256 amount, string memory digitalKey) external {

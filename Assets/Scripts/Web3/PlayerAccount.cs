@@ -23,3 +23,4 @@ public class PlayerAccount : MonoBehaviour
         playerAccount.text = account;
     }
 }
+

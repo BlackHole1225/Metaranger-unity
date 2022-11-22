@@ -27,9 +27,9 @@ contract VitalityItem is ERC1155, AccessControl, IVitalityItem {
         METRTokenContract = METRToken(metrContractAddress);
 
         // Explicitly declare and populate the vitality items
-        vitalityItems["Health"] = ItemValues(0, 200, true);
-        vitalityItems["Armour"] = ItemValues(1, 210, true);
-        vitalityItems["Shields"] = ItemValues(2, 220, true);
+        vitalityItems["Health"] = ItemValues(0, 200 ether, true);
+        vitalityItems["Armour"] = ItemValues(1, 210 ether, true);
+        vitalityItems["Shields"] = ItemValues(2, 220 ether, true);
     }
 
     // Gets a vitality item's price

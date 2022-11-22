@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Unity.FPS.Game;
+using System.Threading.Tasks;
 using UnityEngine;
 using TMPro;
 
@@ -122,20 +123,10 @@ namespace Unity.FPS.Game
             LoadoutMenuButtons.SetActive(false);
         }
 
-        public string GetVitalityItemValue(string itemName)
+        public async Task<string> GetVitalityItemValue(string itemName)
         {
-            Web3Manager.getBalance(itemName);
-            return "1000Test";
+            return await Web3Manager.getBalance(itemName);
         }
-
-        // public bool CheckIfUnlocked(string contractName, string itemName, bool vitalityItem)
-        // {
-        //     if(vitalityItem)
-        //     {
-        //         return Web3Manager.
-        //     }
-        //     return Web3Manager.Chec
-        // }
     }
 
 

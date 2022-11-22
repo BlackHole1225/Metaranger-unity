@@ -13,3 +13,4 @@ public class GameContract
         this.ABI = abi;
     }
 }
+

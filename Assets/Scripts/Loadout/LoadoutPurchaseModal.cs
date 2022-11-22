@@ -19,11 +19,34 @@ namespace Unity.FPS.UI
         [Tooltip("The price of the Game item being purchased")]
         public TMPro.TextMeshProUGUI PriceLabel;
 
-        [Tooltip("Refernce to itself")]
+        [Tooltip("Reference to itself")]
         public GameObject thisModal;
 
-        void CompletePurchase()
+        [Tooltip("Reference to the Web3Manager")]
+        public Web3Manager Web3Manager;
+
+        [Tooltip("Reference to the LoadoutManager")]
+        public LoadoutManager LoadoutManager;
+
+        private string GameItemName;
+
+        public async void CompletePurchase()
         {
+
+            Debug.Log("GameItemName " + GameItemName);
+
+            if (GameItemName.Contains("Health") || GameItemName.Contains("Shields") || GameItemName.Contains("Armour"))
+            {
+                Debug.Log("This is a vitality item");
+                await Web3Manager.purchaseVitalityItem(GameItemName);
+                LoadoutManager.GetVitalityItemValue(GameItemName);
+            }
+            else
+            {
+                Debug.Log("This is a normal game item");
+                await Web3Manager.purchaseGameItem(GameItemName);
+            }
+
             // This is where you would make the blockchain transaction to purchase the item
             Debug.Log("Let's purchase the Game Item");
             thisModal.SetActive(false);
@@ -33,10 +56,12 @@ namespace Unity.FPS.UI
         public void PurchaseGameItem(string GIName, int GIPrice, Sprite GIImage, float imgWidth, float imgHeight)
         {
             TitleLabel.text = GIName;
+            GameItemName = GIName;
             GameItemImage.sprite = GIImage;
             GameItemImage.rectTransform.sizeDelta = new Vector2(imgWidth, imgHeight);
             PriceLabel.text = GIPrice.ToString();
             thisModal.SetActive(true);
+            Debug.Log("GameItemName " + GIName);
         }
     }
 }

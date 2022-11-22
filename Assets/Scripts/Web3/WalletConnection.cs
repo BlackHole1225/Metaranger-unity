@@ -22,19 +22,25 @@ public class WalletConnection : MonoBehaviour
     [Tooltip("Web3 Manager instance")]
     public Web3Manager Web3Manager;
 
+    private bool balanceAttained = false;
+
     void Start()
     {
         connectButton.SetActive(true);
         metrBalanceObject.SetActive(false);
     }
 
-    void Update()
+    async void Update()
     {
-        if (PlayerPrefs.GetString("Account") != "")
+        if (PlayerPrefs.GetString("Account") != "" && !balanceAttained)
         {
+            await Web3Manager.getMETRBalance();
             connectButton.SetActive(false);
             metrBalanceObject.SetActive(true);
-            metrBalanceText.text = Web3Manager.METRBalance.ToString(); ;
+            metrBalanceText.text = Web3Manager.METRBalance.ToString();
+            balanceAttained = true;
+
         }
     }
 }
+

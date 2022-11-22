@@ -44,10 +44,11 @@ interface IGameManager is IGameItemCommon {
     event VitalityItemPurchased(address indexed account, string indexed indexedItemName, string itemName);
 
     /// @notice Event emitted when the GameManager deploys a contract
-    /// @param contractAddress The address that the contract was deployed to
+    /// @param indexedContractAddress The indexed version of the address of the contract deployed
+    /// @param contractAddress The address that the contract was deployed to, in human-readable form
     /// @param indexedContractType The indexed version of the contract type
     /// @param contractType The type of contract that was deployed, in human-readable form
-    event ContractDeployed(address indexed contractAddress, string indexed indexedContractType, string contractType);
+    event ContractDeployed(address indexed indexedContractAddress, address contractAddress, string indexed indexedContractType, string contractType);
 
     ////////////
     // FUNCTIONS
