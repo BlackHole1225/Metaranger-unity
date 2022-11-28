@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Unity.FPS.Game;
 using UnityEngine;
 using TMPro;
@@ -18,6 +19,9 @@ namespace Unity.FPS.UI
 
         [Tooltip("The upgrade tree associated with this Game Item")]
         public string UpgradeTreeName;
+
+        [Tooltip("The contract associated with this GameItem")]
+        public string ContractName;
 
         [Tooltip("The description for this Game Item")]
         public string GameItemDescription;
@@ -62,6 +66,10 @@ namespace Unity.FPS.UI
         public GameObject PurchasedImage;
         [Tooltip("The Image that is displayed if the Game Item has not been purchased")]
         public GameObject UnavailableImage;
+
+        [Tooltip("The UpgradeIndicator GameObject itself")]
+        public GameObject UpgradeIndicatorsObject;
+
         [Tooltip("The list of UpgradeIndicators, if the Game Item has them")]
         public GameObject[] UpgradeIndicators;
         [Tooltip("Reference to this Game Item's image")]
@@ -74,15 +82,15 @@ namespace Unity.FPS.UI
         // Internal reference as to whether this Game Item has been unlocked or not
         bool Unlocked = false;
 
-        void Start()
+        async Task Start()
         {
             GameItemText.text = GameItemTitle;
             if (UnlockedByDefault) Unlocked = true;
-            CheckItemStatuses();
+            await CheckItemStatuses();
 
             if (UnlockedByDefault && GameItemTitle != "BLASTER")
             {
-                GetVitalityItemValue();
+                await GetVitalityItemValue();
             }
         }
 
@@ -96,7 +104,6 @@ namespace Unity.FPS.UI
         public void SelectGameItem()
         {
 
-
             if (!Unlocked || UpgradeTreeName == "NoUpgradeTree")
             {
                 gameItemPurchaseModal.PurchaseGameItem(GameItemName, Price, GameItemImage, imgWidth, imgHeight);
@@ -107,69 +114,91 @@ namespace Unity.FPS.UI
             }
         }
 
-        // TODO Implement this when the smart contracts have been deployed
-        bool CheckIfUnlocked(string gameItem)
+        async Task<bool> CheckIfUnlocked(string gameItem)
         {
-            /*
-            * This will read the player's balance of the specific Game Token
-            * and set Unlocked to either true or false based on this
-            */
-
-            return true;
-        }
-
-        public async void GetVitalityItemValue()
-        {
-            string onChainValue = await loadoutManager.GetVitalityItemValue(GameItemName);
-            Debug.Log(GameItemName + " onChainValue in LoadoutGameItem " + onChainValue);
-            if (onChainValue != "0")
+            string result = await loadoutManager.GetOwnsGameItem(ContractName, gameItem);
+            Debug.Log("result in CheckIfUnlocked " + result);
+            if (Boolean.TryParse(result, out bool ownsItem))
             {
-                Debug.Log("New Current Value for " + GameItemName + " " + (Int32.Parse(CurrentValue) + Int32.Parse(onChainValue)).ToString());
-                CurrentValue = (Int32.Parse(CurrentValue) + Int32.Parse(onChainValue)).ToString();
-                CurrentValueText.text = CurrentValue.ToString();
-
+                return bool.Parse(result);
+            }
+            else
+            {
+                return false;
             }
         }
 
-        void ActivateIndicators(bool whichOne)
+        public async Task GetVitalityItemValue()
         {
-            // foreach (GameObject indicator in UpgradeIndicators)
-            // {
-            //     if (whichOne) // True means we are showing the indicators
-            //     {
-            //         bool result = CheckIfUnlocked(indicator.name);
-            //         if (result)
-            //         {
-            //             UpgradeTextObject.SetActive(false);
-            //             indicator.SetActive(whichOne);
-            //         }
-            //     }
-            //     else
-            //     {
-            //         indicator.SetActive(whichOne);
-            //     }
-            // }
+            string onChainValue;
+
+            if (PlayerPrefs.GetString(GameItemName) == "")
+            {
+                onChainValue = await loadoutManager.GetVitalityItemValue(GameItemName);
+            }
+            else
+            {
+                onChainValue = PlayerPrefs.GetString(GameItemName);
+            }
+
+            if (onChainValue != "0")
+            {
+                int onChainIncrement = Int32.Parse(onChainValue) * 10;
+                CurrentValue = (Int32.Parse(CurrentValue) + onChainIncrement).ToString();
+                CurrentValueText.text = CurrentValue.ToString();
+            }
+        }
+
+        async void ActivateIndicators(bool whichOne)
+        {
+            Debug.Log("\n\tReached ActivateIndicators");
+            foreach (GameObject indicator in UpgradeIndicators)
+            {
+                if (whichOne) // True means we are showing the indicators
+                {
+                    Debug.Log("\tindicator.name " + indicator.name);
+
+                    bool result = await CheckIfUnlocked(indicator.name);
+
+                    Debug.Log("\tresult in ActivateIndicators " + result);
+
+                    if (result)
+                    {
+                        Debug.Log("We should be setting this indicator " + indicator.name);
+                        UpgradeTextObject.SetActive(false);
+                        UpgradeIndicatorsObject.SetActive(true);
+                        indicator.SetActive(true);
+                    }
+                }
+                else
+                {
+                    Debug.Log("We are not setting this indicator " + indicator.name);
+                    indicator.SetActive(whichOne);
+                }
+            }
         }
 
         // TODO Decide if this should be called whenever a purchased has been made or something?
-        public void CheckItemStatuses()
+        public async Task CheckItemStatuses()
         {
             // Check if this item has been unlocked
-            // TODO Implement this when smart contracts deployed
-            // CheckIfUnlocked();
+            if (!UnlockedByDefault)
+            {
+                Unlocked = await CheckIfUnlocked(GameItemName);
+            }
 
-            if (Unlocked == false)
+            Debug.Log("Unlocked in CheckItemStatuses " + GameItemName + " " + Unlocked);
+
+            if (!Unlocked)
             {
                 ActivateIndicators(false);
-                PurchasedImage.SetActive(false);
-                UnavailableImage.SetActive(true);
+                ShowPurchased(false);
                 PriceText.text = Price.ToString();
                 PriceObject.SetActive(true);
             }
             else
             {
-                PurchasedImage.SetActive(true);
-                UnavailableImage.SetActive(false);
+                ShowPurchased(true);
                 PriceObject.SetActive(false);
                 UpgradeTextObject.SetActive(true);
 
@@ -186,6 +215,12 @@ namespace Unity.FPS.UI
                     ActivateIndicators(true);
                 }
             }
+        }
+
+        void ShowPurchased(bool which)
+        {
+            PurchasedImage.SetActive(which);
+            UnavailableImage.SetActive(!which);
         }
 
 

@@ -26,7 +26,6 @@ public class Web3Manager : MonoBehaviour
 
     // METR Contract
     string METRAddress = "0x22Ac36f2932c73559df2b288A375e12c8fa9B7dB";
-    // string erc20ABI = "[ { \"inputs\": [ { \"internalType\": \"string\", \"name\": \"name_\", \"type\": \"string\" }, { \"internalType\": \"string\", \"name\": \"symbol_\", \"type\": \"string\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"constructor\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"owner\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" }, { \"indexed\": false, \"internalType\": \"uint256\", \"name\": \"value\", \"type\": \"uint256\" } ], \"name\": \"Approval\", \"type\": \"event\" }, { \"anonymous\": false, \"inputs\": [ { \"indexed\": true, \"internalType\": \"address\", \"name\": \"from\", \"type\": \"address\" }, { \"indexed\": true, \"internalType\": \"address\", \"name\": \"to\", \"type\": \"address\" }, { \"indexed\": false, \"internalType\": \"uint256\", \"name\": \"value\", \"type\": \"uint256\" } ], \"name\": \"Transfer\", \"type\": \"event\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"owner\", \"type\": \"address\" }, { \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" } ], \"name\": \"allowance\", \"outputs\": [ { \"internalType\": \"uint256\", \"name\": \"\", \"type\": \"uint256\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"amount\", \"type\": \"uint256\" } ], \"name\": \"approve\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"account\", \"type\": \"address\" } ], \"name\": \"balanceOf\", \"outputs\": [ { \"internalType\": \"uint256\", \"name\": \"\", \"type\": \"uint256\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"decimals\", \"outputs\": [ { \"internalType\": \"uint8\", \"name\": \"\", \"type\": \"uint8\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"subtractedValue\", \"type\": \"uint256\" } ], \"name\": \"decreaseAllowance\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"spender\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"addedValue\", \"type\": \"uint256\" } ], \"name\": \"increaseAllowance\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"name\", \"outputs\": [ { \"internalType\": \"string\", \"name\": \"\", \"type\": \"string\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"symbol\", \"outputs\": [ { \"internalType\": \"string\", \"name\": \"\", \"type\": \"string\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [], \"name\": \"totalSupply\", \"outputs\": [ { \"internalType\": \"uint256\", \"name\": \"\", \"type\": \"uint256\" } ], \"stateMutability\": \"view\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"recipient\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"amount\", \"type\": \"uint256\" } ], \"name\": \"transfer\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" }, { \"inputs\": [ { \"internalType\": \"address\", \"name\": \"sender\", \"type\": \"address\" }, { \"internalType\": \"address\", \"name\": \"recipient\", \"type\": \"address\" }, { \"internalType\": \"uint256\", \"name\": \"amount\", \"type\": \"uint256\" } ], \"name\": \"transferFrom\", \"outputs\": [ { \"internalType\": \"bool\", \"name\": \"\", \"type\": \"bool\" } ], \"stateMutability\": \"nonpayable\", \"type\": \"function\" } ]";
 
     // METR Balance
     public BigInteger METRBalance;
@@ -66,8 +65,68 @@ public class Web3Manager : MonoBehaviour
         return null;
     }
 
+    string DetermineERC1155Index(string itemName)
+    {
+        int index = -1;
+
+        if (itemName.Contains("Blaster"))
+        {
+            if (itemName.Contains("Accuracy")) index = 0;
+            if (itemName.Contains("AimSpeed")) index = 1;
+            if (itemName.Contains("Cooldown")) index = 2;
+            if (itemName.Contains("RapidFire")) index = 3;
+            if (itemName.Contains("StoppingPower")) index = 4;
+        }
+
+        if (itemName.Contains("DiscLauncher"))
+        {
+            if (itemName.Contains("AimSpeed")) index = 0;
+            if (itemName.Contains("Base")) index = 1;
+            if (itemName.Contains("ChargeSpeed")) index = 2;
+            if (itemName.Contains("Cooldown")) index = 3;
+            if (itemName.Contains("StoppingPower")) index = 4;
+
+        };
+
+        if (itemName.Contains("Shotgun"))
+        {
+            if (itemName.Contains("AimSpeed")) index = 0;
+            if (itemName.Contains("Base")) index = 1;
+            if (itemName.Contains("Cooldown")) index = 2;
+            if (itemName.Contains("ExtraBarrel")) index = 3;
+            if (itemName.Contains("Spreadshot")) index = 4;
+            if (itemName.Contains("StoppingPower")) index = 5;
+        };
+
+        if (itemName.Contains("Jetpack"))
+        {
+            if (itemName.Contains("Base")) index = 0;
+            if (itemName.Contains("Cooldown")) index = 1;
+            if (itemName.Contains("Duration")) index = 2;
+            if (itemName.Contains("FlightSpeed")) index = 3;
+
+        };
+        if (itemName.Contains("Sniper"))
+        {
+            if (itemName.Contains("AimSpeed")) index = 0;
+            if (itemName.Contains("Base")) index = 1;
+            if (itemName.Contains("Cooldown")) index = 2;
+            if (itemName.Contains("StoppingPower")) index = 3;
+            if (itemName.Contains("Zoom")) index = 4;
+        };
+
+        Debug.Log("Index for " + itemName + ": " + index);
+
+        if (index == -1)
+        {
+            Debug.Log("No index found for " + itemName);
+        };
+
+        return index.ToString();
+    }
+
     // GAME MANAGER FUNCTIONS
-    public async void mintMETR(int amount)
+    public async Task mintMETR(int amount)
     {
         string[] obj = { playerAddress, amount.ToString() + "000000000000000000", digitalKey }; // Convert amount to wei
         string args = JsonConvert.SerializeObject(obj);
@@ -81,7 +140,6 @@ public class Web3Manager : MonoBehaviour
         string[] obj = { playerAddress, contractName, itemName, digitalKey };
         string args = JsonConvert.SerializeObject(obj);
         string response = await Web3GL.SendContract("purchaseGameItem", gameManagerABI, gameManagerAddress, args, value, gasLimit, gasPrice);
-        // string response = await EVM.Call(chain, network, gameManagerAddress, gameManagerABI, "purchaseGameItem", args, rpc);
         Debug.Log("Response from purchaseGameItem in Web3Manager " + response);
     }
 
@@ -89,7 +147,6 @@ public class Web3Manager : MonoBehaviour
     {
         string[] obj = { playerAddress, itemName, digitalKey };
         string args = JsonConvert.SerializeObject(obj);
-        // string response = await EVM.Call(chain, network, gameManagerAddress, gameManagerABI, "purchaseVitalityItem", args, rpc);
         string response = await Web3GL.SendContract("purchaseVitalityItem", gameManagerABI, gameManagerAddress, args, value, gasLimit, gasPrice);
         Debug.Log("Response from purchaseVitalityItem in Web3Manager " + response);
     }
@@ -106,29 +163,39 @@ public class Web3Manager : MonoBehaviour
         Debug.Log("Response from getPrice in Web3Manager " + response);
     }
 
-    // TODO Find out how to get the result out of the string response
-    public async void ownsGameItem(string contractName, string itemName)
+    public async Task<string> ownsGameItem(string contractName, string itemName)
     {
         GameContract gameContract = gameContracts[contractName];
         string[] obj = { playerAddress, itemName };
         string args = JsonConvert.SerializeObject(obj);
-        string response = await EVM.Call(chain, network, gameContract.Address, gameContract.ABI, "ownsGameItem", args, rpc);
-        Debug.Log("Response from ownsGameItem in Web3Manager " + response);
+        try
+        {
+            BigInteger erc1155Test = await ERC1155.BalanceOf(chain, network, gameContract.Address, playerAddress, DetermineERC1155Index(itemName), rpc);
+            bool owns = erc1155Test > 0;
+            Debug.Log("result from erc1155 test " + erc1155Test);
+            Debug.Log("owns in ownsGameItem " + (erc1155Test > 0).ToString());
+            return owns.ToString();
+        }
+        catch
+        {
+            Debug.Log("Error getting balance for " + itemName);
+            return false.ToString();
+        }
+
     }
 
     // VITALITY ITEM FUNCTIONS
-    // TODO Find out how to get the price out of the string response
     public async Task<string> getBalance(string itemName)
     {
         string[] obj = { playerAddress, itemName };
         string args = JsonConvert.SerializeObject(obj);
         string response = await EVM.Call(chain, network, gameContracts["VitalityItemsContract"].Address, gameContracts["VitalityItemsContract"].ABI, "getBalance", args, rpc);
-        Debug.Log("Response from getBalance in Web3Manager " + response);
+        PlayerPrefs.SetString(itemName, response);
         return response;
     }
 
     // METR FUNCTIONS
-    public async Task<bool> getMETRBalance()
+    public async Task getMETRBalance()
     {
         // Waits until we actually have a value for the playerAddress
         while (playerAddress == "")
@@ -137,19 +204,9 @@ public class Web3Manager : MonoBehaviour
         };
 
         BigInteger balance = await ERC20.BalanceOf(chain, network, METRAddress, playerAddress, rpc);
+        METRBalance = balance / gweiConverter;
 
-        if (balance == 0)
-        {
-            METRBalance = balance;
-        }
-        else
-        {
-            METRBalance = balance / gweiConverter;
-            Debug.Log("METR Balance " + balance / gweiConverter);
-        };
-
-        return true;
-
+        PlayerPrefs.SetInt("METRBalance", (int)METRBalance);
     }
 }
 

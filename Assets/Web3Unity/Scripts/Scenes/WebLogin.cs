@@ -40,7 +40,7 @@ public class WebLogin : MonoBehaviour
         // reset login message
         // SetConnectAccount("");
 
-        Web3Manager.getMETRBalance();
+        await Web3Manager.getMETRBalance();
     }
 
     public void OnSkip()

@@ -136,12 +136,12 @@ GameObject:
   - component: {fileID: 2023609}
   - component: {fileID: 2023608}
   m_Layer: 5
-  m_Name: CoolDownSpeed
+  m_Name: SniperCooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2023608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3.9, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &12863038
@@ -254,6 +254,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 296ff84a6dcea4b1a9895d6d8817f7e0,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -460,6 +465,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
       propertyPath: LPM
       value: 
       objectReference: {fileID: 1420644363}
@@ -658,6 +668,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -866,12 +881,12 @@ GameObject:
   - component: {fileID: 107380903}
   - component: {fileID: 107380902}
   m_Layer: 5
-  m_Name: StoppingPower
+  m_Name: BlasterStoppingPower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &107380901
 RectTransform:
   m_ObjectHideFlags: 0
@@ -942,12 +957,12 @@ GameObject:
   - component: {fileID: 109053621}
   - component: {fileID: 109053620}
   m_Layer: 5
-  m_Name: AimSpeed
+  m_Name: BlasterAimSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &109053619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1640,6 +1655,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
+      propertyPath: ContractName
+      value: ShotgunContract
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
       propertyPath: GameItemName
       value: ShotgunBase
       objectReference: {fileID: 0}
@@ -1677,6 +1697,11 @@ PrefabInstance:
       objectReference: {fileID: 871780694}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
+      propertyPath: UpgradeIndicatorsObject
+      value: 
+      objectReference: {fileID: 1535116325}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
       propertyPath: UpgradeIndicators.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -1709,6 +1734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameItemTitle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324531257316293620, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5226972342419830791, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
@@ -2157,6 +2187,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
       propertyPath: LPM
       value: 
       objectReference: {fileID: 1420644363}
@@ -2353,12 +2388,12 @@ GameObject:
   - component: {fileID: 323704885}
   - component: {fileID: 323704884}
   m_Layer: 5
-  m_Name: RapidFire
+  m_Name: BlasterRapidFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &323704883
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2605,6 +2640,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
       propertyPath: LPM
       value: 
       objectReference: {fileID: 1420644363}
@@ -2801,12 +2841,12 @@ GameObject:
   - component: {fileID: 486049747}
   - component: {fileID: 486049746}
   m_Layer: 5
-  m_Name: CoolDownSpeed
+  m_Name: BlasterCooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &486049745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2916,6 +2956,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: de6a719a221ea45f3b2a4ecc200c3bd5,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: UpgradeName
@@ -3073,12 +3118,12 @@ GameObject:
   - component: {fileID: 557198363}
   - component: {fileID: 557198362}
   m_Layer: 5
-  m_Name: JetpackSpeed
+  m_Name: JetpackFlightSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &557198361
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3407,6 +3452,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
+      propertyPath: ContractName
+      value: JetpackContract
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
       propertyPath: GameItemName
       value: JetpackBase
       objectReference: {fileID: 0}
@@ -3449,6 +3499,11 @@ PrefabInstance:
       propertyPath: gameItemPurchaseModal
       value: 
       objectReference: {fileID: 871780694}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
+      propertyPath: UpgradeIndicatorsObject
+      value: 
+      objectReference: {fileID: 2068305562}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
       propertyPath: UpgradeIndicators.Array.size
@@ -3712,6 +3767,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: af6143cdae7644facbf48bb6fa3ece14,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: UpgradeName
@@ -4413,12 +4473,12 @@ GameObject:
   - component: {fileID: 697381107}
   - component: {fileID: 697381106}
   m_Layer: 5
-  m_Name: AimSpeed
+  m_Name: DiscLauncherAimSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &697381105
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4653,6 +4713,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
+      propertyPath: ContractName
+      value: BlasterContract
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
       propertyPath: GameItemName
       value: BlasterBase
       objectReference: {fileID: 0}
@@ -4683,6 +4748,11 @@ PrefabInstance:
         a medium range. Can only be fired in short bursts, before the fuel cells
         overheat, and the weapon must cooldown.
       objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
+      propertyPath: UpgradeIndicatorsObject
+      value: 
+      objectReference: {fileID: 5612364}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
       propertyPath: UpgradeIndicators.Array.size
@@ -4981,6 +5051,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 0de7e14babbc847c5b7ca266dd37e6c6,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -5315,12 +5390,12 @@ GameObject:
   - component: {fileID: 782665888}
   - component: {fileID: 782665887}
   m_Layer: 5
-  m_Name: DiscCharge
+  m_Name: DiscLauncherChargeSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &782665886
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5392,6 +5467,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a279fe8b619484a6db55ca61664eee57,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -5590,12 +5670,12 @@ GameObject:
   - component: {fileID: 791415678}
   - component: {fileID: 791415677}
   m_Layer: 5
-  m_Name: MoreZoom
+  m_Name: SniperZoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &791415676
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5672,6 +5752,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -5881,6 +5966,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 41e3c47d66f9a4a6ba593a6f2e04e0a8,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: UpgradeName
@@ -6338,6 +6428,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
       propertyPath: LPM
       value: 
       objectReference: {fileID: 1420644363}
@@ -6575,6 +6670,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 296ff84a6dcea4b1a9895d6d8817f7e0,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -7050,6 +7150,7 @@ MonoBehaviour:
   PriceLabel: {fileID: 871780692}
   thisModal: {fileID: 871780693}
   Web3Manager: {fileID: 1367709159}
+  LoadoutManager: {fileID: 223052882}
 --- !u!1 &904770611
 GameObject:
   m_ObjectHideFlags: 0
@@ -7287,6 +7388,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a279fe8b619484a6db55ca61664eee57,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -7963,12 +8069,12 @@ GameObject:
   - component: {fileID: 986923198}
   - component: {fileID: 986923197}
   m_Layer: 5
-  m_Name: AimSpeed
+  m_Name: SniperAimSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &986923196
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8183,6 +8289,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: ef2f4b16f3d134f1fa8b60cf5ee5e801,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -8641,12 +8752,12 @@ GameObject:
   - component: {fileID: 1013740720}
   - component: {fileID: 1013740719}
   m_Layer: 5
-  m_Name: ExtraBarrel
+  m_Name: ShotgunExtraBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1013740718
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8755,6 +8866,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
+      propertyPath: ContractName
+      value: SniperContract
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
       propertyPath: GameItemName
       value: SniperBase
       objectReference: {fileID: 0}
@@ -8792,6 +8908,11 @@ PrefabInstance:
       objectReference: {fileID: 871780694}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
+      propertyPath: UpgradeIndicatorsObject
+      value: 
+      objectReference: {fileID: 1962695262}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
       propertyPath: UpgradeIndicators.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -8815,6 +8936,11 @@ PrefabInstance:
       propertyPath: UpgradeIndicators.Array.data[3]
       value: 
       objectReference: {fileID: 2023607}
+    - target: {fileID: 4324531257316293620, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5226972342419830791, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
       propertyPath: m_Pivot.x
@@ -9288,6 +9414,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 8b305e48d53f44e7c96145543c0d5129,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -9895,6 +10026,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
       propertyPath: LPM
       value: 
       objectReference: {fileID: 1420644363}
@@ -10135,6 +10271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
+      propertyPath: ContractName
+      value: DiscLauncherContract
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
       propertyPath: GameItemName
       value: DiscLauncherBase
       objectReference: {fileID: 0}
@@ -10171,6 +10312,11 @@ PrefabInstance:
       propertyPath: gameItemPurchaseModal
       value: 
       objectReference: {fileID: 871780694}
+    - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
+        type: 3}
+      propertyPath: UpgradeIndicatorsObject
+      value: 
+      objectReference: {fileID: 1011758617}
     - target: {fileID: 2749925244837891767, guid: 9aec681b30b6d48fba267df701ff1a50,
         type: 3}
       propertyPath: UpgradeIndicators.Array.size
@@ -10729,7 +10875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1186317202
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11653,6 +11799,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
       propertyPath: LPM
       value: 
       objectReference: {fileID: 1420644363}
@@ -11930,12 +12081,12 @@ GameObject:
   - component: {fileID: 1324929696}
   - component: {fileID: 1324929695}
   m_Layer: 5
-  m_Name: CooldownTime
+  m_Name: JetpackCooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1324929694
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12451,12 +12602,12 @@ GameObject:
   - component: {fileID: 1398447445}
   - component: {fileID: 1398447444}
   m_Layer: 5
-  m_Name: StoppingPower
+  m_Name: ShotgunStoppingPower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1398447443
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12528,6 +12679,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 39372a8d2f98d4866b34cd14307a7b94,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -12825,6 +12981,41 @@ PrefabInstance:
       propertyPath: m_text
       value: CANCEL
       objectReference: {fileID: 0}
+    - target: {fileID: 6570792581761059140, guid: 2e253004c7b7f44f88e6b92bc4b38d04,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570792581761059140, guid: 2e253004c7b7f44f88e6b92bc4b38d04,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570792581761059140, guid: 2e253004c7b7f44f88e6b92bc4b38d04,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1420644363}
+    - target: {fileID: 6570792581761059140, guid: 2e253004c7b7f44f88e6b92bc4b38d04,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570792581761059140, guid: 2e253004c7b7f44f88e6b92bc4b38d04,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CompletePurchase
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570792581761059140, guid: 2e253004c7b7f44f88e6b92bc4b38d04,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Unity.FPS.UI.LoadoutPurchaseModal, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570792581761059140, guid: 2e253004c7b7f44f88e6b92bc4b38d04,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7165369872896369190, guid: 2e253004c7b7f44f88e6b92bc4b38d04,
         type: 3}
       propertyPath: m_Pivot.x
@@ -12990,6 +13181,7 @@ MonoBehaviour:
   PriceLabel: {fileID: 1420644361}
   thisModal: {fileID: 1420644362}
   Web3Manager: {fileID: 1367709159}
+  LoadoutManager: {fileID: 223052882}
 --- !u!1001 &1425121059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13003,6 +13195,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 8b305e48d53f44e7c96145543c0d5129,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -13533,12 +13730,12 @@ GameObject:
   - component: {fileID: 1489001844}
   - component: {fileID: 1489001843}
   m_Layer: 5
-  m_Name: StoppingPower
+  m_Name: SniperStoppingPower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1489001842
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13610,6 +13807,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a279fe8b619484a6db55ca61664eee57,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -13937,12 +14139,12 @@ GameObject:
   - component: {fileID: 1584945855}
   - component: {fileID: 1584945854}
   m_Layer: 5
-  m_Name: Accuracy
+  m_Name: BlasterAccuracy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1584945853
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15215,12 +15417,12 @@ GameObject:
   - component: {fileID: 1763453408}
   - component: {fileID: 1763453407}
   m_Layer: 5
-  m_Name: AimSpeed
+  m_Name: ShotgunAimSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1763453406
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15292,6 +15494,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 2945ab45e90cf44a0b98cb4a50e89e4b,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -15939,6 +16146,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
       propertyPath: LPM
       value: 
       objectReference: {fileID: 1420644363}
@@ -16291,6 +16503,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 8b305e48d53f44e7c96145543c0d5129,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: LPM
@@ -16735,12 +16952,12 @@ GameObject:
   - component: {fileID: 1854838116}
   - component: {fileID: 1854838115}
   m_Layer: 5
-  m_Name: Time
+  m_Name: JetpackDuration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1854838114
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17142,12 +17359,12 @@ GameObject:
   - component: {fileID: 1940098904}
   - component: {fileID: 1940098903}
   m_Layer: 5
-  m_Name: CoolDownSpeed
+  m_Name: ShotgunCooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1940098902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17258,12 +17475,12 @@ GameObject:
   - component: {fileID: 1977356355}
   - component: {fileID: 1977356354}
   m_Layer: 5
-  m_Name: StoppingPower
+  m_Name: DiscLauncherStoppingPower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1977356353
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17334,12 +17551,12 @@ GameObject:
   - component: {fileID: 1988623252}
   - component: {fileID: 1988623251}
   m_Layer: 5
-  m_Name: CoolDownSpeed
+  m_Name: DiscLauncherCooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1988623250
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17718,6 +17935,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: fe9973d73f95c4e69baa769651030f06,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: UpgradeName
@@ -18208,12 +18430,12 @@ GameObject:
   - component: {fileID: 2044370445}
   - component: {fileID: 2044370444}
   m_Layer: 5
-  m_Name: SpreadShot
+  m_Name: ShotgunSpreadshot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2044370443
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19076,6 +19298,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5283f9a613c334e17b5443b171c4550d,
         type: 3}
+    - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
+        type: 3}
+      propertyPath: LOM
+      value: 
+      objectReference: {fileID: 223052882}
     - target: {fileID: 4944897584699699062, guid: a0728336ae4184316814c923e047d580,
         type: 3}
       propertyPath: UpgradeName

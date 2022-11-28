@@ -16,10 +16,13 @@ namespace Unity.FPS.Game
         [Tooltip("Web3 Manager instance")]
         public Web3Manager Web3Manager;
 
+        [Tooltip("Reference to the button itself")]
+        public GameObject ClaimButton;
+
         // Used to prevent double dipping
         private bool hasClaimed = false;
 
-        public void ClaimMETR()
+        public async void ClaimMETR()
         {
             if (!hasClaimed)
             {
@@ -29,7 +32,8 @@ namespace Unity.FPS.Game
                 }
                 else
                 {
-                    Web3Manager.mintMETR(GameScore.playerScore);
+                    await Web3Manager.mintMETR(GameScore.playerScore);
+                    ClaimButton.SetActive(false);
                     hasClaimed = true;
                 }
             }

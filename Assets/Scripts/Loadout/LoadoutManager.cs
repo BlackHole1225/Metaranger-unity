@@ -127,6 +127,11 @@ namespace Unity.FPS.Game
         {
             return await Web3Manager.getBalance(itemName);
         }
+
+        public async Task<string> GetOwnsGameItem(string contractName, string itemName)
+        {
+            return await Web3Manager.ownsGameItem(contractName, itemName);
+        }
     }
 
 

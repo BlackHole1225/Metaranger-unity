@@ -733,6 +733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WarningModal: {fileID: 1172752197733149430}
   Web3Manager: {fileID: 1342918623}
+  ClaimButton: {fileID: 1425176206}
 --- !u!1001 &1483968378
 PrefabInstance:
   m_ObjectHideFlags: 0

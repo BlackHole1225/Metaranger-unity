@@ -12,8 +12,6 @@ namespace Unity.FPS.Game
         [Tooltip("Differentiates player from other Actors that use this script")]
         public bool isPlayer;
 
-        // [Tooltip("Reference to the Web3Mananger")] public Web3Manager Web3Manager;
-
         [Tooltip("Health ratio at which the critical health vignette starts appearing")]
         public float CriticalHealthRatio = 0.3f;
 
@@ -37,12 +35,44 @@ namespace Unity.FPS.Game
             CurrentHealth = MaxHealth;
             if (isPlayer)
             {
-                // At this point, you would query the blockchain / user's tokens to see what they armour / shields are
-                // Instead of setting them in the inspector like here
-                if (MaxArmour > 0f) { CurrentArmour = 1f; };
-                if (MaxShields > 0f) { CurrentShields = 1f; };
+                SetValues();
             }
 
+        }
+
+        public void SetValues()
+        {
+            // Health
+            float healthInc = PlayerPrefs.GetFloat("HealthIncrement", 0f);
+            Debug.Log("HealthIncrement " + healthInc);
+            MaxHealth = MaxHealth + healthInc;
+            CurrentHealth = MaxHealth;
+
+            // Armour
+            float currentArmour = PlayerPrefs.GetFloat("ArmourIncrement", 0f);
+            Debug.Log("ArmourIncrement " + currentArmour);
+            if (currentArmour < 10f)
+            {
+                MaxArmour = 10f;
+            }
+            else
+            {
+                MaxArmour = currentArmour + 1f;
+            };
+            CurrentArmour = currentArmour + 1f;
+
+            // Shields
+            float currentShields = PlayerPrefs.GetFloat("ShieldsIncrement", 0f);
+            Debug.Log("ShieldsIncrement " + currentShields);
+            if (currentShields < 10f)
+            {
+                MaxShields = 10f;
+            }
+            else
+            {
+                MaxShields = currentShields + 1f;
+            };
+            CurrentShields = currentShields + 1f;
         }
 
         public void Heal(float healAmount)

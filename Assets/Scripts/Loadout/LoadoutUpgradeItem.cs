@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Unity.FPS.Game;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +21,9 @@ namespace Unity.FPS.UI
     {
         [Header("Upgrade Name")]
         public string UpgradeName;
+
+        [Tooltip("Reference to the LoadoutManager")]
+        public Unity.FPS.Game.LoadoutManager LOM;
 
         [Header("Button States")]
         [Tooltip("The Unavailable State")]
@@ -48,11 +52,29 @@ namespace Unity.FPS.UI
 
         public State upgradeState = State.Unavailable;
 
-        bool CheckOwned()
+        string DetermineGameItemContract()
         {
-            // TODO
-            // This is where you would check if this Game Item is owned
-            return false;
+            if (UpgradeName.Contains("Blaster")) return "BlasterContract";
+            if (UpgradeName.Contains("DiscLauncher")) return "DiscLauncherContract";
+            if (UpgradeName.Contains("Shotgun")) return "ShotgunContract";
+            if (UpgradeName.Contains("Jetpack")) return "JetpackContract";
+            if (UpgradeName.Contains("Sniper")) return "SniperContract";
+            return null;
+        }
+
+        async Task<bool> CheckOwned()
+        {
+            if (UpgradeName == "BlasterBase") return true;
+            string contractName = DetermineGameItemContract();
+            string result = await LOM.GetOwnsGameItem(contractName, UpgradeName);
+            if (Boolean.TryParse(result, out bool ownsItem))
+            {
+                return bool.Parse(result);
+            }
+            else
+            {
+                return false;
+            }
         }
 
         // This function is called by other Game Items, to see if it is owned already
@@ -62,12 +84,14 @@ namespace Unity.FPS.UI
             return upgradeState;
         }
 
-        public void CheckStatus()
+        public async void CheckStatus()
         {
             // If the item has no prerequisites, it is Owned
             // If the user has the game item, then it is Owned
-            bool result = CheckOwned();
-            if (result || prerequisites.Length == 0)
+            bool result = await CheckOwned();
+
+
+            if (prerequisites.Length == 0 || (prerequisites.Length != 0 && result))
             {
                 upgradeState = State.Owned;
                 UnavailableButton.SetActive(false);
@@ -109,11 +133,6 @@ namespace Unity.FPS.UI
 
 
         void Start()
-        {
-            CheckStatus();
-        }
-
-        void Update()
         {
             CheckStatus();
         }

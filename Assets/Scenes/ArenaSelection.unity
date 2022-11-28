@@ -320,6 +320,21 @@ PrefabInstance:
       propertyPath: m_text
       value: Sunset Outpost
       objectReference: {fileID: 0}
+    - target: {fileID: 4762122510314707967, guid: 111fb03a810a64eb9a9eb6359283397b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 329008036}
+    - target: {fileID: 4762122510314707967, guid: 111fb03a810a64eb9a9eb6359283397b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadTargetScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762122510314707967, guid: 111fb03a810a64eb9a9eb6359283397b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Unity.FPS.UI.SelectArenaButton, fps.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 5180861879221249097, guid: 111fb03a810a64eb9a9eb6359283397b,
         type: 3}
       propertyPath: m_Sprite
@@ -436,7 +451,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3092868195103748356, guid: 111fb03a810a64eb9a9eb6359283397b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 111fb03a810a64eb9a9eb6359283397b, type: 3}
 --- !u!224 &329008034 stripped
 RectTransform:
@@ -444,6 +460,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 329008033}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &329008035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5280523645575693235, guid: 111fb03a810a64eb9a9eb6359283397b,
+    type: 3}
+  m_PrefabInstance: {fileID: 329008033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &329008036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329008035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b6696b2dc5344ec4af1d2be00141763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: SunsetOutpost
 --- !u!1001 &381920301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -460,6 +495,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Hell Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762122510314707967, guid: 111fb03a810a64eb9a9eb6359283397b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 381920304}
+    - target: {fileID: 4762122510314707967, guid: 111fb03a810a64eb9a9eb6359283397b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadTargetScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762122510314707967, guid: 111fb03a810a64eb9a9eb6359283397b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Unity.FPS.UI.SelectArenaButton, fps.UI
       objectReference: {fileID: 0}
     - target: {fileID: 5180861879221249097, guid: 111fb03a810a64eb9a9eb6359283397b,
         type: 3}
@@ -577,7 +627,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3092868195103748356, guid: 111fb03a810a64eb9a9eb6359283397b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 111fb03a810a64eb9a9eb6359283397b, type: 3}
 --- !u!224 &381920302 stripped
 RectTransform:
@@ -585,6 +636,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 381920301}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &381920303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5280523645575693235, guid: 111fb03a810a64eb9a9eb6359283397b,
+    type: 3}
+  m_PrefabInstance: {fileID: 381920301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &381920304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381920303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b6696b2dc5344ec4af1d2be00141763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: HellStation
 --- !u!1001 &470058049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -601,6 +671,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Plasma Refinery
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762122510314707967, guid: 111fb03a810a64eb9a9eb6359283397b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 470058052}
+    - target: {fileID: 4762122510314707967, guid: 111fb03a810a64eb9a9eb6359283397b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadTargetScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762122510314707967, guid: 111fb03a810a64eb9a9eb6359283397b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Unity.FPS.UI.SelectArenaButton, fps.UI
       objectReference: {fileID: 0}
     - target: {fileID: 5180861879221249097, guid: 111fb03a810a64eb9a9eb6359283397b,
         type: 3}
@@ -718,7 +803,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3092868195103748356, guid: 111fb03a810a64eb9a9eb6359283397b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 111fb03a810a64eb9a9eb6359283397b, type: 3}
 --- !u!224 &470058050 stripped
 RectTransform:
@@ -726,6 +812,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 470058049}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &470058051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5280523645575693235, guid: 111fb03a810a64eb9a9eb6359283397b,
+    type: 3}
+  m_PrefabInstance: {fileID: 470058049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &470058052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470058051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b6696b2dc5344ec4af1d2be00141763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: PlasmaRefinery
 --- !u!1 &904770611
 GameObject:
   m_ObjectHideFlags: 0

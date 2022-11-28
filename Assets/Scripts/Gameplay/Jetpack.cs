@@ -1,4 +1,5 @@
-﻿using Unity.FPS.Game;
+﻿using System;
+using Unity.FPS.Game;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,13 +8,13 @@ namespace Unity.FPS.Gameplay
     [RequireComponent(typeof(AudioSource))]
     public class Jetpack : MonoBehaviour
     {
-        [Header("References")] [Tooltip("Audio source for jetpack sfx")]
+        [Header("References")]
+        [Tooltip("Audio source for jetpack sfx")]
         public AudioSource AudioSource;
 
         [Tooltip("Particles for jetpack vfx")] public ParticleSystem[] JetpackVfx;
 
-        [Header("Parameters")] [Tooltip("Whether the jetpack is unlocked at the begining or not")]
-        public bool IsJetpackUnlockedAtStart = false;
+        [Header("Parameters")]
 
         [Tooltip("The strength with which the jetpack pushes the player up")]
         public float JetpackAcceleration = 7f;
@@ -23,7 +24,8 @@ namespace Unity.FPS.Gameplay
             "This will affect how much using the jetpack will cancel the gravity value, to start going up faster. 0 is not at all, 1 is instant")]
         public float JetpackDownwardVelocityCancelingFactor = 1f;
 
-        [Header("Durations")] [Tooltip("Time it takes to consume all the jetpack fuel")]
+        [Header("Durations")]
+        [Tooltip("Time it takes to consume all the jetpack fuel")]
         public float ConsumeDuration = 1.5f;
 
         [Tooltip("Time it takes to completely refill the jetpack while on the ground")]
@@ -35,7 +37,8 @@ namespace Unity.FPS.Gameplay
         [Tooltip("Delay after last use before starting to refill")]
         public float RefillDelay = 1f;
 
-        [Header("Audio")] [Tooltip("Sound played when using the jetpack")]
+        [Header("Audio")]
+        [Tooltip("Sound played when using the jetpack")]
         public AudioClip JetpackSfx;
 
         bool m_CanUseJetpack;
@@ -51,9 +54,44 @@ namespace Unity.FPS.Gameplay
 
         public UnityAction<bool> OnUnlockJetpack;
 
+        bool TokenResult(string whichToken)
+        {
+
+            bool result;
+            Boolean.TryParse(PlayerPrefs.GetString(whichToken), out result);
+            Debug.Log("Outcome in Token Result " + Boolean.TryParse(PlayerPrefs.GetString(whichToken), out result));
+            return result;
+        }
+
+        void ApplyTokenEffects()
+        {
+            IsJetpackUnlocked = TokenResult("JetpackBase");
+
+            if (TokenResult("JetpackFlightSpeed"))
+            {
+                JetpackAcceleration *= 2;
+            }
+
+            if (TokenResult("JetpackDuration"))
+            {
+                ConsumeDuration /= 2;
+            }
+
+            if (TokenResult("JetpackCooldown"))
+            {
+                RefillDurationGrounded /= 2;
+                RefillDurationInTheAir /= 2;
+            }
+
+        }
+
         void Start()
         {
-            IsJetpackUnlocked = IsJetpackUnlockedAtStart;
+            // IsJetpackUnlocked = IsJetpackUnlockedAtStart;
+            if (PlayerPrefs.GetString("Account") != "")
+            {
+                ApplyTokenEffects();
+            }
 
             m_PlayerCharacterController = GetComponent<PlayerCharacterController>();
             DebugUtility.HandleErrorIfNullGetComponent<PlayerCharacterController, Jetpack>(m_PlayerCharacterController,

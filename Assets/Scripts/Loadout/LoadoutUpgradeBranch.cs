@@ -29,9 +29,14 @@ namespace Unity.FPS.UI
             {
                 AvailableBranch.SetActive(true);
             }
-            else
+            else if (destinationUpgradeState == State.Owned)
             {
                 OwnedBranch.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("Something went wrong when checking the status for the branch pointing to " + destinationUpgrade.name);
+                CheckStatus();
             }
         }
 

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Loadout.unity
     guid: 0a9d185f1f74249d7b278035ce06960f
+  - enabled: 1
+    path: Assets/Scenes/CheckBlockchain.unity
+    guid: 52e6cc10e937f4446a210192ec313b94
   m_configObjects: {}

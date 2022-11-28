@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Unity.FPS.Game;
 using Unity.FPS.UI;
 using UnityEngine;
@@ -39,7 +40,7 @@ namespace Unity.FPS.UI
             {
                 Debug.Log("This is a vitality item");
                 await Web3Manager.purchaseVitalityItem(GameItemName);
-                LoadoutManager.GetVitalityItemValue(GameItemName);
+                await LoadoutManager.GetVitalityItemValue(GameItemName);
             }
             else
             {
@@ -47,8 +48,6 @@ namespace Unity.FPS.UI
                 await Web3Manager.purchaseGameItem(GameItemName);
             }
 
-            // This is where you would make the blockchain transaction to purchase the item
-            Debug.Log("Let's purchase the Game Item");
             thisModal.SetActive(false);
         }
 
