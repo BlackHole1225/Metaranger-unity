@@ -56,7 +56,6 @@ namespace Unity.FPS.Gameplay
 
         bool TokenResult(string whichToken)
         {
-
             bool result;
             Boolean.TryParse(PlayerPrefs.GetString(whichToken), out result);
             Debug.Log("Outcome in Token Result " + Boolean.TryParse(PlayerPrefs.GetString(whichToken), out result));
@@ -65,19 +64,19 @@ namespace Unity.FPS.Gameplay
 
         void ApplyTokenEffects()
         {
-            IsJetpackUnlocked = TokenResult("JetpackBase");
+            IsJetpackUnlocked = TokenResult("JetpackBaseOwned");
 
-            if (TokenResult("JetpackFlightSpeed"))
+            if (TokenResult("JetpackFlightSpeedOwned"))
             {
                 JetpackAcceleration *= 2;
             }
 
-            if (TokenResult("JetpackDuration"))
+            if (TokenResult("JetpackDurationOwned"))
             {
                 ConsumeDuration /= 2;
             }
 
-            if (TokenResult("JetpackCooldown"))
+            if (TokenResult("JetpackCooldownOwned"))
             {
                 RefillDurationGrounded /= 2;
                 RefillDurationInTheAir /= 2;
@@ -87,7 +86,6 @@ namespace Unity.FPS.Gameplay
 
         void Start()
         {
-            // IsJetpackUnlocked = IsJetpackUnlockedAtStart;
             if (PlayerPrefs.GetString("Account") != "")
             {
                 ApplyTokenEffects();

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using Unity.FPS.Game;
 using UnityEngine;
 using TMPro;
@@ -26,34 +27,33 @@ public class WalletConnection : MonoBehaviour
 
     private bool balanceAttained = false;
 
-    void Start()
+    async void Start()
     {
         connectButton.SetActive(true);
         metrBalanceObject.SetActive(false);
-    }
-
-    async void Update()
-    {
         if (!balanceAttained)
         {
             await CheckBalance();
         }
     }
 
+
     public async Task CheckBalance()
     {
-        // If there is a wallet connected
-        if (PlayerPrefs.GetString("Account") != "")
-        {
-            connectButton.SetActive(false);
-            metrBalanceObject.SetActive(true);
 
-            metrBalanceText.text = "Retrieving Balance";
-            await Web3Manager.getMETRBalance();
-            Debug.Log("METR Balance in PlayerPrefs " + PlayerPrefs.GetInt("METRBalance"));
-            metrBalanceText.text = PlayerPrefs.GetInt("METRBalance").ToString();
-            balanceAttained = true;
+        while (PlayerPrefs.GetString("Account") == "" || PlayerPrefs.GetString("Account") == null)
+        {
+            await new WaitForSeconds(1f);
         }
+
+        connectButton.SetActive(false);
+        metrBalanceObject.SetActive(true);
+
+        metrBalanceText.text = "Retrieving Balance";
+        await Web3Manager.getMETRBalance();
+        Debug.Log("METR Balance in PlayerPrefs " + PlayerPrefs.GetInt("METRBalance"));
+        metrBalanceText.text = PlayerPrefs.GetInt("METRBalance").ToString();
+        balanceAttained = true;
     }
 }
 

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Unity.FPS.UI;
+using TMPro;
+
 
 public class CheckBlockchainBeforeGame : MonoBehaviour
 {
@@ -11,14 +13,16 @@ public class CheckBlockchainBeforeGame : MonoBehaviour
     public Web3Manager Web3Manager;
 
     [Tooltip("Visual Progress Bar")]
-    public FillBarColorChange ProgressBar;
+    public Image ProgressBar;
+
+    [Tooltip("Text displaying the progress as a percentage")]
+    public TMPro.TextMeshProUGUI ProgressText;
 
     private float totalItems = 28f;
     private float itemsCompleted = 0f;
 
     async void Start()
     {
-        ProgressBar.Initialize(1f, 0f);
         await CheckVitalityItems();
         await CheckBlasterItems();
         await CheckJetpackItems();
@@ -30,7 +34,8 @@ public class CheckBlockchainBeforeGame : MonoBehaviour
 
     void Update()
     {
-        ProgressBar.UpdateVisual(itemsCompleted / totalItems);
+        ProgressBar.fillAmount = itemsCompleted / totalItems;
+        ProgressText.text = Math.Round(itemsCompleted / totalItems * 100, 2).ToString() + "%";
     }
 
     async Task CheckVitalityItems()
@@ -44,7 +49,7 @@ public class CheckBlockchainBeforeGame : MonoBehaviour
         PlayerPrefs.SetFloat("HealthIncrement", healthIncrement);
         itemsCompleted++;
         Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
-        ProgressBar.UpdateVisual(itemsCompleted / totalItems);
+
 
         // Shields 
         Debug.Log("Checking shields");
@@ -53,7 +58,7 @@ public class CheckBlockchainBeforeGame : MonoBehaviour
         PlayerPrefs.SetFloat("ShieldsIncrement", shieldsIncrement);
         itemsCompleted++;
         Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
-        ProgressBar.UpdateVisual(itemsCompleted / totalItems);
+
 
         // Armour
         Debug.Log("Checking armour");
@@ -62,7 +67,7 @@ public class CheckBlockchainBeforeGame : MonoBehaviour
         PlayerPrefs.SetFloat("ArmourIncrement", armourIncrement);
         itemsCompleted++;
         Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
-        ProgressBar.UpdateVisual(itemsCompleted / totalItems);
+
     }
 
     async Task CheckBlasterItems()
@@ -71,23 +76,26 @@ public class CheckBlockchainBeforeGame : MonoBehaviour
 
         string[] blasterTokens = { "BlasterAccuracy", "BlasterStoppingPower", "BlasterRapidFire", "BlasterAimSpeed", "BlasterCooldown" };
 
-        foreach (string token in blasterTokens)
-        {
-            Debug.Log("Checking " + token);
-            string onChainValue = await Web3Manager.ownsGameItem("BlasterContract", token);
-            Debug.Log("onChainValue for " + token + ": " + onChainValue);
-            if (Boolean.TryParse(onChainValue, out bool result))
-            {
-                PlayerPrefs.SetString(token, onChainValue);
-            }
-            else
-            {
-                continue;
-            }
-            itemsCompleted++;
-            Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
-            ProgressBar.UpdateVisual(itemsCompleted / totalItems);
-        }
+        await Web3Manager.ownsGameItems("BlasterContract");
+        itemsCompleted += 5;
+
+        // foreach (string token in blasterTokens)
+        // {
+        //     Debug.Log("Checking " + token);
+        //     string onChainValue = await Web3Manager.ownsGameItem("BlasterContract", token);
+        //     Debug.Log("onChainValue for " + token + ": " + onChainValue);
+        //     if (Boolean.TryParse(onChainValue, out bool result))
+        //     {
+        //         PlayerPrefs.SetString(token, onChainValue);
+        //     }
+        //     else
+        //     {
+        //         continue;
+        //     }
+        //     itemsCompleted++;
+        //     Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
+
+        // }
     }
 
     async Task CheckJetpackItems()
@@ -96,32 +104,35 @@ public class CheckBlockchainBeforeGame : MonoBehaviour
 
         string[] jetpackTokens = { "JetpackBase", "JetpackFlightSpeed", "JetpackDuration", "JetpackCooldown" };
 
-        foreach (string token in jetpackTokens)
-        {
-            Debug.Log("Checking " + token);
-            string onChainValue = await Web3Manager.ownsGameItem("JetpackContract", token);
-            Debug.Log("onChainValue for " + token + ": " + onChainValue);
-            if (Boolean.TryParse(onChainValue, out bool result))
-            {
-                PlayerPrefs.SetString(token, onChainValue);
-            }
-            else
-            {
-                continue;
-            }
-            // If there is no base token, they won't have any of the others
-            if (token == "JetpackBase" && onChainValue == "false")
-            {
-                itemsCompleted += 4;
-                Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
-                ProgressBar.UpdateVisual(itemsCompleted / totalItems);
-                break;
-            };
+        await Web3Manager.ownsGameItems("JetpackContract");
+        itemsCompleted += 4;
 
-            itemsCompleted++;
-            Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
-            ProgressBar.UpdateVisual(itemsCompleted / totalItems);
-        }
+        // foreach (string token in jetpackTokens)
+        // {
+        //     Debug.Log("Checking " + token);
+        //     string onChainValue = await Web3Manager.ownsGameItem("JetpackContract", token);
+        //     Debug.Log("onChainValue for " + token + ": " + onChainValue);
+        //     if (Boolean.TryParse(onChainValue, out bool result))
+        //     {
+        //         PlayerPrefs.SetString(token, onChainValue);
+        //     }
+        //     else
+        //     {
+        //         continue;
+        //     }
+        //     // If there is no base token, they won't have any of the others
+        //     if (token == "JetpackBase" && onChainValue == "false")
+        //     {
+        //         itemsCompleted += 4;
+        //         Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
+
+        //         break;
+        //     };
+
+        //     itemsCompleted++;
+        //     Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
+
+        // }
     }
 
     async Task CheckShotgunItems()
@@ -130,32 +141,35 @@ public class CheckBlockchainBeforeGame : MonoBehaviour
 
         string[] shotgunTokens = { "ShotgunBase", "ShotgunSpreadshot", "ShotgunCooldown", "ShotgunStoppingPower", "ShotgunExtraBarrel", "ShotgunAimSpeed" };
 
-        foreach (string token in shotgunTokens)
-        {
-            Debug.Log("Checking " + token);
-            string onChainValue = await Web3Manager.ownsGameItem("ShotgunContract", token);
-            Debug.Log("onChainValue for " + token + ": " + onChainValue);
-            if (Boolean.TryParse(onChainValue, out bool result))
-            {
-                PlayerPrefs.SetString(token, onChainValue);
-            }
-            else
-            {
-                continue;
-            }
-            // If there is no base token, they won't have any of the others
-            if (token == "ShotgunBase" && onChainValue == "false")
-            {
-                itemsCompleted += 6;
-                Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
-                ProgressBar.UpdateVisual(itemsCompleted / totalItems);
-                break;
-            }
+        await Web3Manager.ownsGameItems("ShotgunContract");
+        itemsCompleted += 6;
 
-            itemsCompleted++;
-            Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
-            ProgressBar.UpdateVisual(itemsCompleted / totalItems);
-        }
+        // foreach (string token in shotgunTokens)
+        // {
+        //     Debug.Log("Checking " + token);
+        //     string onChainValue = await Web3Manager.ownsGameItem("ShotgunContract", token);
+        //     Debug.Log("onChainValue for " + token + ": " + onChainValue);
+        //     if (Boolean.TryParse(onChainValue, out bool result))
+        //     {
+        //         PlayerPrefs.SetString(token, onChainValue);
+        //     }
+        //     else
+        //     {
+        //         continue;
+        //     }
+        //     // If there is no base token, they won't have any of the others
+        //     if (token == "ShotgunBase" && onChainValue == "false")
+        //     {
+        //         itemsCompleted += 6;
+        //         Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
+
+        //         break;
+        //     }
+
+        //     itemsCompleted++;
+        //     Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
+
+        // }
     }
 
     async Task CheckDiscLauncherItems()
@@ -164,32 +178,35 @@ public class CheckBlockchainBeforeGame : MonoBehaviour
 
         string[] discLauncherTokens = { "DiscLauncherBase", "DiscLauncherAimSpeed", "DiscLauncherChargeSpeed", "DiscLauncherStoppingPower", "DiscLauncherCooldown" };
 
-        foreach (string token in discLauncherTokens)
-        {
-            Debug.Log("Checking " + token);
-            string onChainValue = await Web3Manager.ownsGameItem("DiscLauncherContract", token);
-            Debug.Log("onChainValue for " + token + ": " + onChainValue);
-            if (Boolean.TryParse(onChainValue, out bool result))
-            {
-                PlayerPrefs.SetString(token, onChainValue);
-            }
-            else
-            {
-                continue;
-            }
-            // If there is no base token, they won't have any of the others
-            if (token == "DiscLauncherBase" && onChainValue == "false")
-            {
-                itemsCompleted += 5;
-                Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
-                ProgressBar.UpdateVisual(itemsCompleted / totalItems);
-                break;
-            }
+        await Web3Manager.ownsGameItems("DiscLauncherContract");
+        itemsCompleted += 5;
 
-            itemsCompleted++;
-            Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
-            ProgressBar.UpdateVisual(itemsCompleted / totalItems);
-        }
+        // foreach (string token in discLauncherTokens)
+        // {
+        //     Debug.Log("Checking " + token);
+        //     string onChainValue = await Web3Manager.ownsGameItem("DiscLauncherContract", token);
+        //     Debug.Log("onChainValue for " + token + ": " + onChainValue);
+        //     if (Boolean.TryParse(onChainValue, out bool result))
+        //     {
+        //         PlayerPrefs.SetString(token, onChainValue);
+        //     }
+        //     else
+        //     {
+        //         continue;
+        //     }
+        //     // If there is no base token, they won't have any of the others
+        //     if (token == "DiscLauncherBase" && onChainValue == "false")
+        //     {
+        //         itemsCompleted += 5;
+        //         Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
+
+        //         break;
+        //     }
+
+        //     itemsCompleted++;
+        //     Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
+
+        // }
     }
 
     async Task CheckSniperItems()
@@ -198,31 +215,34 @@ public class CheckBlockchainBeforeGame : MonoBehaviour
 
         string[] sniperTokens = { "SniperBase", "SniperAimSpeed", "SniperCooldown", "SniperStoppingPower", "SniperZoom" };
 
-        foreach (string token in sniperTokens)
-        {
-            Debug.Log("Checking " + token);
-            string onChainValue = await Web3Manager.ownsGameItem("SniperContract", token);
-            Debug.Log("onChainValue for " + token + ": " + onChainValue);
-            if (Boolean.TryParse(onChainValue, out bool result))
-            {
-                PlayerPrefs.SetString(token, onChainValue);
-            }
-            else
-            {
-                continue;
-            }
-            // If there is no base token, they won't have any of the others
-            if (token == "SniperBase" && onChainValue == "false")
-            {
-                itemsCompleted += 5;
-                Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
-                ProgressBar.UpdateVisual(itemsCompleted / totalItems);
-                break;
-            }
+        await Web3Manager.ownsGameItems("SniperContract");
+        itemsCompleted += 5;
 
-            itemsCompleted++;
-            Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
-            ProgressBar.UpdateVisual(itemsCompleted / totalItems);
-        }
+        // foreach (string token in sniperTokens)
+        // {
+        //     Debug.Log("Checking " + token);
+        //     string onChainValue = await Web3Manager.ownsGameItem("SniperContract", token);
+        //     Debug.Log("onChainValue for " + token + ": " + onChainValue);
+        //     if (Boolean.TryParse(onChainValue, out bool result))
+        //     {
+        //         PlayerPrefs.SetString(token, onChainValue);
+        //     }
+        //     else
+        //     {
+        //         continue;
+        //     }
+        //     // If there is no base token, they won't have any of the others
+        //     if (token == "SniperBase" && onChainValue == "false")
+        //     {
+        //         itemsCompleted += 5;
+        //         Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
+
+        //         break;
+        //     }
+
+        //     itemsCompleted++;
+        //     Debug.Log("itemsCompleted / totalItems " + (itemsCompleted / totalItems).ToString());
+
+        // }
     }
 }

@@ -44,6 +44,23 @@ public class Web3Manager : MonoBehaviour
        {"VitalityItemsContract",new GameContract("0x85B3C588912Cbd2F415bFBC4A34f069554385663", vitalityItemABI) },
     };
 
+    // The indices that represent the game items on each contract
+    Dictionary<string, string[]> gameItemIndices = new Dictionary<string, string[]>(){
+        {"BlasterContract", new string[]{"0","1","2","3","4"}},
+        {"JetpackContract", new string[]{"0","1","2","3"}},
+        {"ShotgunContract", new string[]{"0","1","2","3","4","5"}},
+        {"DiscLauncherContract", new string[]{"0","1","2","3","4"}},
+        {"SniperContract", new string[]{"0","1","2","3","4"}},
+    };
+
+    Dictionary<string, List<string>> gameItemNames = new Dictionary<string, List<string>>(){
+        {"BlasterContract", new List<string>{"BlasterAccuracy", "BlasterStoppingPower", "BlasterRapidFire", "BlasterAimSpeed", "BlasterCooldown"}},
+        {"JetpackContract", new List<string>{"JetpackBase", "JetpackFlightSpeed", "JetpackDuration", "JetpackCooldown"}},
+        {"ShotgunContract", new List<string>{"ShotgunBase", "ShotgunSpreadshot", "ShotgunCooldown", "ShotgunStoppingPower", "ShotgunExtraBarrel", "ShotgunAimSpeed"}},
+        {"DiscLauncherContract", new List<string>{"DiscLauncherBase", "DiscLauncherAimSpeed", "DiscLauncherChargeSpeed", "DiscLauncherStoppingPower", "DiscLauncherCooldown"}},
+        {"SniperContract", new List<string>{"SniperBase", "SniperAimSpeed", "SniperCooldown", "SniperStoppingPower", "SniperZoom"}},
+    };
+
     void Start()
     {
         playerAddress = PlayerPrefs.GetString("Account");
@@ -152,8 +169,6 @@ public class Web3Manager : MonoBehaviour
     }
 
     // GAME ITEM FUNCTIONS
-
-    // TODO Find out how to get the price out of the string response
     public async void getPrice(string contractName, string itemName)
     {
         GameContract gameContract = gameContracts[contractName];
@@ -166,14 +181,10 @@ public class Web3Manager : MonoBehaviour
     public async Task<string> ownsGameItem(string contractName, string itemName)
     {
         GameContract gameContract = gameContracts[contractName];
-        string[] obj = { playerAddress, itemName };
-        string args = JsonConvert.SerializeObject(obj);
         try
         {
             BigInteger erc1155Test = await ERC1155.BalanceOf(chain, network, gameContract.Address, playerAddress, DetermineERC1155Index(itemName), rpc);
             bool owns = erc1155Test > 0;
-            Debug.Log("result from erc1155 test " + erc1155Test);
-            Debug.Log("owns in ownsGameItem " + (erc1155Test > 0).ToString());
             return owns.ToString();
         }
         catch
@@ -181,7 +192,33 @@ public class Web3Manager : MonoBehaviour
             Debug.Log("Error getting balance for " + itemName);
             return false.ToString();
         }
+    }
 
+    public async Task ownsGameItems(string contractName)
+    {
+        GameContract gameContract = gameContracts[contractName];
+        string[] itemIndices = gameItemIndices[contractName];
+        string[] playerAddressArray = new string[itemIndices.Length];
+
+        for (int i = 0; i < playerAddressArray.Length; i++)
+        {
+            playerAddressArray[i] = playerAddress;
+        }
+
+        List<BigInteger> balances = await ERC1155.BalanceOfBatch(chain, network, gameContract.Address, playerAddressArray, itemIndices, rpc);
+        for (int i = 0; i < balances.Count; i++)
+        {
+            if (balances[i] > 0)
+            {
+                PlayerPrefs.SetString(gameItemNames[contractName][i] + "Owned", "true");
+            }
+            else
+            {
+                PlayerPrefs.SetString(gameItemNames[contractName][i] + "Owned", "false");
+            }
+
+            Debug.Log(gameItemNames[contractName][i] + "Owned: " + PlayerPrefs.GetString(gameItemNames[contractName][i] + "Owned"));
+        }
     }
 
     // VITALITY ITEM FUNCTIONS
@@ -198,7 +235,7 @@ public class Web3Manager : MonoBehaviour
     public async Task getMETRBalance()
     {
         // Waits until we actually have a value for the playerAddress
-        while (playerAddress == "")
+        while (playerAddress == "" || playerAddress == null)
         {
             await new WaitForSeconds(1f);
         };
