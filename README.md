@@ -1,5 +1,3 @@
-# <div align="center">MetaRanger_v1</div>
-
 <div align="center"><img src="./READMEContent/Images/MetaRangers_Banner.png" /></div>
 
 <br/>
