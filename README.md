@@ -1,9 +1,10 @@
 # <div align="center">MetaRanger_v1</div>
 
-<div align="center"><img src="https://github.com/BGHProjects/MetaRanger_v1/blob/READMEContent/Images/MetaRangers_Banner.png" /></div>
+<div align="center"><img src="./READMEContent/Images/MetaRangers_Banner.png" /></div>
 
 <br/>
 This project is a proof of concept for a Web3 dApp build in Unity that interacts with smart contracts. 
+
 - The project takes the form of a first person shooter, built on top of [Unity's FPS Microgame](https://learn.unity.com/project/fps-template) that uses an in-game currency in the form of an [ERC20 token](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/), to allow the user to purchase in-game items in the form of [ERC1155 tokens](https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/). 
 - The game uses the [ChainSafe Gaming SDK](https://gaming.chainsafe.io/) to facilitate its connection to the blockchain to read and write to the relevant smart contracts, which have been deployed to the [Polygon Mumbai testnet](https://www.alchemy.com/overviews/mumbai-testnet).
 
@@ -14,25 +15,25 @@ NOTE: This project is a proof of concept, and not intended to represent a polish
 The items within the game that are represented by the ERC1155 are the Vitality Items; including Health, Armour, and Shields, the additional Weapons; Disc Launcher, Shotgun, and Sniper, and the various Weapon Upgrades for each item. These items can be exchanged for accrued METR tokens (the ERC20), within the Loadout menu. The following screenshots are how these items and menus are displayed within the game. (All mockups were made with [Figma](https://www.figma.com/).)
 
 ### Loadout Power Ups
-<div align="center"><img src="./READMEContent/Images/Loadout/MetaRangers_LoadoutPowerUps.png" /></div>
+<div align="center"><img src="./READMEContent/Images/Loadout/Loadout_PowerUps.png" /></div>
 
 ### Loadout Weapons
-<div align="center"><img src="./READMEContent/Images/Loadout/MetaRangers_LoadoutWeapons.png" /></div>
+<div align="center"><img src="./READMEContent/Images/Loadout/Loadout_Weapons.png" /></div>
 
 ### Blaster Upgrade Tree
-<div align="center"><img src="./READMEContent/Images/Loadout/MetaRangers_BlasterTree.png" /></div>
+<div align="center"><img src="./READMEContent/Images/Loadout/Loadout_BlasterTree.png" /></div>
 
 ### Disc Launcher Upgrade Tree
-<div align="center"><img src="./READMEContent/Images/Loadout/MetaRangers_DiscLauncherTree.png" /></div>
+<div align="center"><img src="./READMEContent/Images/Loadout/Loadout_DiscLauncherTree.png" /></div>
 
 ### Shotgun Upgrade Tree
-<div align="center"><img src="./READMEContent/Images/Loadout/MetaRangers_ShotgunTree.png" /></div>
+<div align="center"><img src="./READMEContent/Images/Loadout/Loadout_ShotgunTree.png" /></div>
 
 ### Sniper Upgrade Tree
-<div align="center"><img src="./READMEContent/Images/Loadout/MetaRangers_SniperTree.png" /></div>
+<div align="center"><img src="./READMEContent/Images/Loadout/Loadout_SniperTree.png" /></div>
 
 ### Jetpack Upgrade Tree
-<div align="center"><img src="./READMEContent/Images/Loadout/MetaRangers_JetpackTree.png" /></div>
+<div align="center"><img src="./READMEContent/Images/Loadout/Loadout_JetpackTree.png" /></div>
 
 ## Deployed Contracts (Mumbai Polyscan)
 
@@ -54,6 +55,6 @@ The items within the game that are represented by the ERC1155 are the Vitality I
 <div align="center"><img src="./READMEContent/Images/TestCoverage/MetaRangers_FullTestCoverage.png" /></div>
 
 ## Example In-Game Contract Interactions
-<div align="center"><img src="./READMEContent/Footage/MetaRangers_ConnectWallet.gif" /></div>
-<div align="center"><img src="./READMEContent/Footage/MetaRangers_PurchaseGameItem.gif" /></div>
+<div align="center"><img src="./READMEContent/Footage/MetaRangers_ClaimMETRGIF.gif" /></div>
+<div align="center"><img src="./READMEContent/Footage/MetaRangers_PurchaseGameItemGIF.gif" /></div>
 
