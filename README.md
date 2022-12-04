@@ -55,6 +55,10 @@ The items within the game that are represented by the ERC1155 are the Vitality I
 <div align="center"><img src="./READMEContent/Images/TestCoverage/MetaRangers_FullTestCoverage.png" /></div>
 
 ## Example In-Game Contract Interactions
+### Connecting MetaMask wallet
+<video controls><source src="./READMEContent/Footage/MetaRangers_ConnectingWallet.mov" type="video/mov"</video>
+### Claiming METR
 <div align="center"><img src="./READMEContent/Footage/MetaRangers_ClaimMETRGIF.gif" /></div>
+### Purchasing a Game Item
 <div align="center"><img src="./READMEContent/Footage/MetaRangers_PurchaseGameItemGIF.gif" /></div>
 
