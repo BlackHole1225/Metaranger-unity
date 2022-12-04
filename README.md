@@ -3,7 +3,9 @@
 <div align="center"><img src="https://github.com/BGHProjects/MetaRanger_v1/blob/READMEContent/Images/MetaRangers_Banner.png" /></div>
 
 <br/>
-This project is a proof of concept for a Web3 dApp build in Unity that interacts with smart contracts. The project takes the form of a first person shooter, built on top of [Unity's FPS Microgame](https://learn.unity.com/project/fps-template) that uses an in-game currency in the form of an [ERC20 token](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/), to allow the user to purchase in-game items in the form of [ERC1155 tokens](https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/). The game uses the [ChainSafe Gaming SDK](https://gaming.chainsafe.io/) to facilitate its connection to the blockchain to read and write to the relevant smart contracts, which have been deployed to the [Polygon Mumbai testnet](https://www.alchemy.com/overviews/mumbai-testnet).
+This project is a proof of concept for a Web3 dApp build in Unity that interacts with smart contracts. 
+- The project takes the form of a first person shooter, built on top of [Unity's FPS Microgame](https://learn.unity.com/project/fps-template) that uses an in-game currency in the form of an [ERC20 token](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/), to allow the user to purchase in-game items in the form of [ERC1155 tokens](https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/). 
+- The game uses the [ChainSafe Gaming SDK](https://gaming.chainsafe.io/) to facilitate its connection to the blockchain to read and write to the relevant smart contracts, which have been deployed to the [Polygon Mumbai testnet](https://www.alchemy.com/overviews/mumbai-testnet).
 
 <br/>
 NOTE: This project is a proof of concept, and not intended to represent a polished Web3 game. The contracts used in this application have not been audited, and I take no responsiblity for issues which may arise out of their extended use.
@@ -49,6 +51,7 @@ The items within the game that are represented by the ERC1155 are the Vitality I
 <div align="center"><img src="./READMEContent/Images/TestCoverage/MetaRangers_GameManagerTestCoverage.png" /></div>
 <div align="center"><img src="./READMEContent/Images/TestCoverage/MetaRangers_METRTokenTestCoverage.png" /></div>
 <div align="center"><img src="./READMEContent/Images/TestCoverage/MetaRangers_VitalityItemTestCoverage.png" /></div>
+<div align="center"><img src="./READMEContent/Images/TestCoverage/MetaRangers_FullTestCoverage.png" /></div>
 
 ## Example In-Game Contract Interactions
 <div align="center"><img src="./READMEContent/Footage/MetaRangers_ConnectWallet.gif" /></div>
