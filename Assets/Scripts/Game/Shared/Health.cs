@@ -44,13 +44,11 @@ namespace Unity.FPS.Game
         {
             // Health
             float healthInc = PlayerPrefs.GetFloat("HealthIncrement", 0f);
-            Debug.Log("HealthIncrement " + healthInc);
             MaxHealth = MaxHealth + healthInc;
             CurrentHealth = MaxHealth;
 
             // Armour
             float currentArmour = PlayerPrefs.GetFloat("ArmourIncrement", 0f);
-            Debug.Log("ArmourIncrement " + currentArmour);
             if (currentArmour < 10f)
             {
                 MaxArmour = 10f;
@@ -63,7 +61,6 @@ namespace Unity.FPS.Game
 
             // Shields
             float currentShields = PlayerPrefs.GetFloat("ShieldsIncrement", 0f);
-            Debug.Log("ShieldsIncrement " + currentShields);
             if (currentShields < 10f)
             {
                 MaxShields = 10f;

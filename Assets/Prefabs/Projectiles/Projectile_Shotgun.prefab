@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 10}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8402172112652589804}
   m_Father: {fileID: 0}
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de99b30e1e73fd14e98cc5371da25d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: Shotgun
   Radius: 0.1
   Root: {fileID: 3659995153115176982}
   Tip: {fileID: 1135791333161367127}
@@ -89,6 +91,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 101.4293}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8402172112652589804}
   m_RootOrder: 0
@@ -121,6 +124,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1135791333161367127}
   m_Father: {fileID: 3659995153115176982}
@@ -145,6 +149,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

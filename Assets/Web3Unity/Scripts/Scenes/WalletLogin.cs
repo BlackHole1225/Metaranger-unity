@@ -4,20 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class WalletLogin: MonoBehaviour
+public class WalletLogin : MonoBehaviour
 {
     public Toggle rememberMe;
 
-    void Start() {
+    public Web3Manager Web3Manager;
+
+    void Start()
+    {
         // if remember me is checked, set the account to the saved account
-        if(PlayerPrefs.HasKey("RememberMe") && PlayerPrefs.HasKey("Account"))
-        {
-            if (PlayerPrefs.GetInt("RememberMe") == 1 && PlayerPrefs.GetString("Account") != "")
-            {
-                // move to next scene
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-        }
+        // if(PlayerPrefs.HasKey("RememberMe") && PlayerPrefs.HasKey("Account"))
+        // {
+        //     if (PlayerPrefs.GetInt("RememberMe") == 1 && PlayerPrefs.GetString("Account") != "")
+        //     {
+        //         // move to next scene
+        //         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //     }
+        // }
     }
 
     async public void OnLogin()
@@ -34,7 +37,8 @@ public class WalletLogin: MonoBehaviour
         string account = await EVM.Verify(message, signature);
         int now = (int)(System.DateTime.UtcNow.Subtract(new System.DateTime(1970, 1, 1))).TotalSeconds;
         // validate
-        if (account.Length == 42 && expirationTime >= now) {
+        if (account.Length == 42 && expirationTime >= now)
+        {
             // save account
             PlayerPrefs.SetString("Account", account);
             if (rememberMe.isOn)
@@ -43,7 +47,9 @@ public class WalletLogin: MonoBehaviour
                 PlayerPrefs.SetInt("RememberMe", 0);
             print("Account: " + account);
             // load next scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+            await Web3Manager.getMETRBalance();
         }
     }
 }

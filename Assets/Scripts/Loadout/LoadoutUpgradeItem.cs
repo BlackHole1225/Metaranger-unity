@@ -52,24 +52,13 @@ namespace Unity.FPS.UI
 
         public State upgradeState = State.Unavailable;
 
-        string DetermineGameItemContract()
-        {
-            if (UpgradeName.Contains("Blaster")) return "BlasterContract";
-            if (UpgradeName.Contains("DiscLauncher")) return "DiscLauncherContract";
-            if (UpgradeName.Contains("Shotgun")) return "ShotgunContract";
-            if (UpgradeName.Contains("Jetpack")) return "JetpackContract";
-            if (UpgradeName.Contains("Sniper")) return "SniperContract";
-            return null;
-        }
-
-        async Task<bool> CheckOwned()
+        bool CheckOwned()
         {
             if (UpgradeName == "BlasterBase") return true;
-            string contractName = DetermineGameItemContract();
-            string result = await LOM.GetOwnsGameItem(contractName, UpgradeName);
-            if (Boolean.TryParse(result, out bool ownsItem))
+            string owns = PlayerPrefs.GetString(UpgradeName + "Owned");
+            if (Boolean.TryParse(owns, out bool ownsItem))
             {
-                return bool.Parse(result);
+                return ownsItem;
             }
             else
             {
@@ -84,11 +73,11 @@ namespace Unity.FPS.UI
             return upgradeState;
         }
 
-        public async void CheckStatus()
+        public void CheckStatus()
         {
             // If the item has no prerequisites, it is Owned
             // If the user has the game item, then it is Owned
-            bool result = await CheckOwned();
+            bool result = CheckOwned();
 
 
             if (prerequisites.Length == 0 || (prerequisites.Length != 0 && result))
@@ -133,6 +122,11 @@ namespace Unity.FPS.UI
 
 
         void Start()
+        {
+            CheckStatus();
+        }
+
+        void Update()
         {
             CheckStatus();
         }

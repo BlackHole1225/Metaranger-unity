@@ -86,7 +86,7 @@ namespace Unity.FPS.UI
         {
             GameItemText.text = GameItemTitle;
             if (UnlockedByDefault) Unlocked = true;
-            await CheckItemStatuses();
+            CheckItemStatuses();
 
             if (UnlockedByDefault && GameItemTitle != "BLASTER")
             {
@@ -98,7 +98,7 @@ namespace Unity.FPS.UI
         // If this runs every frame, it might consume computation and make the game slow
         void Update()
         {
-            // CheckItemStatuses();
+            CheckItemStatuses();
         }
 
         public void SelectGameItem()
@@ -114,13 +114,14 @@ namespace Unity.FPS.UI
             }
         }
 
-        async Task<bool> CheckIfUnlocked(string gameItem)
+        bool CheckIfUnlocked(string gameItem)
         {
-            string result = await loadoutManager.GetOwnsGameItem(ContractName, gameItem);
-            Debug.Log("result in CheckIfUnlocked " + result);
-            if (Boolean.TryParse(result, out bool ownsItem))
+
+            string owns = PlayerPrefs.GetString(gameItem + "Owned");
+
+            if (Boolean.TryParse(owns, out bool ownsItem))
             {
-                return bool.Parse(result);
+                return ownsItem;
             }
             else
             {
@@ -149,22 +150,18 @@ namespace Unity.FPS.UI
             }
         }
 
-        async void ActivateIndicators(bool whichOne)
+        void ActivateIndicators(bool whichOne)
         {
-            Debug.Log("\n\tReached ActivateIndicators");
             foreach (GameObject indicator in UpgradeIndicators)
             {
                 if (whichOne) // True means we are showing the indicators
                 {
-                    Debug.Log("\tindicator.name " + indicator.name);
 
-                    bool result = await CheckIfUnlocked(indicator.name);
+                    bool result = CheckIfUnlocked(indicator.name);
 
-                    Debug.Log("\tresult in ActivateIndicators " + result);
 
                     if (result)
                     {
-                        Debug.Log("We should be setting this indicator " + indicator.name);
                         UpgradeTextObject.SetActive(false);
                         UpgradeIndicatorsObject.SetActive(true);
                         indicator.SetActive(true);
@@ -172,22 +169,20 @@ namespace Unity.FPS.UI
                 }
                 else
                 {
-                    Debug.Log("We are not setting this indicator " + indicator.name);
                     indicator.SetActive(whichOne);
                 }
             }
         }
 
         // TODO Decide if this should be called whenever a purchased has been made or something?
-        public async Task CheckItemStatuses()
+        public void CheckItemStatuses()
         {
             // Check if this item has been unlocked
             if (!UnlockedByDefault)
             {
-                Unlocked = await CheckIfUnlocked(GameItemName);
+                Unlocked = CheckIfUnlocked(GameItemName);
             }
 
-            Debug.Log("Unlocked in CheckItemStatuses " + GameItemName + " " + Unlocked);
 
             if (!Unlocked)
             {
@@ -207,7 +202,6 @@ namespace Unity.FPS.UI
                 {
                     UpgradeTextObject.SetActive(false);
                     CurrentValueText.text = CurrentValue.ToString();
-                    Debug.Log("\n\tCurrentValue " + CurrentValue.ToString());
                     CurrentValueObject.SetActive(true);
                 }
                 else

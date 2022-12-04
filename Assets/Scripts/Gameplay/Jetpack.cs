@@ -56,10 +56,16 @@ namespace Unity.FPS.Gameplay
 
         bool TokenResult(string whichToken)
         {
-            bool result;
-            Boolean.TryParse(PlayerPrefs.GetString(whichToken), out result);
-            Debug.Log("Outcome in Token Result " + Boolean.TryParse(PlayerPrefs.GetString(whichToken), out result));
-            return result;
+            string owns = PlayerPrefs.GetString(whichToken);
+
+            if (Boolean.TryParse(owns, out bool ownsItem))
+            {
+                return ownsItem;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         void ApplyTokenEffects()
@@ -73,7 +79,7 @@ namespace Unity.FPS.Gameplay
 
             if (TokenResult("JetpackDurationOwned"))
             {
-                ConsumeDuration /= 2;
+                ConsumeDuration *= 2;
             }
 
             if (TokenResult("JetpackCooldownOwned"))

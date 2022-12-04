@@ -34,17 +34,13 @@ namespace Unity.FPS.UI
         public async void CompletePurchase()
         {
 
-            Debug.Log("GameItemName " + GameItemName);
-
             if (GameItemName.Contains("Health") || GameItemName.Contains("Shields") || GameItemName.Contains("Armour"))
             {
-                Debug.Log("This is a vitality item");
                 await Web3Manager.purchaseVitalityItem(GameItemName);
                 await LoadoutManager.GetVitalityItemValue(GameItemName);
             }
             else
             {
-                Debug.Log("This is a normal game item");
                 await Web3Manager.purchaseGameItem(GameItemName);
             }
 
@@ -60,7 +56,6 @@ namespace Unity.FPS.UI
             GameItemImage.rectTransform.sizeDelta = new Vector2(imgWidth, imgHeight);
             PriceLabel.text = GIPrice.ToString();
             thisModal.SetActive(true);
-            Debug.Log("GameItemName " + GIName);
         }
     }
 }

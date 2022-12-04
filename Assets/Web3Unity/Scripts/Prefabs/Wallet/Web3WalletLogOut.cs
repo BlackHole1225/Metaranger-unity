@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Web3WalletLogOut : MonoBehaviour
 {
-   public void OnLogOut()
+    public void OnLogOut()
     {
-         PlayerPrefs.SetString("Account", "");
-         SceneManager.LoadScene(0);
-    } 
+        PlayerPrefs.SetString("Account", "");
+    }
 }

@@ -10,9 +10,12 @@ using UnityEngine.UI;
 
 public class WalletConnection : MonoBehaviour
 {
-    [Header("Connect Button")]
+    [Header("Connection Buttons")]
     [Tooltip("The Connect Button GameObject")]
     public GameObject connectButton;
+
+    [Tooltip("The Disconnect Button GameObject")]
+    public GameObject disconnectButton;
 
     [Header("METR Balance Items")]
     [Tooltip("The METR Balance GameObject")]
@@ -31,12 +34,12 @@ public class WalletConnection : MonoBehaviour
     {
         connectButton.SetActive(true);
         metrBalanceObject.SetActive(false);
+        disconnectButton.SetActive(false);
         if (!balanceAttained)
         {
             await CheckBalance();
         }
     }
-
 
     public async Task CheckBalance()
     {
@@ -48,12 +51,21 @@ public class WalletConnection : MonoBehaviour
 
         connectButton.SetActive(false);
         metrBalanceObject.SetActive(true);
+        disconnectButton.SetActive(true);
 
         metrBalanceText.text = "Retrieving Balance";
         await Web3Manager.getMETRBalance();
-        Debug.Log("METR Balance in PlayerPrefs " + PlayerPrefs.GetInt("METRBalance"));
         metrBalanceText.text = PlayerPrefs.GetInt("METRBalance").ToString();
         balanceAttained = true;
     }
+
+    public void Logout()
+    {
+        PlayerPrefs.SetString("Account", "");
+        connectButton.SetActive(true);
+        metrBalanceObject.SetActive(false);
+        disconnectButton.SetActive(false);
+    }
+
 }
 

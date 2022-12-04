@@ -58,7 +58,7 @@ namespace Unity.FPS.Game
             }
         }
 
-        void DisplayGameItems(string state)
+        async void DisplayGameItems(string state)
         {
             MainTitleTextObject.SetActive(false);
             SideTitleTextObject.SetActive(true);
@@ -67,12 +67,17 @@ namespace Unity.FPS.Game
             {
                 SetItemsActive(PowerUpItems, false);
                 SetItemsActive(Weapons, true);
+                await Web3Manager.ownsGameItems("BlasterContract");
+                await Web3Manager.ownsGameItems("DiscLauncherContract");
+                await Web3Manager.ownsGameItems("ShotgunContract");
+                await Web3Manager.ownsGameItems("SniperContract");
             }
 
             if (state == "PowerUps")
             {
                 SetItemsActive(Weapons, false);
                 SetItemsActive(PowerUpItems, true);
+                await Web3Manager.ownsGameItems("JetpackContract");
             }
         }
 
@@ -92,11 +97,6 @@ namespace Unity.FPS.Game
                     }
                 }
             }
-            else
-            {
-                // This is where you would show the purchase modal for the non-upgradable items
-            }
-
         }
 
         public void ChangeLoadoutState(string newState)

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Unity.FPS.Game;
 using UnityEngine;
 using UnityEngine.Events;
@@ -115,10 +116,57 @@ namespace Unity.FPS.Gameplay
             // Add starting weapons
             foreach (var weapon in StartingWeapons)
             {
-                AddWeapon(weapon);
+                if (PlayerPrefs.GetString("Account") != "")
+                {
+                    // Only add additional weapons if the player owns the token
+                    if (weapon.WeaponName == "Shotgun" || weapon.WeaponName == "DiscLauncher" || weapon.WeaponName == "Sniper")
+                    {
+                        if (TokenResult(weapon.WeaponName + "BaseOwned"))
+                        {
+                            AddWeapon(weapon);
+                        }
+                    }
+                    else
+                    {
+                        // Always add the Blaster
+                        AddWeapon(weapon);
+                    }
+
+                }
+                else
+                {
+                    // If the user hasn't connected their wallet, only add the Blaster
+                    if (weapon.WeaponName == "Blaster")
+                    {
+
+                        AddWeapon(weapon);
+                    }
+                }
             }
 
             SwitchWeapon(true);
+        }
+
+        bool TokenResult(string whichToken)
+        {
+            string owns = PlayerPrefs.GetString(whichToken);
+
+            if (Boolean.TryParse(owns, out bool ownsItem))
+            {
+                return ownsItem;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        void ApplyTokenEffect(string weaponName)
+        {
+            if (TokenResult(weaponName + "AimSpeedOwned"))
+            {
+                m_PlayerCharacterController.AimingRotationMultiplier = 1f;
+            }
         }
 
         void Update()
@@ -254,6 +302,12 @@ namespace Unity.FPS.Gameplay
                     ActiveWeaponIndex = m_WeaponSwitchNewWeaponIndex;
 
                     WeaponController newWeapon = GetWeaponAtSlotIndex(m_WeaponSwitchNewWeaponIndex);
+
+                    if (PlayerPrefs.GetString("Account") != "")
+                    {
+                        ApplyTokenEffect(newWeapon.WeaponName);
+                    }
+
                     if (OnSwitchedToWeapon != null)
                     {
                         OnSwitchedToWeapon.Invoke(newWeapon);
@@ -398,6 +452,12 @@ namespace Unity.FPS.Gameplay
 
                     if (newWeapon)
                     {
+
+                        if (PlayerPrefs.GetString("Account") != "")
+                        {
+                            ApplyTokenEffect(newWeapon.WeaponName);
+                        }
+
                         m_TimeStartedWeaponSwitch = Time.time;
                         m_WeaponSwitchState = WeaponSwitchState.PutUpNew;
                     }
@@ -429,6 +489,8 @@ namespace Unity.FPS.Gameplay
         // Adds a weapon to our inventory
         public bool AddWeapon(WeaponController weaponPrefab)
         {
+            Debug.Log("AddWeapon called in PlayerWeaponsManager for " + weaponPrefab.WeaponName);
+
             // if we already hold this weapon type (a weapon coming from the same source prefab), don't add the weapon
             if (HasWeapon(weaponPrefab) != null)
             {
@@ -444,6 +506,7 @@ namespace Unity.FPS.Gameplay
                 {
                     // spawn the weapon prefab as child of the weapon socket
                     WeaponController weaponInstance = Instantiate(weaponPrefab, WeaponParentSocket);
+                    OnAddedWeapon.Invoke(weaponInstance, i);
                     weaponInstance.transform.localPosition = Vector3.zero;
                     weaponInstance.transform.localRotation = Quaternion.identity;
 
@@ -463,10 +526,10 @@ namespace Unity.FPS.Gameplay
 
                     m_WeaponSlots[i] = weaponInstance;
 
-                    if (OnAddedWeapon != null)
-                    {
-                        OnAddedWeapon.Invoke(weaponInstance, i);
-                    }
+                    // if (OnAddedWeapon != null)
+                    // {
+                    //     OnAddedWeapon.Invoke(weaponInstance, i);
+                    // }
 
                     return true;
                 }

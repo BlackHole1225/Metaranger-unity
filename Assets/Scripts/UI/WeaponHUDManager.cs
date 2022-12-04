@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Unity.FPS.Game;
 using Unity.FPS.Gameplay;
 using UnityEngine;
@@ -15,6 +16,7 @@ namespace Unity.FPS.UI
 
         PlayerWeaponsManager m_PlayerWeaponsManager;
         List<AmmoCounter> m_AmmoCounters = new List<AmmoCounter>();
+        int activeWeaponIndex;
 
         void Start()
         {
@@ -23,21 +25,60 @@ namespace Unity.FPS.UI
                 this);
 
             WeaponController activeWeapon = m_PlayerWeaponsManager.GetActiveWeapon();
+            activeWeaponIndex = m_PlayerWeaponsManager.ActiveWeaponIndex;
 
             List<WeaponController> startingWeapons = m_PlayerWeaponsManager.StartingWeapons;
 
-            if (activeWeapon)
-            {
-                AddWeapon(activeWeapon, m_PlayerWeaponsManager.ActiveWeaponIndex);
-                ChangeWeapon(activeWeapon);
-            }
+            // if (activeWeapon)
+            // {
+            //     AddWeapon(activeWeapon, m_PlayerWeaponsManager.ActiveWeaponIndex);
+            //     ChangeWeapon(activeWeapon);
+            // }
 
-            m_PlayerWeaponsManager.OnAddedWeapon += AddWeapon;
-            m_PlayerWeaponsManager.OnRemovedWeapon += RemoveWeapon;
-            m_PlayerWeaponsManager.OnSwitchedToWeapon += ChangeWeapon;
+            // For some reason, the below isn't working
+            // m_PlayerWeaponsManager.OnAddedWeapon += AddWeapon;
+            // m_PlayerWeaponsManager.OnRemovedWeapon += RemoveWeapon;
+            // m_PlayerWeaponsManager.OnSwitchedToWeapon += ChangeWeapon;
+            AddAmmoCounters();
         }
 
-        void AddWeapon(WeaponController newWeapon, int weaponIndex)
+        void Update()
+        {
+            UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(AmmoPanel);
+        }
+
+        bool ValidateOwnedWeapon(string weaponName)
+        {
+            if (weaponName == "Blaster") return true;
+            string ownString = PlayerPrefs.GetString(weaponName + "BaseOwned");
+
+            if (Boolean.TryParse(ownString, out bool owns))
+            {
+                return owns;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        void AddAmmoCounters()
+        {
+            List<WeaponController> startingWeapons = m_PlayerWeaponsManager.StartingWeapons;
+            int i = 0;
+            foreach (var weapon in startingWeapons)
+            {
+                if (ValidateOwnedWeapon(weapon.WeaponName))
+                {
+                    AddWeapon(weapon, activeWeaponIndex + i);
+                    ChangeWeapon(weapon);
+                    i++;
+                }
+
+            }
+        }
+
+        public void AddWeapon(WeaponController newWeapon, int weaponIndex)
         {
             GameObject ammoCounterInstance = Instantiate(AmmoCounterPrefab, AmmoPanel);
             AmmoCounter newAmmoCounter = ammoCounterInstance.GetComponent<AmmoCounter>();
