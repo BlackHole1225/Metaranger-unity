@@ -13,7 +13,8 @@ public class Web3Manager : MonoBehaviour
     string chain = "polygon";
     string chainID = "80001";
     string network = "mumbai";
-    string rpc = "https://rpc-mumbai.matic.today";
+    // string rpc = "https://rpc-mumbai.matic.today";
+    string rpc = "https://rpc-mumbai.maticvigil.com";
     string gasLimit = "";
     string gasPrice = "";
     private string digitalKey = "2cd347f69a4cbb6545677cf5b3f50019370cdb858579315d08f15b23e89f4b15e4773d3eda46f393c98e57ef179babcd096c415301955bf043faa30c058807cbe233290dc1f69d9e77e5b5e222a27ca681b50d548b639875ae74844ee338cc567d0ce4b2e9f79fc19656fc601d23ff0180a0dda2d8a961bb9b378fa36b49e4d10fde93c8927a2a94be7ef4d41cff87878d8a104ade3d38a9c82e66148214568f27f4e995907407e10b271409cba8daf1f5be1c93929f38d3a8da3df97eab90d909482986edb05eec";
